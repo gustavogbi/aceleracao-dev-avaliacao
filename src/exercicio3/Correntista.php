@@ -1,6 +1,6 @@
 <?php
 
-namespace aceleradev;
+namespace aceleradev\exercicio3;
 
 class Correntista
 {

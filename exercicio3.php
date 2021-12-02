@@ -2,10 +2,10 @@
 
 require_once(__DIR__ . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php');
 
-use aceleradev\Correntista;
-use aceleradev\Gerente;
-use aceleradev\Transferencia;
-use aceleradev\OperacoesBanco;
+use aceleradev\exercicio3\Correntista;
+use aceleradev\exercicio3\Gerente;
+use aceleradev\exercicio3\Transferencia;
+use aceleradev\exercicio3\OperacoesBanco;
 
 $gerente = new Gerente();
 
@@ -40,19 +40,19 @@ function atualizarSaldo(array $todosCorrentistas, array $transferencias, Operaco
                 $saldoResultado = $saldoAnterior + $saldoMovimento;
                 $todosCorrentistas[$index]->setSaldo($saldoResultado);
 
-                if(is_dir('src/movimentos')){
-                    $file = fopen("src/movimentos/{$correntista->getCPFCliente()}.txt", 'a+');
+                if (is_dir('src/movimentos')) {
+                    $file = fopen("src/exercicio3/movimentos/{$correntista->getCPFCliente()}.txt", 'a+');
 
-                    if($saldoMovimento < 0) {
-                        $movimentosTxt = "$saldoAnterior$saldoMovimento = $saldoResultado ". PHP_EOL;   
+                    if ($saldoMovimento < 0) {
+                        $movimentosTxt = "$saldoAnterior$saldoMovimento = $saldoResultado " . PHP_EOL;
                     } else {
-                        $movimentosTxt = "$saldoAnterior+$saldoMovimento = $saldoResultado ". PHP_EOL;   
+                        $movimentosTxt = "$saldoAnterior+$saldoMovimento = $saldoResultado " . PHP_EOL;
                     }
-                    
-                    $movimentosTxt = serialize($movimentosTxt); 
+
+                    $movimentosTxt = serialize($movimentosTxt);
                     fwrite($file, $movimentosTxt);
                     fclose($file);
-                }    
+                }
             }
         }
     }
@@ -60,4 +60,3 @@ function atualizarSaldo(array $todosCorrentistas, array $transferencias, Operaco
 }
 
 $c = atualizarSaldo($c, $m, $gerente);
-
