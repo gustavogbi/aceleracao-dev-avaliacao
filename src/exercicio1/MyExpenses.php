@@ -2,9 +2,8 @@
 
 
 class MyExpenses {
-    protected array $despesas;
-    protected string $cpf;
-    protected string $nomeDoIndividuo;
+    public $despesasDiaMes = [];
+    public $cpf;
 
     public function __construct($cpf, $despesasDiaMes)
     {
@@ -22,8 +21,7 @@ class MyExpenses {
     }
 
     public function GravaInfos(DespesaMes $despesaMes){
-
-        $objSerializado = serialize($despesaMes);
+         $objSerializado = serialize($despesaMes);
         $filename = $this->nomeDoIndividuo . ".txt";
         $file = fopen($filename, "a+");
         fwrite($file, $objSerializado);
