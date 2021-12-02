@@ -1,5 +1,7 @@
 <?php
 
+namespace aceleradev\exercicio2;
+
 class FullAnimations extends StreamingService
 {
   function listShows()
