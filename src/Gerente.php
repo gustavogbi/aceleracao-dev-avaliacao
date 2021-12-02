@@ -14,7 +14,20 @@ class Gerente implements OperacoesBanco
                 break;
             }
         }
-
         return $correntista;
     }
+
+    // function novoSaldo(array $todosCorrentistas): array
+    // {
+    //         foreach ($todosCorrentistas as $index => $correntista) {
+    //                 $saldoAnterior = $correntista->getSaldo();
+    //                 $todosCorrentistas[$index]->setSaldo($saldoAnterior);
+    //                 $file = fopen("Novo{$correntista->getCPFCliente()}.txt", 'a+');
+    //                 $movimentosTxt = "$saldoAnterior". PHP_EOL;   
+    //                 $movimentosTxt = serialize($movimentosTxt); 
+    //                 fwrite($file, $movimentosTxt);
+    //                 fclose($file);
+    //         }
+    //     return $todosCorrentistas;
+    // }
 }
