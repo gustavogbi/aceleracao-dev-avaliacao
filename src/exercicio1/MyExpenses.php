@@ -2,12 +2,14 @@
 
 
 class MyExpenses {
-    public $despesasDiaMes = [];
-    public $cpf;
+    protected array $despesas;
+    protected string $cpf;
+    protected string $nomeDoIndividuo;
 
     public function __construct($cpf, $despesasDiaMes)
     {
-        
+        $this->cpf = $cpf;
+        $this->despesaDiaMes= $despesasDiaMes;
     }
 
     public function getCpf(){
@@ -20,7 +22,13 @@ class MyExpenses {
     }
 
     public function GravaInfos(DespesaMes $despesaMes){
-        $despesaMes->nomeTitular;
+
+        $objSerializado = serialize($despesaMes);
+        $filename = $this->nomeDoIndividuo . ".txt";
+        $file = fopen($filename, "a+");
+        fwrite($file, $objSerializado);
+        fclose($file);
+        echo "arquivo gravado com sucesso";
 
 
     }
