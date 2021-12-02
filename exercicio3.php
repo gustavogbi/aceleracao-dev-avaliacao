@@ -40,7 +40,7 @@ function atualizarSaldo(array $todosCorrentistas, array $transferencias, Operaco
                 $saldoResultado = $saldoAnterior + $saldoMovimento;
                 $todosCorrentistas[$index]->setSaldo($saldoResultado);
 
-                if (is_dir('src/movimentos')) {
+                if (is_dir('src/movimentos/exercicio3')) {
                     $file = fopen("src/exercicio3/movimentos/{$correntista->getCPFCliente()}.txt", 'a+');
 
                     if ($saldoMovimento < 0) {
