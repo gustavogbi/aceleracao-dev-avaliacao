@@ -1,37 +1,4 @@
-<?php
-
-class DespesaMes{
-
-    protected int $mesDaDespesa;
-    protected float $valorDaDespesa;
-
-    public function __construct(int $mesDaDespesa, float $valorDaDespesa = 0)
-    {
-        $this->valorDaDespesa = $valorDaDespesa;
-        $this->mesDaDespesa = $mesDaDespesa;
-    }
-    public function getMes():int{
-        return $this->mesDaDespesa;
-    }
-    public function getValor():float{
-        return $this->valorDaDespesa;
-    }
-}
-
-class DespesaDia extends DespesaMes{
-
-    protected int $diaDaDespesa;
-
-    public function __construct(int $mesDaDespesa, int $diaDaDespesa, float $valorDaDespesa)
-    {
-        parent::__construct($mesDaDespesa,$valorDaDespesa);
-        $this->diaDaDespesa = $diaDaDespesa;
-    }
-    public function getDia():int{
-        return $this->diaDaDespesa;
-    }
-
-}
+<?php 
 
 class MyExpenses{
 
@@ -73,3 +40,5 @@ class MyExpenses{
     }
     
 }
+
+?>

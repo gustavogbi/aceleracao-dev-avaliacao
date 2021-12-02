@@ -1,19 +1,21 @@
 <?php 
 
+class MyExpenses{
 
-class MyExpenses {
-    public $despesasDiaMes = [];
-    public $cpf;
+    protected array $despesas;
+    protected string $cpf;
+    protected string $nomeDoIndividuo;
 
-    public function __construct($cpf, $despesasDiaMes)
+    public function __construct(array $despesas = [], string $cpf, string $nomeDoIndividuo)
     {
+        $this->despesas = $despesas;
         $this->cpf = $cpf;
-        $this->despesaDiaMes= $despesasDiaMes;
+        $this->nomeDoIndividuo = $nomeDoIndividuo;
     }
 
-    public function getCpf(){
-        $cpf = $this->cpf ;
-        return $cpf;
+    public function getCpf():string{
+
+        return $this->cpf;
     }
     public function totalizaMes(int $mes){
 
@@ -27,10 +29,6 @@ class MyExpenses {
         return new DespesaMes($mes, $totalDespesasNoMes);
         
     }
-
-
-
-
     public function gravaInfos(DespesaMes $despesaMes){
 
         $objSerializado = serialize($despesaMes);
@@ -44,5 +42,3 @@ class MyExpenses {
 }
 
 ?>
-
-
