@@ -6,23 +6,26 @@ error_reporting(E_ALL);
 
 require_once(__DIR__ . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php');
 
-use aceleradev\exercicio2\DisneyPlus;
-use aceleradev\exercicio2\Netflixxx33;
-use aceleradev\exercicio2\DarkFilms;
-use aceleradev\exercicio2\FullAnimations;
-use aceleradev\exercicio2\AnimakaiTV2;
-use aceleradev\exercicio2\SkyPobre;
-use aceleradev\exercicio2\PlusOne;
-use aceleradev\exercicio2\AcademicGreen;
-use aceleradev\exercicio2\NorthTV;
-use aceleradev\exercicio2\TelgoPlus;
-use aceleradev\exercicio2\AvianPlus;
-use aceleradev\exercicio2\Oracle;
-use aceleradev\exercicio2\Postgres;
-use aceleradev\exercicio2\Mongo;
-use aceleradev\exercicio2\MariaDb;
-use aceleradev\exercicio2\Firebase;
-use aceleradev\exercicio2\Mysql;
+use aceleradev\exercicio2\{
+    DisneyPlus,
+    Netflixxx33,
+    DarkFilms,
+    FullAnimations,
+    AnimakaiTV2,
+    SkyPobre,
+    PlusOne,
+    AcademicGreen,
+    NorthTV,
+    TelgoPlus,
+    AvianPlus,
+    Oracle,
+    Postgres,
+    Mongo,
+    MariaDb,
+    Firebase,
+    Mysql
+};
+
 
 $disneyPlus = new DisneyPlus();
 $disneyPlus->setDatabaseDriver(new Oracle());
