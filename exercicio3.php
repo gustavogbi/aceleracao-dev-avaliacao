@@ -34,24 +34,25 @@ function atualizarSaldo(array $todosCorrentistas, array $transferencias, Operaco
 {
     foreach ($transferencias as $transferencia) {
         foreach ($todosCorrentistas as $index => $correntista) {
-            if ($transferencia->getCPFCorrentista() == $correntista->getCPFCliente()) {
-                $saldoAnterior = $correntista->getSaldo();
-                $saldoMovimento = $transferencia->getValorMovimento();
-                $saldoResultado = $saldoAnterior + $saldoMovimento;
-                $todosCorrentistas[$index]->setSaldo($saldoResultado);
+            if($correntista instanceof Correntista && $transferencia instanceof Transferencia) {
+                if ($transferencia->getCPFCorrentista() == $correntista->getCPFCliente()) {
+                    $saldoAnterior = $correntista->getSaldo();
+                    $saldoMovimento = $transferencia->getValorMovimento();
+                    $saldoResultado = $saldoAnterior + $saldoMovimento;
+                    $todosCorrentistas[$index]->setSaldo($saldoResultado);
+                    if (is_dir('src/exercicio3/movimentos')) {
+                        $file = fopen("src/exercicio3/movimentos/{$correntista->getCPFCliente()}.txt", 'a+');
 
-                if (is_dir('src/movimentos/exercicio3')) {
-                    $file = fopen("src/exercicio3/movimentos/{$correntista->getCPFCliente()}.txt", 'a+');
+                        if ($saldoMovimento < 0) {
+                            $movimentosTxt = "$saldoAnterior$saldoMovimento = $saldoResultado " . PHP_EOL;
+                        } else {
+                            $movimentosTxt = "$saldoAnterior+$saldoMovimento = $saldoResultado " . PHP_EOL;
+                        }
 
-                    if ($saldoMovimento < 0) {
-                        $movimentosTxt = "$saldoAnterior$saldoMovimento = $saldoResultado " . PHP_EOL;
-                    } else {
-                        $movimentosTxt = "$saldoAnterior+$saldoMovimento = $saldoResultado " . PHP_EOL;
+                        $movimentosTxt = serialize($movimentosTxt);
+                        fwrite($file, $movimentosTxt);
+                        fclose($file);
                     }
-
-                    $movimentosTxt = serialize($movimentosTxt);
-                    fwrite($file, $movimentosTxt);
-                    fclose($file);
                 }
             }
         }
