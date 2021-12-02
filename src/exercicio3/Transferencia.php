@@ -1,6 +1,6 @@
 <?php
 
-namespace aceleradev;
+namespace aceleradev\exercicio3;
 
 class Transferencia implements MovimentoConta
 {
@@ -22,4 +22,3 @@ class Transferencia implements MovimentoConta
         return $this->valor;
     }
 }
-
