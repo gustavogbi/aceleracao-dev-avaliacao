@@ -1,36 +1,44 @@
 <?php 
 
+class MyExpenses{
 
-class MyExpenses {
-    public $despesasDiaMes = [];
-    public $cpf;
+    protected array $despesas;
+    protected string $cpf;
+    protected string $nomeDoIndividuo;
 
-    public function __construct($cpf, $despesasDiaMes)
+    public function __construct(array $despesas = [], string $cpf, string $nomeDoIndividuo)
     {
+        $this->despesas = $despesas;
         $this->cpf = $cpf;
-        $this->despesaDiaMes= $despesasDiaMes;
+        $this->nomeDoIndividuo = $nomeDoIndividuo;
     }
 
-    public function getCpf(){
-        $cpf = $this->cpf ;
-        return $cpf;
-    }
-    public function totalizaMes($mes){
-        $despesas = "Despesas do mes".$mes;
-        return $despesas;
-    }
+    public function getCpf():string{
 
-    public function GravaInfos(DespesaMes $despesaMes){
-         $objSerializado = serialize($despesaMes);
+        return $this->cpf;
+    }
+    public function totalizaMes(int $mes){
+
+        $totalDespesasNoMes = 0;
+
+        foreach($this->despesas as $despesa){
+            if($despesa->getMes() == $mes){
+                $totalDespesasNoMes += $despesa->getValor();
+            }
+        }
+        return new DespesaMes($mes, $totalDespesasNoMes);
+        
+    }
+    public function gravaInfos(DespesaMes $despesaMes){
+
+        $objSerializado = serialize($despesaMes);
         $filename = $this->nomeDoIndividuo . ".txt";
         $file = fopen($filename, "a+");
         fwrite($file, $objSerializado);
         fclose($file);
         echo "arquivo gravado com sucesso";
-
-
     }
-
+    
 }
 
-
+?>

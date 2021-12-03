@@ -2,15 +2,19 @@
 
 require_once('DespesaMes.php');
 
-class DespesaDia  extends DespesaMes{
-    private $dia;
-    public function DespesaDia($dia, $mes, $valor){
-        $this->getMes(); 
-        $this->getValor();
-      }
-    public function getDia(){
-        return $this->dia;
+class DespesaDia extends DespesaMes{
+
+    protected int  $diaDaDespesa;
+
+    public function __construct(int $mesDaDespesa, int $diaDaDespesa, float $valorDaDespesa)
+    {
+        parent::__construct($mesDaDespesa,$valorDaDespesa);
+        $this->diaDaDespesa = $diaDaDespesa;
     }
+    public function getDia():int{
+        return $this->diaDaDespesa;
+    }
+
 }
 
 
