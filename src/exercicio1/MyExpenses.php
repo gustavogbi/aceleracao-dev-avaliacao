@@ -9,7 +9,7 @@ class MyExpenses
     protected string $cpf;
     protected string $nomeDoIndividuo;
 
-    public function __construct(array $despesas = [], string $cpf, string $nomeDoIndividuo)
+    public function __construct(array $despesas, string $cpf, string $nomeDoIndividuo)
     {
         $this->despesas = $despesas;
         $this->cpf = $cpf;
