@@ -1,6 +1,6 @@
 <?php
 
-require_once('MyExpenses.php');
+namespace aceleradev\exercicio1;
 
 class DespesaMes{
 
@@ -19,6 +19,3 @@ class DespesaMes{
         return $this->valorDaDespesa;
     }
 }
-
-
-?>

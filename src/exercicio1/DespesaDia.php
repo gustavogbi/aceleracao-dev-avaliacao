@@ -1,6 +1,6 @@
 <?php
 
-require_once('DespesaMes.php');
+namespace aceleradev\exercicio1;
 
 class DespesaDia extends DespesaMes{
 
@@ -16,6 +16,3 @@ class DespesaDia extends DespesaMes{
     }
 
 }
-
-
-?>

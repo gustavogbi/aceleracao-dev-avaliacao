@@ -1,6 +1,9 @@
-<?php 
+<?php
 
-class MyExpenses{
+namespace aceleradev\exercicio1;
+
+class MyExpenses
+{
 
     protected array $despesas;
     protected string $cpf;
@@ -13,23 +16,25 @@ class MyExpenses{
         $this->nomeDoIndividuo = $nomeDoIndividuo;
     }
 
-    public function getCpf():string{
+    public function getCpf(): string
+    {
 
         return $this->cpf;
     }
-    public function totalizaMes(int $mes){
+    public function totalizaMes(int $mes)
+    {
 
         $totalDespesasNoMes = 0;
 
-        foreach($this->despesas as $despesa){
-            if($despesa->getMes() == $mes){
+        foreach ($this->despesas as $despesa) {
+            if ($despesa->getMes() == $mes) {
                 $totalDespesasNoMes += $despesa->getValor();
             }
         }
         return new DespesaMes($mes, $totalDespesasNoMes);
-        
     }
-    public function gravaInfos(DespesaMes $despesaMes){
+    public function gravaInfos(DespesaMes $despesaMes)
+    {
 
         $objSerializado = serialize($despesaMes);
         $filename = $this->nomeDoIndividuo . ".txt";
@@ -38,7 +43,4 @@ class MyExpenses{
         fclose($file);
         echo "arquivo gravado com sucesso";
     }
-    
 }
-
-?>
