@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\QuadroMensalController;
 use App\Http\Controllers\EmployerController;
+use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +24,5 @@ Route::get('/', function () {
 Route::get('/quadromensal', [QuadroMensalController::class, 'index']);
 Route::get('/funcionarios', [EmployerController::class, 'index']);
 Route::get('/funcionario/{id}', [EmployerController::class, 'show']);
+Route::get('/itens', [ItemController::class, 'index']);
+Route::get('/item/{id}', [ItemController::class, 'show'])->name('item.show');
