@@ -21,8 +21,8 @@ Route::get('/', function () {
 });
 
 
-Route::get('/quadromensal', [QuadroMensalController::class, 'index']);
-Route::get('/funcionarios', [EmployerController::class, 'index']);
-Route::get('/funcionario/{id}', [EmployerController::class, 'show']);
-Route::get('/itens', [ItemController::class, 'index']);
+Route::get('/quadromensal', [QuadroMensalController::class, 'index'])->name('quadroMensal');
+Route::get('/funcionarios', [EmployerController::class, 'index'])->name('funcionarios');
+Route::get('/funcionario/{id}', [EmployerController::class, 'show'])->name('funcionario.show');
+Route::get('/itens', [ItemController::class, 'index'])->name('itens');
 Route::get('/item/{id}', [ItemController::class, 'show'])->name('item.show');
