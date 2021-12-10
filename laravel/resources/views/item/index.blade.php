@@ -1,5 +1,7 @@
 @include('includes.header')
     <div class="container">
+        
+       <div class="text-primary"> Itens</div>
         <table class="table table-bordered mt-5">
             <thead>
                 <tr>

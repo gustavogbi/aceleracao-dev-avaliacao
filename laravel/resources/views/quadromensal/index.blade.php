@@ -1,5 +1,7 @@
 @include('includes.header')
 <div class="container">
+    
+<div class="text-primary"> Quadro mensal</div>
     <table class="table table-bordered mt-5">
         <thead>
             <tr>
