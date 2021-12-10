@@ -7,7 +7,7 @@
         <ul class="list-group list-group-flush text-center">
             <h3><li class="list-group-item">ID: {{$item->id}}</li></h3>
             <h3><li class="list-group-item">Item: {{$item->item}}</li></h3>
-            <h3><li class="list-group-item">Marca: {{$item->quantidade}}</li></h3>
+            <h3><li class="list-group-item">Marca: {{$item->marca}}</li></h3>
             <h3><li class="list-group-item">Garantia: {{$item->garantia ? 'Sim' : "Não"}}</li></h3>
             <h3><li class="list-group-item">Uso aproximado de 20 dias: {{ $item->quantidade / 20 }}</li></h3>
         </ul>
