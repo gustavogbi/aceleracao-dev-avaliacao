@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\QuadroMensalController;
+use App\Http\Controllers\EmployerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,5 @@ Route::get('/', function () {
 
 
 Route::get('/quadromensal', [QuadroMensalController::class, 'index']);
+Route::get('/funcionarios', [EmployerController::class, 'index']);
+Route::get('/funcionario/{id}', [EmployerController::class, 'show']);
