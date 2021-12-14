@@ -9,8 +9,17 @@
 
     <!-- Begin Page Content -->
     <div class="container-fluid">
-        @if (session('mensagem'))
-            <p style="color: green;">{{ session('mensagem') }}</p>
+        @if (session('danger'))
+            <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Successo! </strong> {{ session('danger') }}
+            </div>
+        @endif
+        @if (session('success'))
+            <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Successo! </strong> {{ session('success') }}
+            </div>
         @endif
         <!-- Page Heading -->
 
@@ -45,13 +54,50 @@
                                     <td>{{ $doador->fumante }}</td>
                                     <td>{{ $doador->doencas }}</td>
                                     <td>{{ $doador->observacoes }}</td>
-                                    <td><a href="{{ route('doador.show', $doador->id) }}">Visualizar</a><br>
-                                        <a href="{{ route('doador.edit', $doador->id) }}">Editar</a><br>
-                                        <form action="{{ route('doador.destroy', $doador->id) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <a href="#" onclick="this.closest('form').submit();return false;">Deletar</a>
-                                        </form>
+                                    <td>
+                                        <a href="{{ route('doador.show', $doador->id) }}">
+                                            <button type="button" class="btn btn-primary">Vizualizar</button>
+                                        </a>
+                                        <a href="{{ route('doador.edit', $doador->id) }}">
+                                            <button type="button" class="btn btn-success">Editar</button>
+                                        </a>
+                                        <button type="button" class="btn btn-danger" data-toggle="modal"
+                                            data-target="#myModal{{ $doador->id }}">
+                                            Excluir
+                                        </button>
+                                        <!-- The Modal -->
+                                        <div class="modal" id="myModal{{ $doador->id }}">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+
+                                                    <!-- Modal Header -->
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close"
+                                                            data-dismiss="modal">&times;</button>
+                                                    </div>
+
+                                                    <!-- Modal body -->
+                                                    <div class="modal-body">
+                                                        Tem certeza que deseja remover o registro
+                                                        #{{ $doador->id }}?<br>
+                                                        <form action="{{ route('doador.destroy', $doador->id) }}"
+                                                            method="post">
+                                                            <input type="hidden" name="_method" value="DELETE">
+                                                            @csrf
+                                                            <button type="submmit" class="btn btn-danger">Remover</button>
+
+                                                            <button type="button" class="btn btn-primary"
+                                                                data-dismiss="modal">Cancelar</button>
+                                                        </form>
+                                                    </div>
+
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
                             @endforeach

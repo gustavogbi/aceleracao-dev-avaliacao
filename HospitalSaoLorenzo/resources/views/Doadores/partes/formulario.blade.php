@@ -37,7 +37,7 @@
             name="altura" placeholder="Altura">
     </div>
     <div class="col-sm-6">
-        Fumante: 
+        Fumante:
         <input type="text" class="form-control form-control-user" value="{{ $doador->fumante ?? old('fumante') }}"
             name="fumante" placeholder="Fumante">
     </div>
@@ -45,7 +45,7 @@
 
 <div class="form-group row">
     <div class="col-sm-6 mb-3 mb-sm-0">
-        Doenças: 
+        Doenças:
         <input type="text" class="form-control form-control-user" value="{{ $doador->doencas ?? old('doencas') }}"
             name="doencas" placeholder="Doenças">
     </div>

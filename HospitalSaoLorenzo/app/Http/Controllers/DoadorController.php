@@ -32,7 +32,7 @@ class DoadorController extends Controller
             dd($doador);
         }
 
-        return redirect()->route('doador.index')->with('mensagem', "Cadastro efetivado com sucesso!");
+        return redirect()->route('doador.index')->with('success', "Cadastro efetivado com sucesso!");
     }
 
     public function edit($id)
@@ -45,13 +45,13 @@ class DoadorController extends Controller
     {
         $doador = Doador::findOrFail($id);
         $doador->update($request->all());
-        return redirect()->route('doador.index')->with('mensagem', "Cadastro atualizado com sucesso!");
+        return redirect()->route('doador.index')->with('success', "Cadastro atualizado com sucesso!");
     }
 
     public function destroy($id)
     {
         $doador = Doador::findOrFail($id);
         $doador->delete();
-        return redirect()->route('doador.index')->with('mensagem', "Cadastro deletado com sucesso!");
+        return redirect()->route('doador.index')->with('danger', "Cadastro deletado com sucesso!");
     }
 }
