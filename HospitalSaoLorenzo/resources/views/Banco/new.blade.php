@@ -22,7 +22,7 @@
                     </div>
                    
 <form action="{{route('bancodesangue.inserir')}}" method="post">
-    @include('partes.formatabancodesangue')
+    @include('banco.partes.formatabancodesangue')
 </form>
                 </div>
             </div>
