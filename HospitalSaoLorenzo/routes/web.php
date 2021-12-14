@@ -46,4 +46,4 @@ Route::post('/medico', [MedicoController::class, 'store'])->name('medico.store')
 Route::get('medico/show/{id}', [MedicoController::class, 'show'])->name('medico.show');
 Route::get('medico/edit/{id}', [MedicoController::class, 'edit'])->name('medico.edit');
 Route::delete('medico/delete/{id}', [MedicoController::class, 'destroy'])->name('medico.destroy');
-Route::put('medico/{id}', [MedicoController::class, 'update'])->name('medico.update');gi
+Route::put('medico/{id}', [MedicoController::class, 'update'])->name('medico.update');
