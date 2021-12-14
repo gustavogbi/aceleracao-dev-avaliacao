@@ -1,4 +1,5 @@
-@include('includes.header')
+@extends('includes.single')
+@section('content')
     <div class="container">
         <h1 class="text-primary text-center">
                 Item
@@ -17,5 +18,4 @@
             <a href="{{route('itens')}}" class="btn btn-primary col-6">Listar Todos os itens</a>
         </div>
     </div>
-
-@include('includes.footer')
+@endsection

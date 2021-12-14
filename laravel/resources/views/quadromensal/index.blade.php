@@ -1,4 +1,5 @@
-@include('includes.header')
+@extends('includes.single')
+@section('content')
 <div class="container">
     
 <div class="text-primary"> Quadro mensal</div>
@@ -23,5 +24,4 @@
         @endforeach
     </table>
 </div>
-
-@include('includes.footer')
+@endsection

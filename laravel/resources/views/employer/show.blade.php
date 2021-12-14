@@ -1,4 +1,5 @@
-@include('includes.header')
+@extends('includes.single')
+@section('content')
     <div class="container">
         <h1 class="text-primary text-center">
                 Funcionarios
@@ -16,5 +17,4 @@
             <a href="{{route('funcionarios')}}" class="btn btn-primary col-6">Listar Todos os Funcionarios</a>
         </div>
     </div>
-
-@include('includes.footer')
+@endsection

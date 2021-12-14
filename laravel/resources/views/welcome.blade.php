@@ -1,4 +1,5 @@
-@extends('includes.header')
+@extends('includes.single')
+@section('content')
 
     <div class="container my-5">
         <div class="row">
@@ -18,5 +19,4 @@
             </div>
         </div>
     </div>
-
-@extends('includes.footer')
+@endsection

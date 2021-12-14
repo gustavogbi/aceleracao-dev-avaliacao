@@ -1,4 +1,5 @@
-@include('includes.header')
+@extends('includes.single')
+@section('content')
     <div class="container">
        <div class="text-primary"> Funcionarios</div>
         <table class="table table-bordered mt-5">
@@ -21,5 +22,4 @@
             @endforeach
         </table>
     </div>
-
-@include('includes.footer')
+@endsection
