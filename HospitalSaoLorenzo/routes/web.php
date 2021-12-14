@@ -1,10 +1,10 @@
 <?php
 
 use App\Http\Controllers\BancoSangueController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AcessoController;
 use App\Http\Controllers\DoadorController;
 use App\Http\Controllers\MedicoController;
-
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,14 +17,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [AcessoController::class, 'index'])->name('index');
 
 
 /* Banco de sangue */
-Route::get('/bancodesangue', [BancoSangueController::class, 'index'])->name('bancodesangue.index');;
-Route::get('/bancodesangue/novo', [BancoSangueController::class, 'new'])->name('bancodesangue.git ');;
+Route::get('/bancodesangue', [BancoSangueController::class, 'index'])->name('bancodesangue.index');
+Route::get('/bancodesangue/novo', [BancoSangueController::class, 'new'])->name('bancodesangue.novo');
 Route::post('/bancodesangue/insere', [BancoSangueController::class, 'insert'])->name('bancodesangue.inserir');
 Route::delete('/bancodesangue/remover/{id}', [BancoSangueController::class, 'delete'])->name('bancodesangue.remover');
 Route::get('/bancodesangue/editar/{id}', [BancoSangueController::class, 'edit'])->name('bancodesangue.editar');
@@ -48,4 +46,4 @@ Route::post('/medico', [MedicoController::class, 'store'])->name('medico.store')
 Route::get('medico/show/{id}', [MedicoController::class, 'show'])->name('medico.show');
 Route::get('medico/edit/{id}', [MedicoController::class, 'edit'])->name('medico.edit');
 Route::delete('medico/delete/{id}', [MedicoController::class, 'destroy'])->name('medico.destroy');
-Route::put('medico/{id}', [MedicoController::class, 'update'])->name('medico.update');
+Route::put('medico/{id}', [MedicoController::class, 'update'])->name('medico.update');gi
