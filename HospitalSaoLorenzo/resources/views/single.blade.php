@@ -65,8 +65,8 @@
                 </a>
                 <div id="Pacientes" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="buttons.html">Novo</a>
-                        <a class="collapse-item" href="cards.html">Todos</a>
+                        <a class="collapse-item" href="{{route('pacientes.create')}}">Novo</a>
+                        <a class="collapse-item" href="{{route('pacientes.index')}}">Todos</a>
                     </div>
                 </div>
             </li>
