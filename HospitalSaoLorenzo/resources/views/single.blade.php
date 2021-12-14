@@ -112,8 +112,8 @@
                 </a>
                 <div id="Doadores" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="buttons.html">Novo</a>
-                        <a class="collapse-item" href="cards.html">Todos</a>
+                        <a class="collapse-item" href="/doador/novo">Novo</a>
+                        <a class="collapse-item" href="/doador">Todos</a>
                     </div>
                 </div>
             </li>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BancoSangueController;
+use App\Http\Controllers\DoadorController;
 use Illuminate\Support\Facades\Route;
 
 /*
