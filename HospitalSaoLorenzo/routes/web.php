@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BancoSangueController;
+use App\Http\Controllers\AcessoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,14 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [AcessoController::class, 'index'])->name('index');
 
 
 /* Banco de sangue */
-Route::get('/bancodesangue', [BancoSangueController::class, 'index'])->name('bancodesangue.index');;
-Route::get('/bancodesangue/novo', [BancoSangueController::class, 'new'])->name('bancodesangue.novo');;
+Route::get('/bancodesangue', [BancoSangueController::class, 'index'])->name('bancodesangue.index');
+Route::get('/bancodesangue/novo', [BancoSangueController::class, 'new'])->name('bancodesangue.novo');
 Route::post('/bancodesangue/insere', [BancoSangueController::class, 'insert'])->name('bancodesangue.inserir');
 Route::delete('/bancodesangue/remover/{id}', [BancoSangueController::class, 'delete'])->name('bancodesangue.remover');
 Route::get('/bancodesangue/editar/{id}', [BancoSangueController::class, 'edit'])->name('bancodesangue.editar');
