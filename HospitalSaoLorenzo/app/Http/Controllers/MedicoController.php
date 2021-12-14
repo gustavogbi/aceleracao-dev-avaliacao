@@ -12,4 +12,9 @@ class MedicoController extends Controller
         //dd($medico);
         return view('medicos.index', compact('medicos'));
     }
+    public function show($id)
+    {
+        $medico = Medico::findOrFail($id);
+        return view('Medicos.show', compact('medico'));
+    }
 }
