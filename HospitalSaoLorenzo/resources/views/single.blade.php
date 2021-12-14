@@ -31,7 +31,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -41,26 +41,17 @@
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="/">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Painel administrativo</span></a>
-            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Interface
-            </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Pacientes"
                     aria-expanded="true" aria-controls="Pacientes">
-                    <i class="fas fa-fw fa-cog"></i>
+                   
+                    <i class="fas fa-wheelchair fa-2x text-gray-300"></i>
                     <span>Pacientes</span>
                 </a>
                 <div id="Pacientes" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -74,7 +65,8 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Medico"
                     aria-expanded="true" aria-controls="Medico">
-                    <i class="fas fa-fw fa-cog"></i>
+                 
+                    <i class="fas fa-user-md fa-2x text-gray-300"></i>
                     <span>Medico</span>
                 </a>
                 <div id="Medico" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -91,7 +83,8 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Estagiarios"
                     aria-expanded="true" aria-controls="Estagiarios">
-                    <i class="fas fa-fw fa-cog"></i>
+                  
+                    <i class="fas fa-graduation-cap fa-2x text-gray-300"></i>
                     <span>Estagiarios</span>
                 </a>
                 <div id="Estagiarios" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -107,7 +100,8 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Doadores"
                     aria-expanded="true" aria-controls="Doadores">
-                    <i class="fas fa-fw fa-cog"></i>
+                    
+                    <i class="fas fa-h-square fa-2x text-gray-300"></i>
                     <span>Doadores</span>
                 </a>
                 <div id="Doadores" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -123,8 +117,9 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#bancodesangue"
                     aria-expanded="true" aria-controls="bancodesangue">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Banco de sangue</span>
+                    
+                                            <i class="fas fa-wheelchair fa-2x text-gray-300"></i>
+                    <span>Bancos de sangue</span>
                 </a>
                 <div id="bancodesangue" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
@@ -139,7 +134,8 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#doacoes"
                     aria-expanded="true" aria-controls="doacoes">
-                    <i class="fas fa-fw fa-cog"></i>
+                  
+                    <i class="fas fa-university fa-2x text-gray-300"></i>
                     <span>Doações</span>
                 </a>
                 <div id="doacoes" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -253,27 +249,6 @@
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Bootstrap core JavaScript-->
     <script src="/sbadmin/vendor/jquery/jquery.min.js"></script>
     <script src="/sbadmin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
