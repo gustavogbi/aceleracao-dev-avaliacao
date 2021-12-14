@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Medico extends Model
 {
-    use HasFactory;
+    protected $fillable = ['CRM', 'nome', 'areaDeAtuacao', 'idade', 'telefone', 'email'];
 }
