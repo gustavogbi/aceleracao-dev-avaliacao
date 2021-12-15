@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\BancoSangue;
 use Illuminate\Http\Request;
+use App\Http\Requests\UpdateStoreBancoDeSangueRequest;
 
 class BancoSangueController extends Controller
 {
@@ -11,11 +12,11 @@ class BancoSangueController extends Controller
         return view('Banco.index', compact('bancodesangues'));
     }  
     
-    public function new(){
-        return view('Banco.new');
+    public function create(){
+        return view('Banco.create');
     }
     
-    function insert(Request $request){
+    function store(UpdateStoreBancoDeSangueRequest $request){
         $bancodesangue = BancoSangue::create($request->all());
         if(!$bancodesangue){
             dd($bancodesangue);
@@ -25,7 +26,7 @@ class BancoSangueController extends Controller
     }
 
     
-    function delete($id){
+    function destroy($id){
         $bancodesangue = BancoSangue::find($id);
 
         if(!$bancodesangue):
@@ -47,7 +48,7 @@ class BancoSangueController extends Controller
         return view('banco.edit', compact('bancodesangue'));
     }
     
-    public function update(Request $request, $id){
+    public function update(UpdateStoreBancoDeSangueRequest $request, $id){
         $bancodesangue = BancoSangue::find($id);
 
         if(!$bancodesangue):

@@ -4,8 +4,8 @@
                         <!-- Page Heading -->
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="h3 mb-0 text-gray-800">Banco de sangue</h1>
-                            <a href="/bancodesangue/novo" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                    class="fas fa-download fa-sm text-white-50"></i> Novo</a>
+                            <a href="/bancodesangue/create" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                    class="fas fa-plus fa-sm text-white-50"></i> Novo</a>
                         </div>
 
                         
@@ -14,7 +14,7 @@
                     @if (session('danger'))
                     <div class="alert alert-danger">
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <strong>Successo! </strong> {{ session('danger')}}
+     {{ session('danger')}}
     </div>
                     @endif
                     @if (session('success'))
@@ -70,7 +70,7 @@
         <!-- Modal body -->
         <div class="modal-body">
             Tem certeza que deseja remover o registro #{{$bancodesangue->id}}?<br>
-        <form action="{{route('bancodesangue.remover', $bancodesangue->id)}}" method="post">
+        <form action="{{route('bancodesangue.destroy', $bancodesangue->id)}}" method="post">
                 <input type="hidden" name="_method" value="DELETE">
                 @csrf
             <button type="submmit" class="btn btn-danger">Remover</button>
@@ -86,11 +86,11 @@
         </div>
     </div>
     </div>
-    <a href="/bancodesangue/editar/{{$bancodesangue->id}}" >
+    <a href="/bancodesangue/edit/{{$bancodesangue->id}}" >
                                           
             <button type="button" class="btn btn-success" >Editar</button></a>
 
-            <a href="{{route('bancodesangue.exibe', $bancodesangue->id)}}">                
+            <a href="{{route('bancodesangue.show', $bancodesangue->id)}}">                
             <button type="button" class="btn btn-primary" >Vizualizar</button></a>
                                  
                         </tr>
