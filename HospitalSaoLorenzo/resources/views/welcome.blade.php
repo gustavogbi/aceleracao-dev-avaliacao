@@ -1,9 +1,38 @@
 @extends('single')
 @section('content')
 
-<div class="row">
 
-<div class="col-xl-3 col-md-6 mb-4">
+
+<div class="row">
+<div class="col-md-6">
+                                    <div class="card bg-info text-danger shadow">
+                                        <div class="card-body">
+                                         <a href="/relatorioadministrativo" class="text-white">   Relatório administrativo</a>
+                                            <div class="text-white small">Clique aqui para acessar o relatório administrativo</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="card bg-dark text-white shadow">
+                                        <div class="card-body">
+                                            <a href="/relatoriodedoacoes" class="text-white">Relatório de doações</a>
+                                            <div class="text-white small">Clique acima para acessar o relatório de doações</div>
+                                        </div>
+                                    </div>
+                                </div>
+</div>
+<hr>
+<div class="row">
+<div class="col-md"><hr>
+        <img src="/img/background.png" class="img-fluid">
+    
+</div>
+</div>
+<hr>
+<div class="row" >
+
+<div class="col-md-2">
                             <div class="card border-left-secondary shadow h-100 py-2 bg-primary">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
@@ -30,7 +59,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="col-md-2">
                             <div class="card border-left-secondary shadow h-100 py-2 bg-white">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
@@ -57,7 +86,7 @@
                             </div>
                         </div>
 
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="col-md-2">
                             <div class="card border-left-secondary shadow h-100 py-2 bg-success">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
@@ -84,7 +113,7 @@
                             </div>
                         </div>
 
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="col-md-2">
                             <div class="card border-left-secondary shadow h-100 py-2 bg-warning">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
@@ -110,7 +139,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="col-md-2">
                             <div class="card border-left-secondary shadow h-100 py-2 bg-danger">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
@@ -136,7 +165,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="col-md-2">
                             <div class="card border-left-secondary shadow h-100 py-2 bg-secondary">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
@@ -163,4 +192,5 @@
                             </div>
                         </div>
 </div>
+<hr>
 @endsection

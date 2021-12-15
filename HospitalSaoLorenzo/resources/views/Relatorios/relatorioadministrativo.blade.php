@@ -6,7 +6,7 @@
 <div class="row">
     
 <div class="d-sm-flex align-items-center ">
-        <h1 class="h3 mb-3 text-danger aling-center">Medicos</h1>
+<a href="/doador">   <h1 class="h3 mb-3 text-danger aling-center">Medicos</h1></a>
 </div>
                         <div class="col-md-12">
                             <div class="card border-left-secondary shadow h-100 py-2 bg-white">
@@ -83,7 +83,7 @@
                         </div>
 
                         <div class="d-sm-flex align-items-center ">
-        <h1 class="h3 mb-3 text-success aling-center">Estagiarios</h1>
+                        <a href="/estagiario">    <h1 class="h3 mb-3 text-success aling-center">Estagiarios</h1></a>
 </div>
                         <div class="col-md-12">
                             <div class="card border-left-secondary shadow h-100 py-2 bg-success">
