@@ -65,12 +65,12 @@
                                             <div class="text-xs font-weight-bold text-white text-uppercase mb-1">Estagiarios                                  </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-white">{{$bancodesangues}}</div>
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-white">{{$estagiarios}}</div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="progress progress-sm mr-2">
                                                         <div class="progress-bar bg-primary" role="progressbar"
-                                                            style="width: {{$bancodesangues}}px" aria-valuenow="50" aria-valuemin="0"
+                                                            style="width: {{$estagiarios}}px" aria-valuenow="50" aria-valuemin="0"
                                                             aria-valuemax="100"></div>
                                                     </div>
                                                 </div>
