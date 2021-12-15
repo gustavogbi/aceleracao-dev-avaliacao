@@ -12,7 +12,9 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                 @if (session('success'))
-     <p style="color: green;">{{ session('success')}}</p>    
+     <p style="color: green;">{{ session('success')}}</p>   
+     @elseif(session('danger'))
+     <p style="color: red;">{{ session('danger')}}</p>   
 @endif
 <!-- Page Heading -->
 
@@ -47,7 +49,17 @@
                         @if($paciente->is_doador) <td>Sim</td>
                         @else <td>Não</td>
                         @endif
-                        <td>Excluir | Editar</td>
+                        <td>
+                            <a href="{{route('pacientes.show', $paciente->id)}}">Mostrar</a>
+                             | 
+                            <form action="{{route('pacientes.destroy', $paciente->id)}}" method="post">
+                                @csrf
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" href="{{route('pacientes.destroy', $paciente->id)}}">Excluir</button>
+                            </form>
+                             | 
+                            <a href="{{route('pacientes.edit', $paciente->id)}}">Editar</a>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
