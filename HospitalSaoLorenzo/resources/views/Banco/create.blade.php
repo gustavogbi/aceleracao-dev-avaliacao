@@ -21,9 +21,8 @@
                         <h1 class="h4 text-gray-900 mb-4">Novo cadastro</h1>
                     </div>
                    
-<form action="{{route('bancodesangue.update', $bancodesangue->id)}}" method="post">
+<form action="{{route('bancodesangue.store')}}" method="post">
     @include('banco.partes.formatabancodesangue')
-    @method('PUT')
 </form>
                 </div>
             </div>

@@ -2,8 +2,8 @@
 @section('content')
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Medicos</h1>
-        <a href="{{ route('medico.index') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+        <h1 class="h3 mb-0 text-gray-800">Doacoes</h1>
+        <a href="{{ route('doacoes.index') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                 class="fas fa-list fa-sm text-white-50"></i> Todos</a>
     </div>
 
@@ -15,12 +15,11 @@
                     <div class="col-md">
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Editar cadastro</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Novo cadastro</h1>
                             </div>
 
-                            <form action="{{ route('medico.update', $medico->id) }}" method="post">
-                                @method('PUT')
-                                @include('Medicos.partes.formulario')
+                            <form action="{{ route('doacoes.store') }}" method="post">
+                                @include('doacoes.partes.formulario')
                             </form>
                         </div>
                     </div>
