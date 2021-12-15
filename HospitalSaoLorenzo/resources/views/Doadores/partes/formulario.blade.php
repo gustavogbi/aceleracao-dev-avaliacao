@@ -38,16 +38,34 @@
     </div>
     <div class="col-sm-6">
         Fumante:
-        <input type="text" class="form-control form-control-user" value="{{ $doador->fumante ?? old('fumante') }}"
-            name="fumante" placeholder="Fumante">
+        <br>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="fumante" value="0"
+                {{ !empty($doador) && !$doador->fumante ? 'checked' : '' }}>
+            <label class="form-check-label">Não</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="fumante" value="1"
+                {{ !empty($doador) && $doador->fumante ? 'checked' : '' }}>
+            <label class="form-check-label">Sim</label>
+        </div>
     </div>
 </div>
 
 <div class="form-group row">
     <div class="col-sm-6 mb-3 mb-sm-0">
         Doenças:
-        <input type="text" class="form-control form-control-user" value="{{ $doador->doencas ?? old('doencas') }}"
-            name="doencas" placeholder="Doenças">
+        <br>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="doencas" value="0"
+                {{ !empty($doador) && !$doador->doencas ? 'checked' : '' }}>
+            <label class="form-check-label">Não</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="doencas" value="1"
+                {{ !empty($doador) && $doador->doencas ? 'checked' : '' }}>
+            <label class="form-check-label">Sim</label>
+        </div>
     </div>
     <div class="col-sm-6">
         Observações:
