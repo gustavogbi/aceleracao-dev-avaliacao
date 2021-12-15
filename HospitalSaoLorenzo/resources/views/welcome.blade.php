@@ -38,12 +38,12 @@
                                             <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Medicos                                  </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-danger">{{$bancodesangues}}</div>
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-danger">{{$medicos}}</div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="progress progress-sm mr-2">
                                                         <div class="progress-bar bg-dangerp" role="progressbar"
-                                                            style="width: {{$bancodesangues}}px" aria-valuenow="50" aria-valuemin="0"
+                                                            style="width: {{$medicos}}px" aria-valuenow="50" aria-valuemin="0"
                                                             aria-valuemax="100"></div>
                                                     </div>
                                                 </div>
@@ -92,12 +92,12 @@
                                             <div class="text-xs font-weight-bold text-white text-uppercase mb-1">Doadores                                  </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-white">{{$bancodesangues}}</div>
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-white">{{$doadores}}</div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="progress progress-sm mr-2">
                                                         <div class="progress-bar bg-primary" role="progressbar"
-                                                            style="width: {{$bancodesangues}}px" aria-valuenow="50" aria-valuemin="0"
+                                                            style="width: {{$doadores}}px" aria-valuenow="50" aria-valuemin="0"
                                                             aria-valuemax="100"></div>
                                                     </div>
                                                 </div>
@@ -144,12 +144,12 @@
                                             <div class="text-xs font-weight-bold text-white text-uppercase mb-1">Doações                                 </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-white">{{$bancodesangues}}</div>
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-white">{{$doacoes}}</div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="progress progress-sm mr-2">
                                                         <div class="progress-bar bg-primary" role="progressbar"
-                                                            style="width: {{$bancodesangues}}px" aria-valuenow="50" aria-valuemin="0"
+                                                            style="width: {{$doacoes}}px" aria-valuenow="50" aria-valuemin="0"
                                                             aria-valuemax="100"></div>
                                                     </div>
                                                 </div>
