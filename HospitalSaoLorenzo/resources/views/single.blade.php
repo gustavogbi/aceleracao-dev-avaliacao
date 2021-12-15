@@ -89,8 +89,8 @@
                 </a>
                 <div id="Estagiarios" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="buttons.html">Novo</a>
-                        <a class="collapse-item" href="cards.html">Todos</a>
+                        <a class="collapse-item" href="/estagiario/novo">Novo</a>
+                        <a class="collapse-item" href="/estagiario">Todos</a>
                     </div>
                 </div>
             </li>

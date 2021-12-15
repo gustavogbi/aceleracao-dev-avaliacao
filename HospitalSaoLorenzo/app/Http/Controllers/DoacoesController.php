@@ -34,7 +34,7 @@ class DoacoesController extends Controller
             dd($doacoes);
         }
 
-        return redirect()->route('doacoes.index')->with('mensagem', "Cadastro efetivado com sucesso!");
+        return redirect()->route('doacoes.index')->with('success', "Cadastro efetivado com sucesso!");
     }
 
     public function edit($id)
@@ -47,13 +47,13 @@ class DoacoesController extends Controller
     {
         $doacoes = Doacoes::findOrFail($id);
         $doacoes->update($request->all());
-        return redirect()->route('doacoes.index')->with('mensagem', "Cadastro atualizado com sucesso!");
+        return redirect()->route('doacoes.index')->with('success', "Cadastro atualizado com sucesso!");
     }
 
     public function destroy($id)
     {
         $doacoes = Doacoes::findOrFail($id);
         $doacoes->delete();
-        return redirect()->route('doacoes.index')->with('mensagem', "Cadastro deletado com sucesso!");
+        return redirect()->route('doacoes.index')->with('danger', "Cadastro deletado com sucesso!");
     }
 }

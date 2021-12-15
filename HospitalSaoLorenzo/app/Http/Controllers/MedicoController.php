@@ -25,7 +25,7 @@ class MedicoController extends Controller
     {
         $request->validated($request->all());
         Medico::create($request->all());
-        return redirect()->route('medico.index')->with('mensagem', "Cadastro realizado com sucesso!");
+        return redirect()->route('medico.index')->with('success', "Cadastro realizado com sucesso!");
     }
     public function edit($id)
     {
@@ -36,13 +36,13 @@ class MedicoController extends Controller
     {
         $medico = Medico::findOrFail($id);
         $medico->update($request->all());
-        return redirect()->route('medico.index')->with('mensagem', "Cadastro atualizado com sucesso!");
+        return redirect()->route('medico.index')->with('success', "Cadastro atualizado com sucesso!");
     }
     public function destroy($id)
     {
         $medico = Medico::findOrFail($id);
         $medico->delete();
-        return redirect()->route('medico.index')->with('mensagem', "Cadastro deletado com sucesso!");
+        return redirect()->route('medico.index')->with('danger', "Cadastro deletado com sucesso!");
     }
 
 

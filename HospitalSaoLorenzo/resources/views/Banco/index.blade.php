@@ -14,7 +14,7 @@
                     @if (session('danger'))
                     <div class="alert alert-danger">
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <strong>Successo! </strong> {{ session('danger')}}
+     {{ session('danger')}}
     </div>
                     @endif
                     @if (session('success'))

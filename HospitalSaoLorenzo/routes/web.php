@@ -6,6 +6,7 @@ use App\Http\Controllers\AcessoController;
 use App\Http\Controllers\DoadorController;
 use App\Http\Controllers\DoacoesController;
 use App\Http\Controllers\MedicoController;
+use App\Http\Controllers\EstagiarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,3 +58,11 @@ Route::get('medico/show/{id}', [MedicoController::class, 'show'])->name('medico.
 Route::get('medico/edit/{id}', [MedicoController::class, 'edit'])->name('medico.edit');
 Route::delete('medico/delete/{id}', [MedicoController::class, 'destroy'])->name('medico.destroy');
 Route::put('medico/{id}', [MedicoController::class, 'update'])->name('medico.update');
+/* Estagiario */
+Route::get('/estagiario', [EstagiarioController::class, 'index'])->name('estagiario.index');
+Route::get('estagiario/create', [EstagiarioController::class, 'create'])->name('estagiario.create');
+Route::post('/estagiario', [EstagiarioController::class, 'store'])->name('estagiario.store');
+Route::get('estagiario/show/{id}', [EstagiarioController::class, 'show'])->name('estagiario.show');
+Route::get('estagiario/edit/{id}', [EstagiarioController::class, 'edit'])->name('estagiario.edit');
+Route::delete('estagiario/delete/{id}', [EstagiarioController::class, 'destroy'])->name('estagiario.destroy');
+Route::put('estagiario/{id}', [EstagiarioController::class, 'update'])->name('estagiario.update');
