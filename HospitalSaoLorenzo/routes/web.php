@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PacienteController;
 use App\Http\Controllers\BancoSangueController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AcessoController;
@@ -18,6 +19,7 @@ use App\Http\Controllers\EstagiarioController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 
 Route::get('/', [AcessoController::class, 'index'])->name('index');
 Route::get('/relatorioadministrativo', [AcessoController::class, 'relatorioadministrativo'])->name('relatorioadministrativo');
@@ -68,3 +70,12 @@ Route::get('estagiario/show/{id}', [EstagiarioController::class, 'show'])->name(
 Route::get('estagiario/edit/{id}', [EstagiarioController::class, 'edit'])->name('estagiario.edit');
 Route::delete('estagiario/delete/{id}', [EstagiarioController::class, 'destroy'])->name('estagiario.destroy');
 Route::put('estagiario/{id}', [EstagiarioController::class, 'update'])->name('estagiario.update');
+
+/* Pacientes */
+Route::get('/pacientes', [PacienteController::class, 'index'])->name('pacientes.index');
+Route::get('/pacientes/create', [PacienteController::class, 'create'])->name('pacientes.create');
+Route::post('/pacientes/store', [PacienteController::class, 'store'])->name('pacientes.store');
+Route::get('/pacientes/edit/{id}', [PacienteController::class, 'edit'])->name('pacientes.edit');
+Route::put('/pacientes/update/{id}', [PacienteController::class, 'update'])->name('pacientes.update');
+Route::delete('/pacientes/destroy/{id}', [PacienteController::class, 'destroy'])->name('pacientes.destroy');
+Route::get('/pacientes/show/{id}', [PacienteController::class, 'show'])->name('pacientes.show');
