@@ -63,7 +63,7 @@
             </li>
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Medico"
+                <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#Medico"
                     aria-expanded="true" aria-controls="Medico">
                  
                     <i class="fas fa-user-md fa-2x text-gray-300"></i>
@@ -71,8 +71,8 @@
                 </a>
                 <div id="Medico" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="buttons.html">Novo</a>
-                        <a class="collapse-item" href="cards.html">Todos</a>
+                        <a class="collapse-item" href="/medicos/create">Novo</a>
+                        <a class="collapse-item" href="/medicos">Todos</a>
                     </div>
                 </div>
             </li>
@@ -140,8 +140,8 @@
                 </a>
                 <div id="doacoes" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="buttons.html">Novo</a>
-                        <a class="collapse-item" href="cards.html">Todos</a>
+                        <a class="collapse-item" href="/doacoes/novo">Novo</a>
+                        <a class="collapse-item" href="/doacoes">Todos</a>
                     </div>
                 </div>
             </li>

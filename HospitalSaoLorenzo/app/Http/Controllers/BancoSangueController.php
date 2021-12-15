@@ -12,11 +12,11 @@ class BancoSangueController extends Controller
         return view('Banco.index', compact('bancodesangues'));
     }  
     
-    public function new(){
-        return view('Banco.new');
+    public function create(){
+        return view('Banco.create');
     }
     
-    function insert(UpdateStoreBancoDeSangueRequest $request){
+    function store(UpdateStoreBancoDeSangueRequest $request){
         $bancodesangue = BancoSangue::create($request->all());
         if(!$bancodesangue){
             dd($bancodesangue);
@@ -26,7 +26,7 @@ class BancoSangueController extends Controller
     }
 
     
-    function delete($id){
+    function destroy($id){
         $bancodesangue = BancoSangue::find($id);
 
         if(!$bancodesangue):

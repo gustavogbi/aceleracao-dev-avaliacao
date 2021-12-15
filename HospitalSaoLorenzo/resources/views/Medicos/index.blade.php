@@ -2,7 +2,7 @@
 @section('content')
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Medicos</h1>
+        <h1 class="h3 mb-0 text-gray-800">Médicos</h1>
         <a href="{{ route('medico.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                 class="fas fa-plus fa-sm text-white-50"></i> Novo</a>
     </div>
@@ -41,13 +41,47 @@
                                     <td>{{ $medico->idade }}</td>
                                     <td>{{ $medico->telefone }}</td>
                                     <td>{{ $medico->email }}</td>
-                                    <td><a href="{{ route('medico.show', $medico->id) }}">Visualizar</a><br>
-                                        <a href="{{ route('medico.edit', $medico->id) }}">Editar</a><br>
-                                        <form action="{{ route('medico.destroy', $medico->id) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <a href="#" onclick="this.closest('form').submit();return false;">Deletar</a>
-                                        </form>
+                                    <td>
+                                <!-- Button to Open the Modal -->
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal{{$medico->id}}">
+    Excluir</button>
+
+    <!-- The Modal -->
+    <div class="modal" id="myModal{{$medico->id}}">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+            Tem certeza que deseja remover o registro #{{$medico->id}}?<br>
+        <form action="{{route('medico.destroy', $medico->id)}}" method="post">
+                <input type="hidden" name="_method" value="DELETE">
+                @csrf
+            <button type="submmit" class="btn btn-danger">Remover</button>
+                                        
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+            </form> 
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+        </div>
+
+        </div>
+    </div>
+    </div>
+    <a href="/medicos/edit/{{$medico->id}}" >
+                                          
+            <button type="button" class="btn btn-success" >Editar</button></a>
+
+            <a href="{{route('medico.show', $medico->id)}}">                
+            <button type="button" class="btn btn-primary" >Vizualizar</button></a>
+                                 
                                     </td>
                                 </tr>
                             @endforeach

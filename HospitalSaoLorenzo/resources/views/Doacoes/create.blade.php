@@ -15,11 +15,10 @@
                     <div class="col-md">
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Editar cadastro</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Novo cadastro</h1>
                             </div>
 
-                            <form action="{{ route('doacoes.update', $doacao->id) }}" method="post">
-                                @method('PUT')
+                            <form action="{{ route('doacoes.store') }}" method="post">
                                 @include('doacoes.partes.formulario')
                             </form>
                         </div>
