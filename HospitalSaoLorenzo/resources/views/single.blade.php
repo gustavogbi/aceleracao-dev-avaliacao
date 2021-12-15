@@ -48,6 +48,22 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#relatorio"
+                    aria-expanded="true" aria-controls="Pacientes">
+                   
+                    <i class="fas fa-square fa-2x text-gray-300"></i>
+                    <span>Relatórios</span>
+                </a>
+                <div id="relatorio" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/relatorioadministrativo
+                        ">Relatório Administrativo</a>
+                        <a class="collapse-item" href="/relatoriodedoacao">Reatório de doações</a>
+                    </div>
+                </div>
+            </li>
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Pacientes"
                     aria-expanded="true" aria-controls="Pacientes">
                    
