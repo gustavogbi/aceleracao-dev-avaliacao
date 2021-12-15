@@ -21,6 +21,7 @@ use App\Http\Controllers\EstagiarioController;
 
 Route::get('/', [AcessoController::class, 'index'])->name('index');
 Route::get('/relatorioadministrativo', [AcessoController::class, 'relatorioadministrativo'])->name('relatorioadministrativo');
+Route::get('/relatoriodedoacoes', [AcessoController::class, 'relatoriodedoacoes'])->name('relatoriodedoacoes');
 
 
 /* Banco de Sangue */

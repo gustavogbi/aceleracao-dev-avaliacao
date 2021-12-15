@@ -58,7 +58,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="/relatorioadministrativo
                         ">Relatório Administrativo</a>
-                        <a class="collapse-item" href="/relatoriodedoacao">Reatório de doações</a>
+                        <a class="collapse-item" href="/relatoriodedoacoes">Reatório de doações</a>
                     </div>
                 </div>
             </li>
@@ -105,7 +105,7 @@
                 </a>
                 <div id="Estagiarios" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/estagiario/novo">Novo</a>
+                        <a class="collapse-item" href="/estagiario/create">Novo</a>
                         <a class="collapse-item" href="/estagiario">Todos</a>
                     </div>
                 </div>
@@ -122,7 +122,7 @@
                 </a>
                 <div id="Doadores" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/doador/novo">Novo</a>
+                        <a class="collapse-item" href="/doador/create">Novo</a>
                         <a class="collapse-item" href="/doador">Todos</a>
                     </div>
                 </div>
@@ -139,7 +139,7 @@
                 </a>
                 <div id="bancodesangue" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/bancodesangue/novo">Novo</a>
+                        <a class="collapse-item" href="/bancodesangue/create">Novo</a>
                         <a class="collapse-item" href="/bancodesangue">Todos</a>
                     </div>
                 </div>
@@ -156,7 +156,7 @@
                 </a>
                 <div id="doacoes" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/doacoes/novo">Novo</a>
+                        <a class="collapse-item" href="/doacoes/create">Novo</a>
                         <a class="collapse-item" href="/doacoes">Todos</a>
                     </div>
                 </div>
