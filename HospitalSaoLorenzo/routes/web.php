@@ -20,6 +20,7 @@ use App\Http\Controllers\EstagiarioController;
 */
 
 Route::get('/', [AcessoController::class, 'index'])->name('index');
+Route::get('/relatorioadministrativo', [AcessoController::class, 'relatorioadministrativo'])->name('relatorioadministrativo');
 
 
 /* Banco de Sangue */

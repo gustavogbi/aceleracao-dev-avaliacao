@@ -7,6 +7,7 @@ use App\Models\BancoSangue;
 use App\Models\Doacoes;
 use App\Models\Doador;
 use App\Models\Medico;
+use App\Models\Estagiario;
 
 class AcessoController extends Controller
 {
@@ -15,7 +16,15 @@ class AcessoController extends Controller
         $medicos = Medico::count();
         $doadores = Doador::count();
         $doacoes = Doacoes::count();
-        return view('welcome', compact('bancodesangues', 'medicos', 'doadores','doacoes'));
+        $estagiarios = Estagiario::count();
+        return view('welcome', compact('bancodesangues', 'medicos', 'doadores','doacoes', 'estagiarios'));
+    }   
+    public function relatorioadministrativo(){
+        $medicos = Medico::all();
+        $estagiarios = Estagiario::all();
+        $qtd_medicos = Medico::count();
+        $qtd_estagiarios = Estagiario::count();
+        return view('relatorios.relatorioadministrativo', compact('qtd_medicos', 'medicos', 'qtd_estagiarios', 'estagiarios'));
     }  
     
 }
