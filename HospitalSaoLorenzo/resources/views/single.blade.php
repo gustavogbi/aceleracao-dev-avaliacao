@@ -134,7 +134,7 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#bancodesangue"
                     aria-expanded="true" aria-controls="bancodesangue">
                     
-                                            <i class="fas fa-wheelchair fa-2x text-gray-300"></i>
+                                            <i class="fas fa-heart fa-2x text-gray-300"></i>
                     <span>Bancos de sangue</span>
                 </a>
                 <div id="bancodesangue" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
