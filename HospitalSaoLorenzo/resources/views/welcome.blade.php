@@ -23,13 +23,6 @@
                                 </div>
 </div>
 <hr>
-<div class="row">
-<div class="col-md"><hr>
-        <img src="/img/background.png" class="img-fluid">
-    
-</div>
-</div>
-<hr>
 <div class="row" >
 
 <div class="col-md-2">
@@ -37,8 +30,8 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-white text-uppercase mb-1">Pacientes
-                                            </div>
+                                            <a href="/pacientes"> <div class="text-xs font-weight-bold text-white text-uppercase mb-1">Pacientes
+                                            </div></a>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
                                                     <div class="h5 mb-0 mr-3 font-weight-bold text-white">{{$bancodesangues}}</div>
@@ -64,7 +57,7 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Medicos                                  </div>
+                                          <a href="/medico">  <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Medicos </div></a>                                 
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
                                                     <div class="h5 mb-0 mr-3 font-weight-bold text-danger">{{$medicos}}</div>
@@ -91,7 +84,7 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-white text-uppercase mb-1">Estagiarios                                  </div>
+                                           <a href="/estagiario"> <div class="text-xs font-weight-bold text-white text-uppercase mb-1">Estagiarios   </div></a>                             
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
                                                     <div class="h5 mb-0 mr-3 font-weight-bold text-white">{{$estagiarios}}</div>
@@ -118,7 +111,7 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-white text-uppercase mb-1">Doadores                                  </div>
+                                            <a href="/doador"><div class="text-xs font-weight-bold text-white text-uppercase mb-1">Doadores</div></a>                                 
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
                                                     <div class="h5 mb-0 mr-3 font-weight-bold text-white">{{$doadores}}</div>
@@ -144,7 +137,7 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-white text-uppercase mb-1">Banco de sangue                                  </div>
+                                           <a href="bancodesangue"> <div class="text-xs font-weight-bold text-white text-uppercase mb-1">Banco de sangue</div></a>                              
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
                                                     <div class="h5 mb-0 mr-3 font-weight-bold text-white">{{$bancodesangues}}</div>
@@ -170,7 +163,7 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-white text-uppercase mb-1">Doações                                 </div>
+                                          <a href="/doacoes">  <div class="text-xs font-weight-bold text-white text-uppercase mb-1">Doações</div></a>    
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
                                                     <div class="h5 mb-0 mr-3 font-weight-bold text-white">{{$doacoes}}</div>
@@ -190,7 +183,14 @@
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
-</div>
+                                    
+<div class="col-md-12">
 <hr>
+        <img src="/img/background.png" class="img-fluid">
+    
+</div>
+</div>
+      
 @endsection
