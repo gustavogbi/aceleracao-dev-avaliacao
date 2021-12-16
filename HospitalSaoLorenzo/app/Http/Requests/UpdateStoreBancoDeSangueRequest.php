@@ -24,7 +24,7 @@ class UpdateStoreBancoDeSangueRequest extends FormRequest
     public function rules()
     {
         return [
-            'tipo'          => 'required|min:2',
+            'tipo'          => 'required|min:2|',
             'contabilidade'      => 'required|min:2',
             'contabilidade'      => 'required|numeric',
         ];

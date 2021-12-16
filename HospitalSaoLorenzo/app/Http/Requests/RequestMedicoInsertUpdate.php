@@ -25,7 +25,7 @@ class RequestMedicoInsertUpdate extends FormRequest
     {
         return [
             'CRM'=>'required|min:2',
-            'nome'=>'required|min:2',
+            'nome'=>'required|min:2|regex:/^[a-zA-Z]+$/u',
             'areaDeAtuacao'=>'required|min:2',
             'idade'=>'required|min:2',
             'telefone'=>'required|min:10|max:11',
@@ -42,6 +42,7 @@ class RequestMedicoInsertUpdate extends FormRequest
 
             'nome.required' => 'O campo Nome não pode ser vazio',
             'nome.min' => 'O campo Nome não pode ter menos de 2 caracteres',
+            'nome.regex' => 'O campo Nome não pode ser numerico',
 
             
             'areaDeAtuacao.required' => 'O campo Area De Atuacao não pode ser vazio',

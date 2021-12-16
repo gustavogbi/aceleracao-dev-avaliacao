@@ -39,7 +39,7 @@
         <div class="card shadow mb-4">
             <div class="card-body">
                 <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered text-warning" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -122,7 +122,7 @@
         <div class="card shadow mb-4">
             <div class="card-body">
                 <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered text-danger" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -186,12 +186,12 @@
                         <div class="col-md-12">
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
-            <div class="card-body">
+            <div class="card-body ">
              
                             @foreach ($doacoes as $doacao)
 
                            <strong class="text-danger">Doação #{{$doacao->id}}. </strong>
-                            <p class="text-danger"> Feito doação  de {{$doacao->qtd_litros}} litros por 
+                            <p class="text-dark"> Feito doação  de {{$doacao->qtd_litros}} litros por 
                             {{$doacao->nome}}, telefone {{$doacao->telefone}}, 
                             email {{$doacao->email}} na data de {{ \Carbon\Carbon::parse($doacao->created_at)->format('d/m/Y')}}  </p>
 

@@ -24,7 +24,7 @@ class UpdateStoreDoacoesRequest extends FormRequest
     public function rules()
     {
         return [
-            'nome'          => 'required|min:2',
+            'nome'          => 'required|min:2|regex:/^[a-zA-Z]+$/u',
             'telefone'      => 'required|min:2|numeric',
             'email'         => 'required|email|min:2',
             'qtd_litros'          => 'required|min:2|numeric',   
@@ -35,6 +35,7 @@ class UpdateStoreDoacoesRequest extends FormRequest
     {
         return [
             'nome.required' => 'O campo Nome não pode ser vazio',
+            'nome.regex' => 'O campo Nome não pode ser numérico',
             'nome.min' => 'O campo Nome não pode ser menor que 2',
 
             'telefone.required' => 'O campo Telefone não pode ser vazio',

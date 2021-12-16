@@ -24,7 +24,7 @@ class UpdateStoreDoadorRequest extends FormRequest
     public function rules()
     {
         return [
-            'nome'          => 'required|min:2',
+            'nome'          => 'required|min:2|regex:/^[a-zA-Z]+$/u',
             'telefone'      => 'required|min:2',
             'email'         => 'required|email|min:2',
             'peso'          => 'required|min:2',
@@ -40,6 +40,7 @@ class UpdateStoreDoadorRequest extends FormRequest
         return [
             'nome.required' => 'O campo Nome não pode ser vazio',
             'nome.min' => 'O campo Nome não pode ser menor que 2',
+            'nome.regex' => 'O campo Nome não pode ser numérico',
 
             'telefone.required' => 'O campo Telefone não pode ser vazio',
             'telefone.min' => 'O campo Telefone não pode ser menor que 2',
