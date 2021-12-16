@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateStorePacientes;
 use App\Models\Paciente;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,7 @@ class PacienteController extends Controller
         return view('Pacientes.new');
     }
 
-    public function store(Request $request) {
+    public function store(UpdateStorePacientes $request) {
         $paciente = new Paciente();
         $paciente->nome = $request->nome;
         $paciente->sobrenome = $request->sobrenome;
@@ -40,7 +41,7 @@ class PacienteController extends Controller
         return view('Pacientes.edit', compact('paciente'));
     }
 
-    public function update(Request $request, $id) {
+    public function update(UpdateStorePacientes $request, $id) {
         $paciente = Paciente::find($id);
         
         if (!$paciente) dd($paciente);
