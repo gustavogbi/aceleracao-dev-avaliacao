@@ -24,7 +24,7 @@ class RequestEstagiarioInsertUpdate extends FormRequest
     public function rules()
     {
         return [
-            'nome'=>'required|min:2|regex:/^[a-zA-Z]+$/u',
+            'nome'=>'required|min:2|regex:/^[a-zA-ZÑñ\s]+$/',
             'grauDeEscolaridade'=>'required|min:2',
             'telefone'=>'required|min:10|max:11',
             'email'=>'required|min:1|email'

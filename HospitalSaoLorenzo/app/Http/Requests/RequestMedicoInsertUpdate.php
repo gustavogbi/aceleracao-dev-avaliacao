@@ -25,7 +25,7 @@ class RequestMedicoInsertUpdate extends FormRequest
     {
         return [
             'CRM'=>'required|min:2',
-            'nome'=>'required|min:2|regex:/^[a-zA-Z]+$/u',
+            'nome'=>'required|min:2|regex:/^[a-zA-ZÑñ\s]+$/',
             'areaDeAtuacao'=>'required|min:2',
             'idade'=>'required|min:2',
             'telefone'=>'required|min:10|max:11',

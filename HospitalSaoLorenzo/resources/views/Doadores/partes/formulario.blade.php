@@ -36,19 +36,10 @@
         <input type="text" class="form-control form-control-user" value="{{ $doador->altura ?? old('altura') }}"
             name="altura" placeholder="Altura">
     </div>
-    <div class="col-sm-6">
-        Fumante:
-        <br>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="fumante" value="0"
-                {{ !empty($doador) && !$doador->fumante ? 'checked' : '' }}>
-            <label class="form-check-label">Não</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="fumante" value="1"
-                {{ !empty($doador) && $doador->fumante ? 'checked' : '' }}>
-            <label class="form-check-label">Sim</label>
-        </div>
+    <div class="col-sm-6">    Observações:
+        <input type="text" class="form-control form-control-user"
+            value="{{ $doador->observacoes ?? old('observacoes') }}" name="observacoes" placeholder="Observações">
+       
     </div>
 </div>
 
@@ -68,9 +59,18 @@
         </div>
     </div>
     <div class="col-sm-6">
-        Observações:
-        <input type="text" class="form-control form-control-user"
-            value="{{ $doador->observacoes ?? old('observacoes') }}" name="observacoes" placeholder="Observações">
+    Fumante:
+        <br>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="fumante" value="0"
+                {{ !empty($doador) && !$doador->fumante ? 'checked' : '' }}>
+            <label class="form-check-label">Não</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="fumante" value="1"
+                {{ !empty($doador) && $doador->fumante ? 'checked' : '' }}>
+            <label class="form-check-label">Sim</label>
+        </div>
     </div>
 </div>
 <button type="submit" class="btn btn-primary btn-user btn-block">

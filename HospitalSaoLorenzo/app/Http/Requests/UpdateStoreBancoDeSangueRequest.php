@@ -25,8 +25,7 @@ class UpdateStoreBancoDeSangueRequest extends FormRequest
     {
         return [
             'tipo'          => 'required|min:2|',
-            'contabilidade'      => 'required|min:2',
-            'contabilidade'      => 'required|numeric',
+            'contabilidade'      => 'required|min:2|numeric',
         ];
     }
 

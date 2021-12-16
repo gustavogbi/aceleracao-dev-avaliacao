@@ -24,7 +24,7 @@ class UpdateStoreDoacoesRequest extends FormRequest
     public function rules()
     {
         return [
-            'nome'          => 'required|min:2|regex:/^[a-zA-Z]+$/u',
+            'nome'          => 'required|min:2|regex:/^[a-zA-ZÑñ\s]+$/',
             'telefone'      => 'required|min:2|numeric',
             'email'         => 'required|email|min:2',
             'qtd_litros'          => 'required|min:2|numeric',   
