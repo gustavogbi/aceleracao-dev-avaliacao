@@ -44,9 +44,9 @@ class UpdateStoreDoadorRequest extends FormRequest
             'telefone.required' => 'O campo Telefone não pode ser vazio',
             'telefone.min' => 'O campo Telefone não pode ser menor que 2',
 
-            'email.required' => 'O campo Email não pode ser vazio',
-            'email.min' => 'O campo Email não pode ser menor que 2',
-            'email.email' => 'O campo Email não pode ser menor que 2',
+            'email.required' => 'O campo E-mail não pode ser vazio',
+            'email.min' => 'O campo E-mail não pode ser menor que 2',
+            'email.email' => 'O campo E-mail deve ser um endereço de email válido.',
 
             'peso.required' => 'O campo Peso não pode ser vazio',
             'peso.min' => 'O campo Peso não pode ser menor que 2',

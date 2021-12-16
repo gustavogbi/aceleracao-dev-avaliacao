@@ -3,8 +3,8 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Doadores</h1>
-        <a href="/bancodesangue" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                class="fas fa-download fa-sm text-white-50"></i> Todos</a>
+        <a href="{{ route('doador.index') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                class="fas fa-list fa-sm text-white-50"></i> Todos</a>
     </div>
 
     <div class="container">
@@ -21,50 +21,54 @@
 
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
+                                    Nome:
                                     <input type="text" class="form-control form-control-user" value="{{ $doador->nome }}"
-                                        placeholder="Nome" disabled>
+                                        disabled>
                                 </div>
                                 <div class="col-sm-6">
+                                    Telefone:
                                     <input type="text" class="form-control form-control-user"
-                                        value="{{ $doador->telefone }}" placeholder="Telefone" disabled>
+                                        value="{{ $doador->telefone }}" disabled>
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
+                                    Email:
                                     <input type="text" class="form-control form-control-user" value="{{ $doador->email }}"
-                                        placeholder="E-mail" disabled>
+                                        disabled>
                                 </div>
                                 <div class="col-sm-6">
+                                    Peso:
                                     <input type="text" class="form-control form-control-user" value="{{ $doador->peso }}"
-                                        placeholder="peso" disabled>
+                                        disabled>
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
+                                    Altura:
                                     <input type="text" class="form-control form-control-user"
-                                        value="{{ $doador->altura }}" placeholder="Altura" disabled>
+                                        value="{{ $doador->altura }}" disabled>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-6">Fumante:
                                     <input type="text" class="form-control form-control-user"
-                                        value="{{ $doador->fumante }}" placeholder="Fumante" disabled>
+                                        value="{{ $doador->fumante }}" disabled>
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
+                                    Doenças:
                                     <input type="text" class="form-control form-control-user"
-                                        value="{{ $doador->doencas }}" placeholder="Doenças" disabled>
+                                        value="{{ $doador->doencas }}" disabled>
                                 </div>
                                 <div class="col-sm-6">
+                                    Observações:
                                     <input type="text" class="form-control form-control-user"
-                                        value="{{ $doador->observacoes }}" placeholder="Observações" disabled>
+                                        value="{{ $doador->observacoes }}" disabled>
                                 </div>
                             </div>
-                            <a href="{{ route('doador.index') }}" class="btn btn-primary btn-user btn-block">
-                                Voltar
-                            </a>
                         </div>
                     </div>
                 </div>
