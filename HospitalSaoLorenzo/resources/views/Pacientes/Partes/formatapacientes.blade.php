@@ -31,14 +31,18 @@
             placeholder="E-mail">
     </div>
     <div class="col-sm-1">
-        @if ($paciente->email)
-            <input type="checkbox" class="form-control" name="is_doador" checked>
-        @else
-            <input type="checkbox" class="form-control" name="is_doador">
-        @endif
-    </div>
-    <div class="col-sm-3">
-        <p class="form-control form-control-user">É doador?</p>
+    É doador?
+        <br>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="is_doador" value="0"
+                {{ !empty($paciente) && !$paciente->is_doador ? 'checked' : '' }}>
+            <label class="form-check-label">Não</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="is_doador" value="1"
+                {{ !empty($paciente) && $paciente->is_doador ? 'checked' : '' }}>
+            <label class="form-check-label">Sim</label>
+        </div>
     </div>
 </div>
 

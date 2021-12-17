@@ -71,6 +71,7 @@
                 {{ !empty($doador) && $doador->fumante ? 'checked' : '' }}>
             <label class="form-check-label">Sim</label>
         </div>
+        
     </div>
 </div>
 <button type="submit" class="btn btn-primary btn-user btn-block">
