@@ -12,18 +12,18 @@ class DoacoesController extends Controller
     public function index()
     {
         $doacoes = Doacoes::all();
-        return view('doacoes.index', compact('doacoes'));
+        return view('Doacoes.index', compact('doacoes'));
     }
 
     public function show($id)
     {
         $doacao = Doacoes::findOrFail($id);
-        return view('doacoes.show', compact('doacao'));
+        return view('Doacoes.show', compact('doacao'));
     }
 
     public function create()
     {
-        return view('doacoes.create');
+        return view('Doacoes.create');
     }
 
     public function store(UpdateStoredoacoesRequest $request)
@@ -40,7 +40,7 @@ class DoacoesController extends Controller
     public function edit($id)
     {
         $doacao = Doacoes::findOrFail($id);
-        return view('doacoes.edit', compact('doacao'));
+        return view('Doacoes.edit', compact('doacao'));
     }
 
     public function update(UpdateStoreDoacoesRequest $request, $id)

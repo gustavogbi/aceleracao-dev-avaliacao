@@ -20,7 +20,7 @@
 
                             <form action="{{ route('doacoes.update', $doacao->id) }}" method="post">
                                 @method('PUT')
-                                @include('doacoes.partes.formulario')
+                                @include('Doacoes.partes.formulario')
                             </form>
                         </div>
                     </div>

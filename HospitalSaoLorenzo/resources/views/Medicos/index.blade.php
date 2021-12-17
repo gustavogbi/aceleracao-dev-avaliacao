@@ -88,7 +88,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <a href="/medicos/edit/{{ $medico->id }}">
+                                        <a href="{{ route('medico.edit', $medico->id) }}">
 
                                             <button type="button" class="btn btn-success">Editar</button></a>
 

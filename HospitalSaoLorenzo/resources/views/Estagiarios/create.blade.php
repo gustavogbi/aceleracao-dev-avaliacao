@@ -19,7 +19,7 @@
                             </div>
 
                             <form action="{{ route('estagiario.store') }}" method="post">
-                                @include('Estagiarios.partes.formulario')
+                                @include('Estagiarios.Partes.formulario')
                             </form>
                         </div>
                     </div>

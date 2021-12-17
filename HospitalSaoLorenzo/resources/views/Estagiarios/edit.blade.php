@@ -20,7 +20,7 @@
 
                             <form action="{{ route('estagiario.update', $estagiario->id) }}" method="post">
                                 @method('PUT')
-                                @include('Estagiarios.partes.formulario')
+                                @include('Estagiarios.Partes.formulario')
                             </form>
                         </div>
                     </div>

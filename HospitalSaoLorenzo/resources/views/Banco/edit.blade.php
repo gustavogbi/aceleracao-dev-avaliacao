@@ -22,7 +22,7 @@
                             </div>
 
                             <form action="{{ route('bancodesangue.update', $bancodesangue->id) }}" method="post">
-                                @include('banco.partes.formatabancodesangue')
+                                @include('Banco.Partes.formulario')
                                 @method('PUT')
                             </form>
                         </div>

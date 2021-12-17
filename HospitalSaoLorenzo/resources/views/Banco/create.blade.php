@@ -22,7 +22,7 @@
                             </div>
 
                             <form action="{{ route('bancodesangue.store') }}" method="post">
-                                @include('banco.partes.formulario')
+                                @include('Banco.Partes.formulario')
                             </form>
                         </div>
                     </div>

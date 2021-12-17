@@ -12,16 +12,16 @@ class EstagiarioController extends Controller
     public function index()
     {
         $estagiarios = Estagiario::all();
-        return view('estagiarios.index', compact('estagiarios'));
+        return view('Estagiarios.index', compact('estagiarios'));
     }
     public function show($id)
     {
         $estagiario = Estagiario::findOrFail($id);
-        return view('estagiarios.show', compact('estagiario'));
+        return view('Estagiarios.show', compact('estagiario'));
     }
     public function create()
     {
-        return view('estagiarios.create');
+        return view('Estagiarios.create');
     }
     public function store(RequestEstagiarioInsertUpdate $request)
     {

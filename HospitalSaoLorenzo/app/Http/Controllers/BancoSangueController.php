@@ -51,7 +51,7 @@ class BancoSangueController extends Controller
             return redirect()->back();
         endif;
 
-        return view('banco.edit', compact('bancodesangue'));
+        return view('Banco.edit', compact('bancodesangue'));
     }
 
     public function update(UpdateStoreBancoDeSangueRequest $request, $id)
@@ -73,6 +73,6 @@ class BancoSangueController extends Controller
             return redirect()->route('bancodesangue.index');
         }
 
-        return view('banco.show', compact('bancodesangue'));
+        return view('Banco.show', compact('bancodesangue'));
     }
 }

@@ -26,7 +26,7 @@ class AcessoController extends Controller
         $estagiarios = Estagiario::all();
         $qtd_medicos = Medico::count();
         $qtd_estagiarios = Estagiario::count();
-        return view('relatorios.relatorioadministrativo', compact('qtd_medicos', 'medicos', 'qtd_estagiarios', 'estagiarios'));
+        return view('Relatorios.relatorioadministrativo', compact('qtd_medicos', 'medicos', 'qtd_estagiarios', 'estagiarios'));
     }
 
 
@@ -38,6 +38,6 @@ class AcessoController extends Controller
         $qtd_doadores = Doador::count();
         $qtd_bancodesangues = BancoSangue::count();
         $qtd_doacoes = Doador::count();
-        return view('relatorios.relatoriodedoacoes', compact('qtd_doadores', 'qtd_bancodesangues', 'qtd_doacoes', 'doadores', 'bancodesangues', 'doacoes'));
+        return view('Relatorios.relatoriodedoacoes', compact('qtd_doadores', 'qtd_bancodesangues', 'qtd_doacoes', 'doadores', 'bancodesangues', 'doacoes'));
     }
 }
