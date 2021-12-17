@@ -9,18 +9,18 @@
 
     <!-- Begin Page Content -->
     <div class="container-fluid">
-    @if (session('danger'))
-                    <div class="alert alert-danger">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-     {{ session('danger')}}
-    </div>
-                    @endif
-                    @if (session('success'))
-                    <div class="alert alert-success">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <strong>Successo! </strong> {{ session('success')}}
-    </div>
-                    @endif
+        @if (session('danger'))
+            <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ session('danger') }}
+            </div>
+        @endif
+        @if (session('success'))
+            <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Successo! </strong> {{ session('success') }}
+            </div>
+        @endif
         <!-- Page Heading -->
 
         <!-- DataTales Example -->
@@ -47,46 +47,50 @@
                                     <td>{{ $doacao->email }}</td>
                                     <td>{{ $doacao->qtd_litros }}</td>
                                     <td>
-                                <!-- Button to Open the Modal -->
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal{{$doacao->id}}">
-    Excluir</button>
+                                        <!-- Button to Open the Modal -->
+                                        <button type="button" class="btn btn-danger" data-toggle="modal"
+                                            data-target="#myModal{{ $doacao->id }}">
+                                            Excluir</button>
 
-    <!-- The Modal -->
-    <div class="modal" id="myModal{{$doacao->id}}">
-    <div class="modal-dialog">
-        <div class="modal-content">
+                                        <!-- The Modal -->
+                                        <div class="modal" id="myModal{{ $doacao->id }}">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
 
-        <!-- Modal Header -->
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
+                                                    <!-- Modal Header -->
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close"
+                                                            data-dismiss="modal">&times;</button>
+                                                    </div>
 
-        <!-- Modal body -->
-        <div class="modal-body">
-            Tem certeza que deseja remover o registro #{{$doacao->id}}?<br>
-        <form action="{{route('doacoes.destroy', $doacao->id)}}" method="post">
-                <input type="hidden" name="_method" value="DELETE">
-                @csrf
-            <button type="submmit" class="btn btn-danger">Remover</button>
-                                        
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
-            </form> 
-        </div>
+                                                    <!-- Modal body -->
+                                                    <div class="modal-body">
+                                                        Tem certeza que deseja remover o registro #{{ $doacao->id }}?<br>
+                                                        <form action="{{ route('doacoes.destroy', $doacao->id) }}"
+                                                            method="post">
+                                                            <input type="hidden" name="_method" value="DELETE">
+                                                            @csrf
+                                                            <button type="submmit" class="btn btn-danger">Remover</button>
 
-        <!-- Modal footer -->
-        <div class="modal-footer">
-        </div>
+                                                            <button type="button" class="btn btn-primary"
+                                                                data-dismiss="modal">Cancelar</button>
+                                                        </form>
+                                                    </div>
 
-        </div>
-    </div>
-    </div>
-    <a href="/doacoes/edit/{{$doacao->id}}" >
-                                          
-            <button type="button" class="btn btn-success" >Editar</button></a>
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                    </div>
 
-            <a href="{{route('doacoes.show', $doacao->id)}}">                
-            <button type="button" class="btn btn-primary" >Vizualizar</button></a>
-                                 
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="/doacoes/edit/{{ $doacao->id }}">
+
+                                            <button type="button" class="btn btn-success">Editar</button></a>
+
+                                        <a href="{{ route('doacoes.show', $doacao->id) }}">
+                                            <button type="button" class="btn btn-primary">Vizualizar</button></a>
+
                                     </td>
                                 </tr>
                             @endforeach

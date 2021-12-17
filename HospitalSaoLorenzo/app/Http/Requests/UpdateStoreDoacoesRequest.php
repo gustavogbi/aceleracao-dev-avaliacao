@@ -27,7 +27,7 @@ class UpdateStoreDoacoesRequest extends FormRequest
             'nome'          => 'required|min:2|regex:/^[a-zA-ZÑñ\s]+$/',
             'telefone'      => 'required|min:2|numeric',
             'email'         => 'required|email|min:2',
-            'qtd_litros'          => 'required|min:2|numeric',   
+            'qtd_litros'          => 'required|min:2|numeric',
         ];
     }
 
@@ -44,7 +44,7 @@ class UpdateStoreDoacoesRequest extends FormRequest
             'email.required' => 'O campo Email não pode ser vazio',
             'email.min' => 'O campo Email não pode ser menor que 2',
             'email.email' => 'O campo Email esta inválido',
-            
+
             'qtd_litros.required' => 'O campo QUANTIDADE DE LITROS não pode ser vazio',
             'qtd_litros.min' => 'O campo QUANTIDADE DE LITROS não pode ser menor que 2',
             'qtd_litros.numeric' => 'O campo QUANTIDADE DE LITROS tem que ser numérico',

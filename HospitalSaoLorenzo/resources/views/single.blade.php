@@ -50,7 +50,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#relatorio"
                     aria-expanded="true" aria-controls="Pacientes">
-                   
+
                     <i class="fas fa-square fa-2x text-gray-300"></i>
                     <span>Relatórios</span>
                 </a>
@@ -66,22 +66,22 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Pacientes"
                     aria-expanded="true" aria-controls="Pacientes">
-                   
+
                     <i class="fas fa-wheelchair fa-2x text-gray-300"></i>
                     <span>Pacientes</span>
                 </a>
                 <div id="Pacientes" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="{{route('pacientes.create')}}">Novo</a>
-                        <a class="collapse-item" href="{{route('pacientes.index')}}">Todos</a>
+                        <a class="collapse-item" href="{{ route('pacientes.create') }}">Novo</a>
+                        <a class="collapse-item" href="{{ route('pacientes.index') }}">Todos</a>
                     </div>
                 </div>
             </li>
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#Medico"
-                    aria-expanded="true" aria-controls="Medico">
-                 
+                <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#Medico" aria-expanded="true"
+                    aria-controls="Medico">
+
                     <i class="fas fa-user-md fa-2x text-gray-300"></i>
                     <span>Medico</span>
                 </a>
@@ -94,16 +94,17 @@
             </li>
 
 
-            
+
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Estagiarios"
                     aria-expanded="true" aria-controls="Estagiarios">
-                  
+
                     <i class="fas fa-graduation-cap fa-2x text-gray-300"></i>
                     <span>Estagiarios</span>
                 </a>
-                <div id="Estagiarios" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="Estagiarios" class="collapse" aria-labelledby="headingTwo"
+                    data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="/estagiario/create">Novo</a>
                         <a class="collapse-item" href="/estagiario">Todos</a>
@@ -111,12 +112,12 @@
                 </div>
             </li>
 
-            
+
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Doadores"
                     aria-expanded="true" aria-controls="Doadores">
-                    
+
                     <i class="fas fa-h-square fa-2x text-gray-300"></i>
                     <span>Doadores</span>
                 </a>
@@ -128,16 +129,17 @@
                 </div>
             </li>
 
-            
+
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#bancodesangue"
                     aria-expanded="true" aria-controls="bancodesangue">
-                    
-                                            <i class="fas fa-heart fa-2x text-gray-300"></i>
+
+                    <i class="fas fa-heart fa-2x text-gray-300"></i>
                     <span>Bancos de sangue</span>
                 </a>
-                <div id="bancodesangue" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="bancodesangue" class="collapse" aria-labelledby="headingTwo"
+                    data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="/bancodesangue/create">Novo</a>
                         <a class="collapse-item" href="/bancodesangue">Todos</a>
@@ -145,12 +147,12 @@
                 </div>
             </li>
 
-            
+
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#doacoes"
                     aria-expanded="true" aria-controls="doacoes">
-                  
+
                     <i class="fas fa-university fa-2x text-gray-300"></i>
                     <span>Doações</span>
                 </a>
@@ -178,7 +180,7 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                  
+
 
 
                 </nav>
@@ -187,7 +189,7 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-@yield('content')
+                    @yield('content')
 
                 </div>
                 <!-- /.container-fluid -->

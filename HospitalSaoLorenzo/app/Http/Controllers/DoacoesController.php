@@ -8,7 +8,7 @@ use App\Http\Requests\UpdateStoreDoacoesRequest;
 
 class DoacoesController extends Controller
 {
-    
+
     public function index()
     {
         $doacoes = Doacoes::all();

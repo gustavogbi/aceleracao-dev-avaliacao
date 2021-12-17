@@ -34,10 +34,10 @@ class UpdateStoreBancoDeSangueRequest extends FormRequest
         return [
             'tipo.required' => 'O campo TIPO não pode ser vazio!',
             'tipo.min' => 'O campo TIPO não pode ser menor que 2!',
-            
+
             'contabilidade.required' => 'O campo CONTABILIDADE não pode ser vazio!',
             'contabilidade.min' => 'O campo CONTABILIDADE não pode ser menor que 2! EX: 05',
-            'contabilidade.numeric'=>'O campo CONTABILIDADE precisa ser numerico!'
+            'contabilidade.numeric' => 'O campo CONTABILIDADE precisa ser numerico!'
 
         ];
     }

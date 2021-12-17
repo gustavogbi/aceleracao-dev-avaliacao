@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 
 class MedicoController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $medicos = Medico::all();
         return view('medicos.index', compact('medicos'));
     }
@@ -44,6 +45,4 @@ class MedicoController extends Controller
         $medico->delete();
         return redirect()->route('medico.index')->with('danger', "Cadastro deletado com sucesso!");
     }
-
-
 }
