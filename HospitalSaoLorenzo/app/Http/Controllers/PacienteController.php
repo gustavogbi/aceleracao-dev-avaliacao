@@ -17,7 +17,7 @@ class PacienteController extends Controller
 
     public function create()
     {
-        return view('Pacientes.new');
+        return view('Pacientes.create');
     }
 
     public function store(UpdateStorePacientes $request)
