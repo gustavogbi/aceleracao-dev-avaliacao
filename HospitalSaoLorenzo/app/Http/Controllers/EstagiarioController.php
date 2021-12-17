@@ -8,8 +8,9 @@ use Illuminate\Http\Request;
 
 class EstagiarioController extends Controller
 {
-    
-    public function index(){
+
+    public function index()
+    {
         $estagiarios = Estagiario::all();
         return view('estagiarios.index', compact('estagiarios'));
     }
@@ -45,5 +46,4 @@ class EstagiarioController extends Controller
         $Estagiario->delete();
         return redirect()->route('estagiario.index')->with('danger', "Cadastro deletado com sucesso!");
     }
-
 }

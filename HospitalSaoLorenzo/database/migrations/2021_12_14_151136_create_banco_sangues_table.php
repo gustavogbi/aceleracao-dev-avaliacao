@@ -16,12 +16,12 @@ class CreateBancoSanguesTable extends Migration
     {
         Schema::create('banco_sangues', function (Blueprint $table) {
             $table->id();
-            $table->string('tipo'); 
-            $table->integer('contabilidade'); 
+            $table->string('tipo');
+            $table->integer('contabilidade');
             $table->timestamps();
         });
-        
-        $this->newCad('O+','15');
+
+        $this->newCad('O+', '15');
     }
 
     /**
@@ -33,8 +33,9 @@ class CreateBancoSanguesTable extends Migration
     {
         Schema::dropIfExists('banco_sangues');
     }
-    
-    public function newCad($tipo,$contabilidade){
+
+    public function newCad($tipo, $contabilidade)
+    {
         $cad = new BancoSangue();
         $cad->tipo = $tipo;
         $cad->contabilidade = $contabilidade;

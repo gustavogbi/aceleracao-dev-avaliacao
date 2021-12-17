@@ -36,10 +36,10 @@
         <input type="text" class="form-control form-control-user" value="{{ $doador->altura ?? old('altura') }}"
             name="altura" placeholder="Altura">
     </div>
-    <div class="col-sm-6">    Observações:
+    <div class="col-sm-6"> Observações:
         <input type="text" class="form-control form-control-user"
             value="{{ $doador->observacoes ?? old('observacoes') }}" name="observacoes" placeholder="Observações">
-       
+
     </div>
 </div>
 
@@ -59,7 +59,7 @@
         </div>
     </div>
     <div class="col-sm-6">
-    Fumante:
+        Fumante:
         <br>
         <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="fumante" value="0"

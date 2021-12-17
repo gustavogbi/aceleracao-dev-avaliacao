@@ -7,8 +7,8 @@
 <div class="form-group row">
     <div class="col-sm-6 mb-3 mb-sm-0">
         CRM:
-        <input type="text" class="form-control form-control-user" value="{{ $medico->CRM ?? old('CRM') }}"
-            name="CRM" placeholder="CRM">
+        <input type="text" class="form-control form-control-user" value="{{ $medico->CRM ?? old('CRM') }}" name="CRM"
+            placeholder="CRM">
     </div>
     <div class="col-sm-6">
         Nome:
@@ -20,8 +20,9 @@
 <div class="form-group row">
     <div class="col-sm-6 mb-3 mb-sm-0">
         Area De Atuacao:
-        <input type="text" class="form-control form-control-user" value="{{ $medico->areaDeAtuacao ?? old('areaDeAtuacao') }}"
-            name="areaDeAtuacao" placeholder="Area De Atuacao">
+        <input type="text" class="form-control form-control-user"
+            value="{{ $medico->areaDeAtuacao ?? old('areaDeAtuacao') }}" name="areaDeAtuacao"
+            placeholder="Area De Atuacao">
     </div>
     <div class="col-sm-6">
         Idade:
@@ -37,7 +38,7 @@
             name="telefone" placeholder="DDD + Telefone Ex: (XX) XXXX-XXXX">
     </div>
     <div class="col-sm-6">
-        e-mail: 
+        e-mail:
         <input type="text" class="form-control form-control-user" value="{{ $medico->email ?? old('email') }}"
             name="email" placeholder="e-mail">
     </div>

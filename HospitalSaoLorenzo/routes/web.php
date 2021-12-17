@@ -35,7 +35,6 @@ Route::get('bancodesangue/edit/{id}', [BancoSangueController::class, 'edit'])->n
 Route::delete('bancodesangue/delete/{id}', [BancoSangueController::class, 'destroy'])->name('bancodesangue.destroy');
 Route::put('bancodesangue/{id}', [BancoSangueController::class, 'update'])->name('bancodesangue.update');
 
-
 /* Doador */
 Route::get('doador', [DoadorController::class, 'index'])->name('doador.index');
 Route::get('doador/create', [DoadorController::class, 'create'])->name('doador.create');

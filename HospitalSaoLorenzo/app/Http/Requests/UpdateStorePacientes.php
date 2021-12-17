@@ -33,7 +33,8 @@ class UpdateStorePacientes extends FormRequest
         ];
     }
 
-    public function messages() {
+    public function messages()
+    {
         return [
             "nome.required" => "O campo Nome é obrigatório",
             "nome.min" => "O campo Nome deve possuir no mínimo 2 caracteres",
@@ -44,14 +45,14 @@ class UpdateStorePacientes extends FormRequest
 
             "idade.required" => "O campo Idade é obrigatório",
             "idade.numeric" => "O campo Idade deve ser um número",
-            
+
             "endereco.required" => "O campo Endereço é obrigatório",
             "endereco.min" => "O campo endereço deve possuir no mínimo 2 caracacteres",
 
             "telefone.required" => "O campo Telefone é obrigatório",
             "telefone.min" => "O campo telefone deve possuir no mínimo 8 caracteres",
             "telefone.numeric" => "O campo telefone deve conter apenas números",
-            
+
             "email.required" => "O campo E-mail é obrigatório",
             "email.email" => "O campo E-mail deve ser um e-mail válido",
         ];

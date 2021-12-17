@@ -93,14 +93,14 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <a href="/doador/edit/{{ $doador->id }}">
-
-                                            <button type="button" class="btn btn-success  btn-sm">Editar</button></a>
+                                        <a href="{{ route('doador.edit', $doador->id) }}">
+                                            <button type="button" class="btn btn-success  btn-sm">Editar</button>
+                                        </a>
 
                                         <a href="{{ route('doador.show', $doador->id) }}">
-                                            <button type="button" class="btn btn-primary btn-sm">Vizualizar</button></a>
+                                            <button type="button" class="btn btn-primary btn-sm">Vizualizar</button>
+                                        </a>
 
-                                    </td>
                                     </td>
                                 </tr>
                             @endforeach

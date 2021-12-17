@@ -19,11 +19,11 @@ class CreateEstagiariosTable extends Migration
             $table->string('nome');
             $table->string('grauDeEscolaridade');
             $table->string('telefone');
-            $table->string('email'); 
+            $table->string('email');
             $table->timestamps();
         });
-        
-        $this->newCad('Guilherme Osvaldo','3º Periodo', '61985445566','guilhermeosvaldo@hotmail.com');
+
+        $this->newCad('Guilherme Osvaldo', '3º Periodo', '61985445566', 'guilhermeosvaldo@hotmail.com');
     }
 
     /**
@@ -36,8 +36,9 @@ class CreateEstagiariosTable extends Migration
         Schema::dropIfExists('estagiarios');
     }
 
-    
-    public function newCad($nome, $grauDeEscolaridade,$telefone, $email){
+
+    public function newCad($nome, $grauDeEscolaridade, $telefone, $email)
+    {
         $cad = new Estagiario();
         $cad->nome = $nome;
         $cad->telefone = $telefone;

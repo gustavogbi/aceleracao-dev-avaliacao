@@ -24,10 +24,10 @@ class RequestEstagiarioInsertUpdate extends FormRequest
     public function rules()
     {
         return [
-            'nome'=>'required|min:2|regex:/^[a-zA-ZÑñ\s]+$/',
-            'grauDeEscolaridade'=>'required|min:2',
-            'telefone'=>'required|min:10|max:11',
-            'email'=>'required|min:1|email'
+            'nome' => 'required|min:2|regex:/^[a-zA-ZÑñ\s]+$/',
+            'grauDeEscolaridade' => 'required|min:2',
+            'telefone' => 'required|min:10|max:11',
+            'email' => 'required|min:1|email'
         ];
     }
 
@@ -40,7 +40,7 @@ class RequestEstagiarioInsertUpdate extends FormRequest
             'nome.min' => 'O campo NOME não pode ter menos de 2 caracteres',
             'nome.regex' => 'O campo NOME não pode ser numerico',
 
-            
+
             'grauDeEscolaridade.required' => 'O campo GRAU DE ESCOLARIDADE não pode ser vazio',
             'grauDeEscolaridade.min' => 'O campo GRAU DE ESCOLARIDADE não pode ter menos de 2 caracteres',
 

@@ -20,7 +20,7 @@ class CreateMedicosTable extends Migration
             $table->string('areaDeAtuacao');
             $table->string('idade');
             $table->string('telefone');
-            $table->string('email'); 
+            $table->string('email');
             $table->timestamps();
         });
     }

@@ -9,18 +9,18 @@
 
     <!-- Begin Page Content -->
     <div class="container-fluid">
-    @if (session('danger'))
-                    <div class="alert alert-danger">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-     {{ session('danger')}}
-    </div>
-                    @endif
-                    @if (session('success'))
-                    <div class="alert alert-success">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <strong>Successo! </strong> {{ session('success')}}
-    </div>
-                    @endif
+        @if (session('danger'))
+            <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ session('danger') }}
+            </div>
+        @endif
+        @if (session('success'))
+            <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Successo! </strong> {{ session('success') }}
+            </div>
+        @endif
         <!-- Page Heading -->
 
         <!-- DataTales Example -->
@@ -30,7 +30,7 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                 <th>ID</th>
+                                <th>ID</th>
                                 <th>Nome</th>
                                 <th>Grau de escolaridade</th>
                                 <th>telefone</th>
@@ -47,46 +47,51 @@
                                     <td>{{ $estagiario->telefone }}</td>
                                     <td>{{ $estagiario->email }}</td>
                                     <td>
-                                <!-- Button to Open the Modal -->
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal{{$estagiario->id}}">
-    Excluir</button>
+                                        <!-- Button to Open the Modal -->
+                                        <button type="button" class="btn btn-danger" data-toggle="modal"
+                                            data-target="#myModal{{ $estagiario->id }}">
+                                            Excluir</button>
 
-    <!-- The Modal -->
-    <div class="modal" id="myModal{{$estagiario->id}}">
-    <div class="modal-dialog">
-        <div class="modal-content">
+                                        <!-- The Modal -->
+                                        <div class="modal" id="myModal{{ $estagiario->id }}">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
 
-        <!-- Modal Header -->
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
+                                                    <!-- Modal Header -->
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close"
+                                                            data-dismiss="modal">&times;</button>
+                                                    </div>
 
-        <!-- Modal body -->
-        <div class="modal-body">
-            Tem certeza que deseja remover o registro #{{$estagiario->id}}?<br>
-        <form action="{{route('estagiario.destroy', $estagiario->id)}}" method="post">
-                <input type="hidden" name="_method" value="DELETE">
-                @csrf
-            <button type="submmit" class="btn btn-danger">Remover</button>
-                                        
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
-            </form> 
-        </div>
+                                                    <!-- Modal body -->
+                                                    <div class="modal-body">
+                                                        Tem certeza que deseja remover o registro
+                                                        #{{ $estagiario->id }}?<br>
+                                                        <form action="{{ route('estagiario.destroy', $estagiario->id) }}"
+                                                            method="post">
+                                                            <input type="hidden" name="_method" value="DELETE">
+                                                            @csrf
+                                                            <button type="submmit" class="btn btn-danger">Remover</button>
 
-        <!-- Modal footer -->
-        <div class="modal-footer">
-        </div>
+                                                            <button type="button" class="btn btn-primary"
+                                                                data-dismiss="modal">Cancelar</button>
+                                                        </form>
+                                                    </div>
 
-        </div>
-    </div>
-    </div>
-    <a href="/estagiario/edit/{{$estagiario->id}}" >
-                                          
-            <button type="button" class="btn btn-success" >Editar</button></a>
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                    </div>
 
-            <a href="{{route('estagiario.show', $estagiario->id)}}">                
-            <button type="button" class="btn btn-primary" >Vizualizar</button></a>
-                                 
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="/estagiario/edit/{{ $estagiario->id }}">
+
+                                            <button type="button" class="btn btn-success">Editar</button></a>
+
+                                        <a href="{{ route('estagiario.show', $estagiario->id) }}">
+                                            <button type="button" class="btn btn-primary">Vizualizar</button></a>
+
                                     </td>
                                 </tr>
                             @endforeach

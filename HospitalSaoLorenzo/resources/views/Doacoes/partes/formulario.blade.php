@@ -25,8 +25,9 @@
     </div>
     <div class="col-sm-6">
         Quantidade de litros:
-        <input type="text" class="form-control form-control-user" value="{{ $doacao->qtd_litros ?? old('qtd_litros') }}"
-            name="qtd_litros" placeholder="Quantidade de litros">
+        <input type="text" class="form-control form-control-user"
+            value="{{ $doacao->qtd_litros ?? old('qtd_litros') }}" name="qtd_litros"
+            placeholder="Quantidade de litros">
     </div>
 </div>
 <button type="submit" class="btn btn-primary btn-user btn-block">

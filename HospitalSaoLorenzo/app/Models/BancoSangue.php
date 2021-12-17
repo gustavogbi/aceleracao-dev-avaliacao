@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class BancoSangue extends Model
 {
     use HasFactory;
-    protected $fillable = [ "tipo", "contabilidade"];
+    protected $fillable = ["tipo", "contabilidade"];
 }

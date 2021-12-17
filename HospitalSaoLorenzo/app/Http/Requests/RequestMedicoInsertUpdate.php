@@ -24,12 +24,12 @@ class RequestMedicoInsertUpdate extends FormRequest
     public function rules()
     {
         return [
-            'CRM'=>'required|min:2',
-            'nome'=>'required|min:2|regex:/^[a-zA-ZÑñ\s]+$/',
-            'areaDeAtuacao'=>'required|min:2',
-            'idade'=>'required|min:2',
-            'telefone'=>'required|min:10|max:11',
-            'email'=>'required|min:1|email'
+            'CRM' => 'required|min:2',
+            'nome' => 'required|min:2|regex:/^[a-zA-ZÑñ\s]+$/',
+            'areaDeAtuacao' => 'required|min:2',
+            'idade' => 'required|min:2',
+            'telefone' => 'required|min:10|max:11',
+            'email' => 'required|min:1|email'
         ];
     }
 
@@ -44,10 +44,10 @@ class RequestMedicoInsertUpdate extends FormRequest
             'nome.min' => 'O campo Nome não pode ter menos de 2 caracteres',
             'nome.regex' => 'O campo Nome não pode ser numerico',
 
-            
+
             'areaDeAtuacao.required' => 'O campo Area De Atuacao não pode ser vazio',
             'areaDeAtuacao.min' => 'O campo Area De Atuacao não pode ter menos de 2 caracteres',
-            
+
             'idade.required' => 'O campo Idade De Atuacao não pode ser vazio',
             'idade.min' => 'O campo Idade De Atuacao não pode ter menos de 2 caracteres',
 

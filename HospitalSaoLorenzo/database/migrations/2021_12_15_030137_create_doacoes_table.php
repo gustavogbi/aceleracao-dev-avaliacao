@@ -23,8 +23,8 @@ class CreateDoacoesTable extends Migration
             $table->integer('qtd_litros');
             $table->timestamps();
         });
-        
-        $this->newCad('Guilherme Osvaldo','61985445566','guilhermeosvaldo@hotmail.com', 5);
+
+        $this->newCad('Guilherme Osvaldo', '61985445566', 'guilhermeosvaldo@hotmail.com', 5);
     }
 
     /**
@@ -37,8 +37,9 @@ class CreateDoacoesTable extends Migration
         Schema::dropIfExists('doacoes');
     }
 
-    
-    public function newCad($nome,$telefone, $email, $qtd_litros){
+
+    public function newCad($nome, $telefone, $email, $qtd_litros)
+    {
         $cad = new Doacoes();
         $cad->nome = $nome;
         $cad->telefone = $telefone;
