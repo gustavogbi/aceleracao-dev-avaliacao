@@ -51,8 +51,8 @@
                                     <td>{{ $doador->email }}</td>
                                     <td>{{ $doador->peso }}</td>
                                     <td>{{ $doador->altura }}</td>
-                                    <td>{{ $doador->fumante }}</td>
-                                    <td>{{ $doador->doencas }}</td>
+                                    <td>{{ $doador->fumante ? 'sim' : 'não' }}</td>
+                                    <td>{{ $doador->doencas ? 'sim' : 'não' }}</td>
                                     <td>{{ $doador->observacoes }}</td>
                                     <td>
 

@@ -8,70 +8,21 @@
                 class="fas fa-list fa-sm text-white-50"></i> Todos</a>
     </div>
 
-    <div class="container">
-        <div class="card o-hidden border-0 shadow-lg my-5">
-            <div class="card-body p-0">
-                <!-- Nested Row within Card Body -->
-                <div class="row">
-                    <div class="col-md">
-                        <div class="p-5">
-                            <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Exibir Paciente</h1>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-5 mb-3 mb-sm-0">
-                                    <input readonly type="text" class="form-control form-control-user" name="nome"
-                                        value="{{ $paciente->nome ?? $paciente->nome }}" placeholder="Nome">
-                                </div>
-                                <div class="col-sm-5">
-                                    <input readonly type="text" class="form-control form-control-user" name="sobrenome"
-                                        value="{{ $paciente->sobrenome ?? $paciente->sobrenome }}"
-                                        placeholder="Sobrenome">
-                                </div>
-                                <div class="col-sm-2">
-                                    <input readonly type="number" class="form-control form-control-user" name="idade"
-                                        value="{{ $paciente->idade ?? $paciente->idade }}" placeholder="Idade">
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input readonly type="text" class="form-control form-control-user" name="endereco"
-                                        value="{{ $paciente->endereco ?? $paciente->endereco }}" placeholder="Endereço">
-                                </div>
-                                <div class="col-sm-6">
-                                    <input readonly type="tel" class="form-control form-control-user" name="telefone"
-                                        value="{{ $paciente->telefone ?? $paciente->telefone }}" placeholder="Telefone">
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <input readonly type="email" class="form-control form-control-user" name="email"
-                                        value="{{ $paciente->email ?? $paciente->email }}" placeholder="E-mail">
-                                </div>
-                                <div class="col-sm-1">
-                                    @if ($paciente->email)
-                                        <input readonly type="checkbox" class="form-control" name="is_doador" checked>
-                                    @else
-                                        <input readonly type="checkbox" class="form-control" name="is_doador">
-                                    @endif
-                                </div>
-                                <div class="col-sm-3">
-                                    <p class="form-control form-control-user">É doador?</p>
-                                </div>
-                            </div>
-
-                            <a href="/pacientes">
-                                <button class="btn btn-primary btn-user btn-block">
-                                    Voltar
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Detalhes do registro #{{ $paciente->id }}</h6>
         </div>
-
+        <div class="card-body">
+            <p>Id: {{ $paciente->id }}</p>
+            <p>Nome: {{ $paciente->nome }}</p>
+            <p>Sobrenome: {{ $paciente->sobrenome }}</p>
+            <p>Idade: {{ $paciente->idade }}</p>
+            <p>Endereço: {{ $paciente->endereco }}</p>
+            <p>Telefone: {{ $paciente->telefone }}</p>
+            <p>E-mail: {{ $paciente->email }}</p>
+            <p>Doador: {{ $paciente->is_doador ? 'sim' : 'não' }}</p>
+            <p>Data de cadastro: {{ $paciente->created_at }}</p>
+            <p>Ultima atualização: {{ $paciente->updated_at }}</p>
+        </div>
     </div>
 @endsection

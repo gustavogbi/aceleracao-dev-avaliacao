@@ -7,71 +7,22 @@
                 class="fas fa-list fa-sm text-white-50"></i> Todos</a>
     </div>
 
-    <div class="container">
-        <div class="card o-hidden border-0 shadow-lg my-5">
-            <div class="card-body p-0">
-                <!-- Nested Row within Card Body -->
-                <div class="row">
-                    <div class="col-md">
-                        <div class="p-5">
-                            <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Visualizar cadastro</h1>
-                            </div>
-
-                            <div class="form-group row">
-                                <div class="col-sm-6 mb-3 mb-sm-0">
-                                    Nome:
-                                    <input type="text" class="form-control form-control-user" value="{{ $doador->nome }}"
-                                        disabled>
-                                </div>
-                                <div class="col-sm-6">
-                                    Telefone:
-                                    <input type="text" class="form-control form-control-user"
-                                        value="{{ $doador->telefone }}" disabled>
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <div class="col-sm-6 mb-3 mb-sm-0">
-                                    Email:
-                                    <input type="text" class="form-control form-control-user" value="{{ $doador->email }}"
-                                        disabled>
-                                </div>
-                                <div class="col-sm-6">
-                                    Peso:
-                                    <input type="text" class="form-control form-control-user" value="{{ $doador->peso }}"
-                                        disabled>
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <div class="col-sm-6 mb-3 mb-sm-0">
-                                    Altura:
-                                    <input type="text" class="form-control form-control-user"
-                                        value="{{ $doador->altura }}" disabled>
-                                </div>
-                                <div class="col-sm-6">Fumante:
-                                    <input type="text" class="form-control form-control-user"
-                                        value="{{ $doador->fumante }}" disabled>
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <div class="col-sm-6 mb-3 mb-sm-0">
-                                    Doenças:
-                                    <input type="text" class="form-control form-control-user"
-                                        value="{{ $doador->doencas }}" disabled>
-                                </div>
-                                <div class="col-sm-6">
-                                    Observações:
-                                    <input type="text" class="form-control form-control-user"
-                                        value="{{ $doador->observacoes }}" disabled>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Detalhes do registro #{{ $doador->id }}</h6>
+        </div>
+        <div class="card-body">
+            <p>Id: {{ $doador->id }}</p>
+            <p>Nome: {{ $doador->nome }}</p>
+            <p>Telefone: {{ $doador->telefone }}</p>
+            <p>E-mail: {{ $doador->email }}</p>
+            <p>Peso: {{ $doador->peso }}</p>
+            <p>Altura: {{ $doador->altura }}</p>
+            <p>Fumante: {{ $doador->fumante ? 'sim' : 'não' }}</p>
+            <p>Doenças: {{ $doador->doencas ? 'sim' : 'não' }}</p>
+            <p>Observações: {{ $doador->observacoes }}</p>
+            <p>Data de cadastro: {{ $doador->created_at }}</p>
+            <p>Ultima atualização: {{ $doador->updated_at }}</p>
         </div>
     </div>
 @endsection
