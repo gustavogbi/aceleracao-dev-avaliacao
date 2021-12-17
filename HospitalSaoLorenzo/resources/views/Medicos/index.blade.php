@@ -81,14 +81,6 @@
                                                         </form>
                                                     </div>
 
-<<<<<<< HEAD
-        </div>
-    </div>
-    </div>
-    <a href="/medico/edit/{{$medico->id}}" >
-                                          
-            <button type="button" class="btn btn-success" >Editar</button></a>
-=======
                                                     <!-- Modal footer -->
                                                     <div class="modal-footer">
                                                     </div>
@@ -102,7 +94,7 @@
 
                                         <a href="{{ route('medico.show', $medico->id) }}">
                                             <button type="button" class="btn btn-primary">Vizualizar</button></a>
->>>>>>> fc966456433d67e7e1df4bed59dbd5e4638db9a3
+
 
                                     </td>
                                 </tr>
