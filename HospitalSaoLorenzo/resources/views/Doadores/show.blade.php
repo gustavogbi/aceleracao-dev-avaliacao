@@ -21,8 +21,8 @@
             <p>Fumante: {{ $doador->fumante ? 'sim' : 'não' }}</p>
             <p>Doenças: {{ $doador->doencas ? 'sim' : 'não' }}</p>
             <p>Observações: {{ $doador->observacoes }}</p>
-            <p>Data de cadastro: {{ $doador->created_at }}</p>
-            <p>Ultima atualização: {{ $doador->updated_at }}</p>
+            <p>Data de cadastro: {{ $doador->created_at->format('d/m/Y') }}</p>
+            <p>Ultima atualização: {{ $doador->updated_at->format('d/m/Y') }}</p>
         </div>
     </div>
 @endsection

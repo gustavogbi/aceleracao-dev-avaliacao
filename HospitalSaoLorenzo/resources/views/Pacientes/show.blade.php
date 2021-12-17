@@ -21,8 +21,8 @@
             <p>Telefone: {{ $paciente->telefone }}</p>
             <p>E-mail: {{ $paciente->email }}</p>
             <p>Doador: {{ $paciente->is_doador ? 'sim' : 'não' }}</p>
-            <p>Data de cadastro: {{ $paciente->created_at }}</p>
-            <p>Ultima atualização: {{ $paciente->updated_at }}</p>
+            <p>Data de cadastro: {{ $paciente->created_at->format('d/m/Y') }}</p>
+            <p>Ultima atualização: {{ $paciente->updated_at->format('d/m/Y') }}</p>
         </div>
     </div>
 @endsection

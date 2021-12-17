@@ -16,8 +16,8 @@
             <p>Id: {{ $bancodesangue->id }}</p>
             <p>Tipo: {{ $bancodesangue->tipo }}</p>
             <p>Contabilidade: {{ $bancodesangue->contabilidade }}</p>
-            <p>Data de cadastro: {{ $bancodesangue->created_at }}</p>
-            <p>Ultima atualização: {{ $bancodesangue->updated_at }}</p>
+            <p>Data de cadastro: {{ $bancodesangue->created_at->format('d/m/Y') }}</p>
+            <p>Ultima atualização: {{ $bancodesangue->updated_at->format('d/m/Y') }}</p>
         </div>
     </div>
 @endsection

@@ -20,8 +20,8 @@
             <p>Idade: {{ $medico->idade }}</p>
             <p>Telefone: {{ $medico->telefone }}</p>
             <p>Email: {{ $medico->email }}</p>
-            <p>Data de cadastro: {{ $medico->created_at }}</p>
-            <p>Ultima atualização: {{ $medico->updated_at }}</p>
+            <p>Data de cadastro: {{ $medico->created_at->format('d/m/Y') }}</p>
+            <p>Ultima atualização: {{ $medico->updated_at->format('d/m/Y') }}</p>
         </div>
     </div>
 @endsection

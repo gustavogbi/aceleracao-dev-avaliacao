@@ -18,8 +18,8 @@
             <p>Grau de escolaridade: {{ $estagiario->grauDeEscolaridade }}</p>
             <p>Telefone: {{ $estagiario->telefone }}</p>
             <p>Email: {{ $estagiario->email }}</p>
-            <p>Data de cadastro: {{ $estagiario->created_at }}</p>
-            <p>Ultima atualização: {{ $estagiario->updated_at }}</p>
+            <p>Data de cadastro: {{ $estagiario->created_at->format('d/m/Y') }}</p>
+            <p>Ultima atualização: {{ $estagiario->updated_at->format('d/m/Y') }}</p>
         </div>
     </div>
 @endsection

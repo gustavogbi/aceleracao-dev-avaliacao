@@ -1,13 +1,9 @@
 <?php
 
-use App\Http\Controllers\PacienteController;
-use App\Http\Controllers\BancoSangueController;
+
+use App\Http\Controllers\{PacienteController, BancoSangueController, AcessoController, 
+    DoadorController,  DoacoesController, MedicoController, EstagiarioController };
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AcessoController;
-use App\Http\Controllers\DoadorController;
-use App\Http\Controllers\DoacoesController;
-use App\Http\Controllers\MedicoController;
-use App\Http\Controllers\EstagiarioController;
 
 /*
 |--------------------------------------------------------------------------

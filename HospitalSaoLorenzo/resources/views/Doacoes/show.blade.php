@@ -18,8 +18,8 @@
             <p>Telefone: {{ $doacao->telefone }}</p>
             <p>Email: {{ $doacao->email }}</p>
             <p>Quantidade de litros: {{ $doacao->qtd_litros }}</p>
-            <p>Data de cadastro: {{ $doacao->created_at }}</p>
-            <p>Ultima atualização: {{ $doacao->updated_at }}</p>
+            <p>Data de cadastro: {{ $doacao->created_at->format('d/m/Y') }}</p>
+            <p>Ultima atualização: {{ $doacao->updated_at->format('d/m/Y') }}</p>
         </div>
     </div>
 @endsection
