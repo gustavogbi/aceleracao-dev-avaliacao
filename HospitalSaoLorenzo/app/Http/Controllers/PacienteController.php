@@ -29,8 +29,7 @@ class PacienteController extends Controller
         $paciente->endereco = $request->endereco;
         $paciente->telefone = $request->telefone;
         $paciente->email = $request->email;
-        if ($request->is_doador == null) $paciente->is_doador = false;
-        else $paciente->is_doador = true;
+        $paciente->is_doador = $request->is_doador;
         $paciente->save();
 
         return redirect()->route('pacientes.index')->with('success', "Cadastro efetivado com sucesso!");
@@ -57,9 +56,7 @@ class PacienteController extends Controller
         $paciente->endereco = $request->endereco;
         $paciente->telefone = $request->telefone;
         $paciente->email = $request->email;
-        if ($request->is_doador == null) $paciente->is_doador = false;
-        else $paciente->is_doador = true;
-
+        $paciente->is_doador = $request->is_doador;
         $paciente->save();
 
         return redirect()->route('pacientes.index')->with('success', "Paciente {$id} editado com sucesso!");

@@ -5,16 +5,23 @@
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Pacientes</h1>
         <a href="{{ route('pacientes.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                class="fas fa-download fa-sm text-white-50"></i> Novo</a>
+                class="fas fa-plus fa-sm text-white-50"></i> Novo</a>
     </div>
 
 
     <!-- Begin Page Content -->
     <div class="container-fluid">
+        @if (session('danger'))
+            <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ session('danger') }}
+            </div>
+        @endif
         @if (session('success'))
-            <p style="color: green;">{{ session('success') }}</p>
-        @elseif(session('danger'))
-            <p style="color: red;">{{ session('danger') }}</p>
+            <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Successo! </strong> {{ session('success') }}
+            </div>
         @endif
         <!-- Page Heading -->
 
@@ -51,16 +58,50 @@
                                     @else <td>Não</td>
                                     @endif
                                     <td>
-                                        <a href="{{ route('pacientes.show', $paciente->id) }}">Mostrar</a>
-                                        |
-                                        <form action="{{ route('pacientes.destroy', $paciente->id) }}" method="post">
-                                            @csrf
-                                            <input type="hidden" name="_method" value="DELETE">
-                                            <button type="submit"
-                                                href="{{ route('pacientes.destroy', $paciente->id) }}">Excluir</button>
-                                        </form>
-                                        |
-                                        <a href="{{ route('pacientes.edit', $paciente->id) }}">Editar</a>
+                                        <!-- Button to Open the Modal -->
+                                        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                                            data-target="#myModal{{ $paciente->id }}">
+                                            Excluir</button>
+
+                                        <!-- The Modal -->
+                                        <div class="modal" id="myModal{{ $paciente->id }}">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+
+                                                    <!-- Modal Header -->
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close"
+                                                            data-dismiss="modal">&times;</button>
+                                                    </div>
+
+                                                    <!-- Modal body -->
+                                                    <div class="modal-body">
+                                                        Tem certeza que deseja remover o registro
+                                                        #{{ $paciente->id }}?<br>
+                                                        <form action="{{ route('pacientes.destroy', $paciente->id) }}"
+                                                            method="post">
+                                                            <input type="hidden" name="_method" value="DELETE">
+                                                            @csrf
+                                                            <button type="submmit" class="btn btn-danger">Remover</button>
+
+                                                            <button type="button" class="btn btn-primary"
+                                                                data-dismiss="modal">Cancelar</button>
+                                                        </form>
+                                                    </div>
+
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="{{ route('pacientes.edit', $paciente->id) }}">
+
+                                            <button type="button" class="btn btn-success  btn-sm">Editar</button></a>
+
+                                        <a href="{{ route('pacientes.show', $paciente->id) }}">
+                                            <button type="button" class="btn btn-primary btn-sm">Vizualizar</button></a>
                                     </td>
                                 </tr>
                             @endforeach
