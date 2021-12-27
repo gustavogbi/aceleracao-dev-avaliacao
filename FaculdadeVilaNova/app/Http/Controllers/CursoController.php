@@ -40,7 +40,7 @@ class CursoController extends Controller
     public function store(StoreUpdateCursoRequest $request)
     {
         $cad = Curso::create($request->all());
-        return view($this->view . '.update', compact('cad'))->with('success', "Cadastrado efetivado com sucesso!");
+        return view($this->view . '.index')->with('success', "Cadastrado efetivado com sucesso!");
     }
 
     /**
@@ -70,7 +70,7 @@ class CursoController extends Controller
         if (!$cad) :
             return redirect()->back();
         endif;
-        return view($this->view . '.update', compact('cad'));
+        return view($this->view . '.edit', compact('cad'));
     }
 
     /**
