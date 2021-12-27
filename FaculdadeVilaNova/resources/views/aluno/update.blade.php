@@ -10,9 +10,9 @@
 
                 @include('layouts.alerts')
                 <div class="card-body">
-                   <form action="{{ route('users.update', $cad->id)}}" method="post">
+                   <form action="{{ route('alunos.update', $cad->id)}}" method="post">
                     @method('PUT')
-                @include('user.form')
+                @include('aluno.form')
                    </form>
                 </div>
             </div>

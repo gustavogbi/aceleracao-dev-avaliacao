@@ -20,7 +20,7 @@
               </p>
             </a>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="/alunos" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Alunos
