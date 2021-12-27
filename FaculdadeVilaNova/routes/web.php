@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\AlunoController;
+use App\Http\Controllers\{AlunoController,ProfessorController};
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +24,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('alunos', AlunoController::class );
+
+Route::resource('professor', ProfessorController::class );
