@@ -7,16 +7,14 @@ use App\Http\Requests\StoreUpdateCursoRequest;
 
 class CursoController extends Controller
 {
+    protected $view = 'curso';
+    protected $route = 'cursos';
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-
-    protected $view = 'aluno';
-    protected $route = 'alunos';
-
     public function index()
     {
         $cads = Curso::all();
