@@ -55,16 +55,6 @@
               </p>
             </a>
               </li>
-              @if(\Auth::user()->company_id == 0)
-            <li class="nav-item ">
-              <a  class="nav-link" data-bs-toggle="modal" data-bs-target="#companycreate">
-              <i class="nav-icon fas fa-copy"></i>
-              <p class="text-warning">
-                Cadastrar minha empresa
-              </p>
-            </a>
-              </li>
-              @endif
             </ul>
           </li>
         </ul>
