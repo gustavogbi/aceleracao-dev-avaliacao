@@ -23,12 +23,12 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
-        $this->newCad('Administrador','adm@doitall.com.br','123456');
-        $this->newCad('Pedro','pivow@doitall.com.br','123456');
-        $this->newCad('Lucas', 'lucas@doitall.com', '123456');
-        $this->newCad('Fabio','fabio@doitall.com.br','123456');
-        $this->newCad('Gustavo','gustavo@doitall.com.br','123456');
-        $this->newCad('Leal','leal@doitall.com.br','123456');
+        $this->newCad('Administrador','adm@fvl.com.br','123456');
+        $this->newCad('Pedro','pivow@fvl.com.br','123456');
+        $this->newCad('Lucas', 'lucas@fvl.com', '123456');
+        $this->newCad('Fabio','fabio@fvl.com.br','123456');
+        $this->newCad('Gustavo','gustavo@fvl.com.br','123456');
+        $this->newCad('Leal','leal@fvl.com.br','123456');
 
 }
 
