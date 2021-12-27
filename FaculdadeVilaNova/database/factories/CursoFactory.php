@@ -20,7 +20,7 @@ class CursoFactory extends Factory
             'datacriacao' => $this->faker->dateTime(),
             'dataupdate' => $this->faker->dateTime(),
             'categoria' => $this->faker->word(),
-            'mensalidade' => $this->faker->randomFloat(),
+            'mensalidade' => $this->faker->randomFloat(2, 0, 999999),
             'status' => $this->faker->word()
         ];
     }
