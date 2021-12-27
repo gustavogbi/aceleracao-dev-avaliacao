@@ -8,7 +8,7 @@
                 <div class="card-header">Dados</div>
 
                 <div class="card-body">
-               Nome: {{$cad->name}} <br>
+               Nome: {{$cad->id}} <br>
             
                 </div>
             </div>
