@@ -94,7 +94,7 @@ class AlunoController extends Controller
 
         $cad->update($request->all());
         $id= $cad->id;
-        return view($this->view.'.update', compact('cad'))->with('success', "Cadastrado efetivado com sucesso!");
+        return view($this->view.'.update', compact('cad', 'id'))->with('success', "Cadastrado efetivado com sucesso!");
     }
 
     /**
@@ -103,8 +103,15 @@ class AlunoController extends Controller
      * @param  \App\Models\Aluno  $aluno
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Aluno $aluno)
+    public function destroy($id)
     {
-        //
+        $cad = Aluno::find($id);
+
+        if(!$cad):
+            return redirect()->back();
+        endif;
+
+        $cad->delete();
+        return redirect()->route($this->route.'.index')->with('danger', "Cadastro deletado com sucesso");
     }
 }

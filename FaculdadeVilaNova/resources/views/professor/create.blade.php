@@ -6,13 +6,11 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Dados</div>
-
-
                 @include('layouts.alerts')
                 <div class="card-body">
-                   <form action="{{ route('alunos.update', $cad->id)}}" method="post">
-                    @method('PUT')
-                @include('aluno.form')
+                   <form action="{{ route('professor.store')}}" method="post">
+                    @method('POST')
+                    @include('professor.form')
                    </form>
                 </div>
             </div>

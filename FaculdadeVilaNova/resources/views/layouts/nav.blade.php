@@ -20,7 +20,7 @@
               </p>
             </a>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="/alunos" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Alunos
@@ -37,16 +37,20 @@
             </a>
               </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="{{route('professor.index')}}" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                Professores
-                <span class="badge badge-info right">0</span>
+                <span class="badge badge-info right">
+                  @php
+                    echo DB::table("professores")->select("id")->count();    
+                  @endphp
+                </span>
               </p>
             </a>
               </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                Aulas
