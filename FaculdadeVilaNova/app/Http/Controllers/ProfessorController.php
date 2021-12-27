@@ -14,6 +14,7 @@ class ProfessorController extends Controller
     public function index()
     {
         $cads = Professor::all();
+        dd($cads);
         return view($this->view.'.index', compact('cads'));
     }
 
