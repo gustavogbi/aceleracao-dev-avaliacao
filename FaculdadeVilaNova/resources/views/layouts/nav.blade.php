@@ -29,11 +29,10 @@
             </a>
               </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
-              <p>
-               Plano financeiro
-                <span class="badge badge-info right">0</span>
+              <a href="{{ route('planos-financeiros.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-money-bill-wave"></i>
+              <p>Plano Financeiro
+                <!-- <span class="badge badge-info right">0</span> -->
               </p>
             </a>
               </li>
