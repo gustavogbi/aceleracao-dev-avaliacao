@@ -14,7 +14,6 @@ class ProfessorController extends Controller
     public function index()
     {
         $cads = Professor::all();
-        dd($cads);
         return view($this->view.'.index', compact('cads'));
     }
 
@@ -32,9 +31,8 @@ class ProfessorController extends Controller
     public function show($id)
     {
         $cad = Professor::find($id);
-        if($cad)
-        {
-        return view($this->view.'.show', compact('cad'));  
+        if($cad){
+            return view($this->view.'.show', compact('cad'));  
         }   
         return redirect()->back();
     }
@@ -45,7 +43,7 @@ class ProfessorController extends Controller
         if(!$cad):
             return redirect()->back();
         endif;
-         return view($this->view.'.update', compact('cad')); 
+        return view($this->view.'.update', compact('cad')); 
     }
 
     public function update(Request $request, $id)

@@ -8,8 +8,10 @@
                 <div class="card-header">Dados</div>
 
                 <div class="card-body">
-               Nome: {{$cad->id}} <br>
-            
+                    Nome: {{$cad->nome}} <br>
+                    Matricula: {{$cad->matricula}} <br>
+                    Competencia: {{$cad->competencia}} <br>
+                    Escolaridade: {{$cad->escolaridade}} <br>
                 </div>
             </div>
         </div>
