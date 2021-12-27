@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             CursoSeeder::class
+
+            PlanoFinanceiroSeeder::class,
         ]);
     }
 }
