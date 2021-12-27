@@ -14,7 +14,14 @@ class CursoFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nomedocurso' => $this->faker->name(),
+            'qntmax' => $this->faker->randomDigitNotNull(),
+            'descricao' => $this->faker->text(200),
+            'datacriacao' => $this->faker->dateTime(),
+            'dataupdate' => $this->faker->dateTime(),
+            'categoria' => $this->faker->word(),
+            'mensalidade' => $this->faker->randomFloat(),
+            'status' => $this->faker->word()
         ];
     }
 }
