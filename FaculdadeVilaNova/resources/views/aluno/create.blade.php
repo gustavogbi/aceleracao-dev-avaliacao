@@ -21,9 +21,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Dados</div>
-
-
-                @include('layouts.alerts')
+        @include('layouts.alerts')
                 <div class="card-body">
                 <form action="{{ route('alunos.store') }}" method="post">
         @method('POST')

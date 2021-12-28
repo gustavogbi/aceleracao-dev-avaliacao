@@ -51,7 +51,7 @@ class AlunoController extends Controller
         {
             $cad->responsavelFinanceiro = 'Aluno maior de idade';
         }
-        return view($this->view.'.update', compact('cad'))->with('success', "Cadastrado efetivado com sucesso!");
+        return redirect()->route($this->route . '.index')->with('success', "Cadastrado efetivado com sucesso!");
     }
 
     /**
@@ -105,8 +105,8 @@ class AlunoController extends Controller
             $cad->responsavelFinanceiro = 'Aluno maior de idade';
         }
         $id= $cad->id;
-        return view($this->view.'.update', compact('cad', 'id'))->with('success', "Cadastrado efetivado com sucesso!");
-    }
+
+        return redirect()->route($this->route . '.index')->with('success', "Cadastrado atualizado com sucesso!");  }
 
     /**
      * Remove the specified resource from storage.
