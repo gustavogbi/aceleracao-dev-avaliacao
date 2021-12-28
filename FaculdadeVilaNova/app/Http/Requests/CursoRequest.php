@@ -51,7 +51,7 @@ class CursoRequest extends FormRequest
 
             'mensalidade.required' => 'O campo Mensalidade não pode ser vazio',
             'mensalidade.numeric' => 'O campo Mensalidade deve ser um número',
-            'mensalidade.between' => 'O campo Mensalidade não pode ter mais de 4 caracteres',
+            'mensalidade.between' => 'O campo Mensalidade não pode ser menor que 0 e maior que 999999.99',
 
             'status.required' => 'O campo Status não pode ser vazio',
             'status.max' => 'O campo Status não pode ter mais de 45 caracteres',
