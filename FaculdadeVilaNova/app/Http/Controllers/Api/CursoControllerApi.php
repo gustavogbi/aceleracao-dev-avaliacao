@@ -7,15 +7,22 @@ use App\Http\Requests\CursoRequest;
 use App\Http\Resources\CursoCollection;
 use App\Http\Resources\CursoResource;
 use App\Models\Curso;
+use Illuminate\Http\Request;
 
 class CursoControllerApi extends Controller
 {
     protected $view = 'curso';
     protected $route = 'cursos';
 
-    public function index()
+    public function index(Request $request)
     {
-        $cads = Curso::all();
+        $cads = Curso::getInstance();
+
+        if ($request->has('fields')) {
+            $fields = $request->get('fields');
+            $cads = $cads->selectRaw($fields);
+        }
+
         return new CursoCollection($cads);
     }
 
