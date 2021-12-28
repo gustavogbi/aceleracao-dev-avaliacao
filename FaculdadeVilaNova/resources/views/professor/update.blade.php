@@ -8,7 +8,7 @@
                 <div class="card-header">Dados</div>
                     @include('layouts.alerts')
                     <div class="card-body">
-                    <form action="{{ route('professor.update', $cad->id)}}" method="post">
+                    <form action="{{ route('professores.update', $cad->id)}}" method="post">
                         @method('PUT')
                         @include('professor.form')
                     </form>

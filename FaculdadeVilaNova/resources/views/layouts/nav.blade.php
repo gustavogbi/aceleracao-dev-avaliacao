@@ -50,7 +50,7 @@
             </a>
               </li>
             <li class="nav-item">
-              <a href="{{route('professor.index')}}" class="nav-link">
+              <a href="{{route('professores.index')}}" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                Professores

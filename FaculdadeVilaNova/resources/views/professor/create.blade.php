@@ -8,7 +8,7 @@
                 <div class="card-header">Dados</div>
                 @include('layouts.alerts')
                 <div class="card-body">
-                   <form action="{{ route('professor.store')}}" method="post">
+                   <form action="{{ route('professores.store')}}" method="post">
                     @method('POST')
                     @include('professor.form')
                    </form>
