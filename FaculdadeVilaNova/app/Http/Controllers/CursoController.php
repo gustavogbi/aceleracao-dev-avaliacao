@@ -12,7 +12,7 @@ class CursoController extends Controller
 
     public function index()
     {
-        $cads = Curso::all();
+        $cads = Curso::paginate(8);
         return view($this->view . '.index', compact('cads'));
     }
 
