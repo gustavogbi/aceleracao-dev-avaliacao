@@ -13,6 +13,8 @@ class CursoFactory extends Factory
      */
     public function definition()
     {
+        $status = collect(['Disponível', 'Indisponível']);
+
         return [
             'nomedocurso' => $this->faker->name(),
             'qntmax' => $this->faker->randomDigitNotNull(),
@@ -21,7 +23,7 @@ class CursoFactory extends Factory
             'dataupdate' => $this->faker->dateTime(),
             'categoria' => $this->faker->word(),
             'mensalidade' => $this->faker->randomFloat(2, 0, 999999.99),
-            'status' => $this->faker->word()
+            'status' => $status->random()
         ];
     }
 }

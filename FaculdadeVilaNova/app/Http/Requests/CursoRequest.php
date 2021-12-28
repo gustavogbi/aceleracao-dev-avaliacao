@@ -29,7 +29,7 @@ class CursoRequest extends FormRequest
             'descricao' => 'required|max:200',
             'categoria' => 'required|max:45',
             'mensalidade' => 'required|numeric|between:0,999999.99',
-            'status' => 'required|max:45'
+            'status' => 'required|max:45|in:Disponível,Indisponível'
         ];
     }
     public function messages()
@@ -54,6 +54,7 @@ class CursoRequest extends FormRequest
             'mensalidade.between' => 'O campo Mensalidade não pode ser menor que 0 e maior que 999999.99',
 
             'status.required' => 'O campo Status não pode ser vazio',
+            'status.required' => 'O campo Status valor selecionado inválido',
             'status.max' => 'O campo Status não pode ter mais de 45 caracteres',
 
         ];
