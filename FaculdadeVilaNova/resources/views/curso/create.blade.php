@@ -8,7 +8,6 @@
                     @include('layouts.alerts')
                     <div class="card-body">
                         <form action="{{ route('cursos.store') }}" method="post">
-                            @method('PUT')
                             @include('curso.form')
                         </form>
                     </div>
