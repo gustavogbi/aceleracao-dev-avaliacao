@@ -22,7 +22,7 @@ class AlunoController extends Controller
 
     public function index()
     {
-            $cads = Aluno::all();
+            $cads = Aluno::paginate(8);
             return view($this->view.'.index', compact('cads'));
       
     }

@@ -3,17 +3,17 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ProfessorRequest;
-use App\Http\Resources\ProfessorResource;
-use App\Http\Resources\ProfessorResourceCollection;
-use App\Models\Professor;
+use App\Http\Requests\AlunoRequest;
+use App\Http\Resources\AlunoResource;
+use App\Http\Resources\AlunoResourceCollection;
+use App\Models\Aluno;
 use Illuminate\Http\Request;
 
-class ProfessorController extends Controller
+class AlunoController extends Controller
 {
     private $model;
 
-    public function __construct(Professor $model){
+    public function __construct(Aluno $model){
         $this->model = $model;
     }
 
@@ -26,30 +26,30 @@ class ProfessorController extends Controller
             $cad = $cad->selectRaw($fields);
         }
 
-       return new ProfessorResourceCollection($cad->paginate(8));
+       return new AlunoResourceCollection($cad->paginate(8));
     }
     
-    public function store(ProfessorRequest $request)
+    public function store(AlunoRequest $request)
     {
-        $cad = Professor::create($request->all());
+        $cad = Aluno::create($request->all());
         return response()->json(['code'=>'200', "msg"=>'Cadastro inserido com sucesso']);
     }
 
     public function show($id)
     {
-        $cad = Professor::find($id);
+        $cad = Aluno::find($id);
 
         if(!$cad){
-            return response()->json(["code"=>500,"msg"=>"nao foi possivel encontrar o id fornecido"]);
+            return response()->json(["code"=>500,"msg"=>"Não foi possivel encontrar o id fornecido"]);
         }
-        return new ProfessorResource($cad);
+        return new AlunoResource($cad);
     }
 
-    public function update(ProfessorRequest $request, $id)
+    public function update(AlunoRequest $request, $id)
     {
-        $cad = Professor::find($id);
+        $cad = Aluno::find($id);
         if(!$cad){
-            return response()->json(["code"=>500,"msg"=>"nao foi possivel encontrar o id fornecido"]);
+            return response()->json(["code"=>500,"msg"=>"Não foi possivel encontrar o id fornecido"]);
         }
         $cad->update($request->all());
         return response()->json(['code'=>'200', "msg"=>'Cadastro alterado com sucesso']);
@@ -57,7 +57,7 @@ class ProfessorController extends Controller
 
     public function destroy($id)
     {
-        $cad = Professor::find($id);
+        $cad = Aluno::find($id);
 
         if(!$cad){
             return response()->json(["code"=>500,"msg"=>"nao foi possivel encontrar o id fornecido"]);
