@@ -3,6 +3,19 @@
     <div class="container">
         <div class="row ">
             <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">Cursos</div>
+
+                    <div class="card-body">
+                        <a href="{{ route('cursos.create') }}"><button type="button" class="btn btn-success tet-white">
+                                <i class="fa fa-plus"></i> Novo</button></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-12">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -37,7 +50,8 @@
                                     <form action="{{ route('cursos.destroy', $cad->id) }}" method="POST">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                                        <button type="submit" class="btn btn-danger"><i
+                                                class="far fa-trash-alt"></i></button>
                                     </form>
                                 </td>
                             </tr>
