@@ -82,7 +82,7 @@
           </tbody>
         </table>
 
-        @include('layouts/paginate')
+        {{ $cads->links() }}
 
     </div>
 </div>
