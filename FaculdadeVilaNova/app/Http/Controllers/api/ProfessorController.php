@@ -14,8 +14,7 @@ class ProfessorController extends Controller
     
     public function index()
     {
-       $professor = Professor::all();
-       //return response()->json($professor);
+       $professor = Professor::paginate(8);
        return new ProfessorResourceCollection($professor);
     }
     
