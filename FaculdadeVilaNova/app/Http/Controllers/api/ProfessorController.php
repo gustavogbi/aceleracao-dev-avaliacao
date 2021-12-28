@@ -11,17 +11,28 @@ use Illuminate\Http\Request;
 
 class ProfessorController extends Controller
 {
-    
-    public function index()
+    private $model;
+
+    public function __construct(Professor $model){
+        $this->model = $model;
+    }
+
+    public function index(Request $request)
     {
-       $professor = Professor::paginate(8);
-       return new ProfessorResourceCollection($professor);
+        $professor = $this->model;
+
+        if($request->has('fields')){
+            $fields = $request->get('fields');
+            $professor = $professor->selectRaw($fields);
+        }
+
+       return new ProfessorResourceCollection($professor->paginate(8));
     }
     
     public function store(ProfessorRequest $request)
     {
         $professor = Professor::create($request->all());
-        return response()->json($professor);
+        return response()->json(['code'=>'200', "msg"=>'Professor inserido com sucesso']);
     }
 
     public function show($id)
@@ -40,7 +51,7 @@ class ProfessorController extends Controller
             return response()->json(["code"=>500,"msg"=>"nao foi possivel encontrar o id fornecido"]);
         }
         $professor->update($professor->all());
-        return response()->json($professor);
+        return response()->json(['code'=>'200', "msg"=>'Professor inserido com sucesso']);
     }
 
     public function destroy($id)

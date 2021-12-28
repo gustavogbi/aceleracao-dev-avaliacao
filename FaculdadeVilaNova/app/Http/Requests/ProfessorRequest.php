@@ -41,11 +41,11 @@ class ProfessorRequest extends FormRequest
             'matricula.min' => 'O campo matricula não pode ter menos de 3 caracteres',
             
             'competencia.required' => 'O campo competencia não pode ser vazio',
-            'competencia.min' => 'O campo nome não pode ter menos de 4 caracteres',
+            'competencia.min' => 'O campo competencia não pode ter menos de 4 caracteres',
 
             
-            'escolaridade.required' => 'O campo nome não pode ser vazio',
-            'escolaridade.min' => 'O campo nome não pode ter menos de 4 caracteres',
+            'escolaridade.required' => 'O campo escolaridade não pode ser vazio',
+            'escolaridade.min' => 'O campo escolaridade não pode ter menos de 4 caracteres',
 
         ];
     }

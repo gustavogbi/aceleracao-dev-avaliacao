@@ -51,6 +51,9 @@
               @endforeach
           </tbody>
         </table>
+
+        @include('layouts/paginate')
+
     </div>
 </div>
 @endsection
