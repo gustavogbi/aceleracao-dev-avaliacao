@@ -98,7 +98,11 @@
 
             <!-- Main content -->
             <section class="content">
+              
+<div class="container" style="background-image: url(/img/background.png) ;   background-repeat: no-repeat;"><br>
                 @yield('content')
+</div>
+
             </section>
             <!-- /.content -->
         </div>

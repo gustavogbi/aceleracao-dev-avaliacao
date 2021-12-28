@@ -14,7 +14,7 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
               <a href="/cursos" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="nav-icon 	fas fa-laptop-code"></i>
               <p>
                 Cursos<span class="badge badge-info right">
                 @php
@@ -25,7 +25,7 @@
             </a>
             <li class="nav-item">
               <a href="/alunos" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="nav-icon fas fa-user-graduate"></i>
               <p>
                 Alunos
                 <span class="badge badge-info right">
@@ -50,7 +50,7 @@
               </li>
             <li class="nav-item">
               <a href="{{route('professores.index')}}" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="nav-icon fas fa-chalkboard-teacher"></i>
               <p>
                Professores
                 <span class="badge badge-info right">
@@ -63,7 +63,7 @@
               </li>
             <li class="nav-item">
               <a href="" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="nav-icon fas fa-book-open"></i>
               <p>
                Aulas
                 <span class="badge badge-info right">
