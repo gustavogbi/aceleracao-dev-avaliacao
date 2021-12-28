@@ -42,8 +42,8 @@
                                 <td>{{ $cad->mensalidade }} </td>
                                 <td>{{ $cad->status }} </td>
                                 <td>
-                                    <button data-bs-toggle="collapse" data-bs-target="#cad{{ $cad->id }}"
-                                        class="btn btn-primary">Ações</button>
+                                <button data-bs-toggle="collapse" data-bs-target="#cad{{$cad->id}}"  class="btn btn-primary">Ações</button>
+
 
                                     <div id="cad{{ $cad->id }}" class="collapse">
                                         <a class="dropdown-item" href="{{ route('cursos.show', $cad->id) }}"><button
@@ -84,10 +84,9 @@
                                                 <!-- Modal footer -->
                                                 <div class="modal-footer">
                                                 </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
+    </div>
+  </div>
+</div>
                                 </td>
                             </tr>
                         @endforeach
