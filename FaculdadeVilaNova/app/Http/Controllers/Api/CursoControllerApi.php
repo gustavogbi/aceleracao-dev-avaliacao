@@ -49,4 +49,16 @@ class CursoControllerApi extends Controller
 
         return new CursoResource($cad);
     }
+
+    public function disponiveis()
+    {
+        $cads = Curso::where('status', 'Disponível')->get();
+        return new CursoCollection($cads);
+    }
+
+    public function indisponiveis()
+    {
+        $cads = Curso::where('status', 'Indisponível')->get();
+        return new CursoCollection($cads);
+    }
 }
