@@ -37,7 +37,8 @@ class ProfessorController extends Controller
 
     public function show($id)
     {
-        $professor = Professor::findOrFail($id);
+        $professor = Professor::find($id);
+
         if(!$professor){
             return response()->json(["code"=>500,"msg"=>"nao foi possivel encontrar o id fornecido"]);
         }
@@ -46,21 +47,22 @@ class ProfessorController extends Controller
 
     public function update(ProfessorRequest $request, $id)
     {
-        $professor = Professor::findOrFail($id);
+        $professor = Professor::find($id);
         if(!$professor){
             return response()->json(["code"=>500,"msg"=>"nao foi possivel encontrar o id fornecido"]);
         }
-        $professor->update($professor->all());
-        return response()->json(['code'=>'200', "msg"=>'Professor inserido com sucesso']);
+        $professor->update($request->all());
+        return response()->json(['code'=>'200', "msg"=>'Professor alterado com sucesso']);
     }
 
     public function destroy($id)
     {
-        $professor = Professor::findOrFail($id);
+        $professor = Professor::find($id);
+
         if(!$professor){
             return response()->json(["code"=>500,"msg"=>"nao foi possivel encontrar o id fornecido"]);
         }
         $professor->delete();
-        return response()->json(["code"=>200,"msg"=>"documento removido com sucesso"]);
+        return response()->json(["code"=>200,"msg"=>"professor removido com sucesso"]);
     }
 }
