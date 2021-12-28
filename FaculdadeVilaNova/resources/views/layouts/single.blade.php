@@ -104,7 +104,7 @@
   
 
   <footer class="main-footer">
-    <strong>FVL </strong>
+    <strong>Faculdade Vila Nova </strong><br>
     Grupo: Pedro, Lucas, Fabio, Leal, Gustavo.
     <div class="float-right d-none d-sm-inline-block">
       <b>Versão</b> 1.0

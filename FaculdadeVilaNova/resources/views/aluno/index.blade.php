@@ -36,12 +36,12 @@
               <td>{{ $cad->id }} </td>
               <td>{{ $cad->nome }} </td>
               <td>{{ $cad->matricula }} </td>
-              <td>{{ $cad->datanascimento }} </td>
+              <td>{{ date('d/m/Y', strtotime( $cad->datanascimento) )}} </td>
               <td>{{ $cad->responsavelFinanceiro }} </td>
               <td>{{ $cad->cpf }} </td>
               <td>
                 <a href="{{route('alunos.show', $cad->id ) }}"><button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button></a>
-                <a href="{{route('alunos.edit', $cad->id ) }}"><button type="button" class="btn btn-primary"><i class="far fa-edit"></i></button></a>
+                <a href="{{route('alunos.edit', $cad->id ) }}"><button type="button" class="btn btn-info"><i class="far fa-edit"></i></button></a>
                <!-- Button to Open the Modal -->
 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$cad->id}}">
 <i class="far fa-trash-alt"></i>
