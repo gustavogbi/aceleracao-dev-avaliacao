@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Aluno;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\AlunoRequest;
+use Carbon\Carbon;
 
 class AlunoController extends Controller
 {
@@ -41,9 +43,14 @@ class AlunoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AlunoRequest $request)
     {
         $cad = Aluno::create($request->all());
+        //Verifica se o aluno é maior de idade
+        if(Carbon:: parse($cad->datanascimento)->diff(\Carbon\Carbon::now())->format('%y') > 18)
+        {
+            $cad->responsavelFinanceiro = 'Aluno maior de idade';
+        }
         return view($this->view.'.update', compact('cad'))->with('success', "Cadastrado efetivado com sucesso!");
     }
 
@@ -85,14 +92,18 @@ class AlunoController extends Controller
      * @param  \App\Models\Aluno  $aluno
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AlunoRequest $request, $id)
     {
         $cad = Aluno::find($id);
         if(!$cad):
             return redirect()->back();
         endif;
-
         $cad->update($request->all());
+       //Verifica se o aluno é maior de idade
+        if((Carbon:: parse($cad->datanascimento)->diff(\Carbon\Carbon::now())->format('%y') > 18) )
+        {
+            $cad->responsavelFinanceiro = 'Aluno maior de idade';
+        }
         $id= $cad->id;
         return view($this->view.'.update', compact('cad', 'id'))->with('success', "Cadastrado efetivado com sucesso!");
     }

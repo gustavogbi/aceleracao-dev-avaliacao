@@ -104,21 +104,29 @@
         </div>
         <!-- /.content-wrapper -->
 
+      @include('layouts.nav')
+    </div>
+    <!-- /.sidebar -->
+  </aside>
 
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
 
-        <footer class="main-footer">
-            <strong>FVL </strong>
-            Grupo: Pedro, Lucas, Fabio, Leal, Gustavo.
-            <div class="float-right d-none d-sm-inline-block">
-                <b>Versão</b> 1.0
-            </div>
-        </footer>
+    <!-- Main content -->
+    <section class="content">
+    @yield('content')
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
 
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
+  
+
+  <footer class="main-footer">
+    <strong>Faculdade Vila Nova </strong><br>
+    Grupo: Pedro, Lucas, Fabio, Leal, Gustavo.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Versão</b> 1.0
     </div>
     <!-- ./wrapper -->
 
