@@ -102,23 +102,9 @@
             </section>
             <!-- /.content -->
         </div>
-        <!-- /.content-wrapper -->
-
-      @include('layouts.nav')
     </div>
     <!-- /.sidebar -->
   </aside>
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-
-    <!-- Main content -->
-    <section class="content">
-    @yield('content')
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
 
   
 
