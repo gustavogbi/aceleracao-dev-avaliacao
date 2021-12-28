@@ -10,12 +10,15 @@
   Data de nascimento:
          <input onchange="responsavel(this)" onload="responsavel(this)"  type="date" name="datanascimento" id="datanascimento"  value="{{ $cad->datanascimento ?? old ('datanascimento')}}" class="form-control" >
        <br>
+      
+       @if(Route::is('alunos.edit'))
        @if(\Carbon\Carbon::parse($cad->datanascimento)->diff(\Carbon\Carbon::now())->format('%y') < 18)
        <div id="responsavelFinanceirodiv" >
        Responsável Financeiro<div class='text-danger'>(Para menores de 18 anos)</div>  
        <input type="text"   name="responsavelFinanceiro" id="responsavelFinanceiro"  
        value="{{ $cad->responsavelFinanceiro ?? old ('responsavelFinanceiro')}}" class="form-control" required>
          <br> </div>
+         @endif
          @endif
          <div id="responsavelFinanceirodiv" style="display: none;">
        Responsável Financeiro<div class='text-danger'>(Para menores de 18 anos)</div>  
