@@ -19,6 +19,12 @@ Mensalidade:
     class="form-control">
 <br>
 Status:
-<input type="text" name="status" id="status" value="{{ $cad->status ?? old('status') }}" class="form-control">
+<select class="select2bs4" name="status" id="status" style="width: 100%;">
+    <option {{ ($cad->status ?? old('status')) == 'Disponível' ? 'selected' : '' }} value="Disponível">
+        Disponível
+    </option>
+    <option {{ ($cad->status ?? old('status')) == 'Indisponível' ? 'selected' : '' }} value="Indisponível">
+        Indisponível</option>
+</select>
 <br>
 <button type="subbmit" class="btn btn-primary addCompany">Salvar</button>

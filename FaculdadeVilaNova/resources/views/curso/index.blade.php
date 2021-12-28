@@ -28,6 +28,7 @@
                             <th>Descrição</th>
                             <th>Categoria</th>
                             <th>Mensalidade</th>
+                            <th>Status</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
