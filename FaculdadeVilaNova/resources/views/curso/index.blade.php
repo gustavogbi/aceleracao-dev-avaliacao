@@ -43,7 +43,6 @@
                                 <td>{{ $cad->mensalidade }} </td>
                                 <td>{{ $cad->status }} </td>
                                 <td>
-<<<<<<< HEAD
                                 <button data-bs-toggle="collapse" data-bs-target="#cad{{$cad->id}}"  class="btn btn-primary">Ações</button>
 
 <div id="cad{{$cad->id}}" class="collapse">
@@ -83,18 +82,7 @@
     </div>
   </div>
 </div>
-=======
-                                    <a href="{{ route('cursos.show', $cad->id) }}"><button type="button"
-                                            class="btn btn-primary"><i class="far fa-eye"></i></button></a>
-                                    <a href="{{ route('cursos.edit', $cad->id) }}"><button type="button"
-                                            class="btn btn-primary"><i class="far fa-edit"></i></button></a>
-                                    <form action="{{ route('cursos.destroy', $cad->id) }}" method="POST">
-                                        <input type="hidden" name="_method" value="DELETE">
-                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        <button type="submit" class="btn btn-danger"><i
-                                                class="far fa-trash-alt"></i></button>
-                                    </form>
->>>>>>> 551a84ff812aca9fe172ceeda01ab2ff38e74c10
+
                                 </td>
                             </tr>
                         @endforeach
