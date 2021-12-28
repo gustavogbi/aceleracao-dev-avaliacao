@@ -20,6 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::group(['namespace' => 'App\Http\Controllers\api', 'middleware' => 'auth.basic', 'name' => 'api.'], function () {
     Route::apiResource('/professores', 'ProfessorController');
+    Route::apiResource('/alunos', 'AlunoController');
     Route::get('/cursos/disponiveis', 'CursoControllerApi@disponiveis')->name('cursos.disponiveis');
     Route::get('/cursos/indisponiveis', 'CursoControllerApi@indisponiveis')->name('cursos.indisponiveis');
     Route::apiResource('/cursos', 'CursoControllerApi');
