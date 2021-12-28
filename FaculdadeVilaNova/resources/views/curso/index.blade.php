@@ -62,8 +62,6 @@
                                             </button></a>
                                     </div>
 
-
-
                                     <!-- The Modal -->
                                     <div class="modal" id="delete{{ $cad->id }}">
                                         <div class="modal-dialog">
