@@ -14,10 +14,14 @@
             <ul class="nav nav-treeview">
 
               <li class="nav-item">
-              <a href="/users/{{Auth::user()->id}}/edit" class="nav-link">
+              <a href="/cursos" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
-                Cursos
+                Cursos<span class="badge badge-info right">
+                @php
+                    echo DB::table("cursos")->select("id")->count();    
+                   @endphp
+                </span>
               </p>
             </a>
             <li class="nav-item">
@@ -25,7 +29,11 @@
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Alunos
-                <span class="badge badge-info right">0</span>
+                <span class="badge badge-info right">
+                @php
+                    echo DB::table("alunos")->select("id")->count();    
+                   @endphp
+                </span>
               </p>
             </a>
               </li>
@@ -33,7 +41,11 @@
               <a href="{{ route('planos-financeiros.index') }}" class="nav-link">
               <i class="nav-icon fas fa-money-bill-wave"></i>
               <p>Plano Financeiro
-                <!-- <span class="badge badge-info right">0</span> -->
+                 <span class="badge badge-info right">
+                    @php
+                    echo DB::table("planos_financeiros")->select("id")->count();    
+                   @endphp
+                </span>
               </p>
             </a>
               </li>
@@ -55,7 +67,11 @@
               <i class="nav-icon fas fa-copy"></i>
               <p>
                Aulas
-                <span class="badge badge-info right">0</span>
+                <span class="badge badge-info right">
+                <span class="badge badge-info right">
+             
+                </span>
+                </span>
               </p>
             </a>
               </li>

@@ -1,12 +1,7 @@
 <?php
 
 
-use App\Http\Controllers\AlunoController;
-use App\Http\Controllers\CursoController;
-
-use App\Http\Controllers\PlanoFinanceiroController;
-
-use App\Http\Controllers\{AlunoController,ProfessorController};
+use App\Http\Controllers\{AlunoController,ProfessorController, PlanoFinanceiroController, CursoController};
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
