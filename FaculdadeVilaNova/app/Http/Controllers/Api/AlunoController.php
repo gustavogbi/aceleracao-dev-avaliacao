@@ -60,7 +60,7 @@ class AlunoController extends Controller
         $cad = Aluno::find($id);
 
         if(!$cad){
-            return response()->json(["code"=>500,"msg"=>"nao foi possivel encontrar o id fornecido"]);
+            return response()->json(["code"=>500,"msg"=>"Não foi possivel encontrar o id fornecido"]);
         }
         $cad->delete();
         return response()->json(["code"=>200,"msg"=>"Cadastro removido com sucesso"]);
