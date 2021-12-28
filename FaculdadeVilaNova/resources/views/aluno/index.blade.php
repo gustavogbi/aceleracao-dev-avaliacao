@@ -1,32 +1,32 @@
 @extends('layouts.single')
 @section('content')
 <div class="container">
-  <div class="row ">
-      <div class="col-md-12">
-          <div class="card">
-              <div class="card-header">Professores</div>
+    <div class="row ">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">Alunos</div>
 
-              <div class="card-body">
-              <a href="{{route('professores.create') }}"><button type="button" class="btn btn-success tet-white">
-                <i class="fa fa-plus"></i> Novo</button></a>
-            
-              </div>
-          </div>
-      </div>
-  </div>
+                <div class="card-body">
+                <a href="{{route('alunos.create') }}"><button type="button" class="btn btn-success tet-white">
+                  <i class="fa fa-plus"></i> Novo</button></a>
+              
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="container">
-  @include('layouts.alerts')
     <div class="row ">
         <div class="col-md-12">
         <table class="table table-bordered">
           <thead>
             <tr>
               <th scope="col">ID</th>
-              <th scope="col">NOME</th>
-              <th scope="col">MATRICULA</th>
-              <th scope="col">COMPETENCIA</th>
-              <th scope="col">ESCOLARIDADE</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Matricula</th>
+              <th scope="col">Data de nascimento</th>
+              <th scope="col">Responsável financeiro </th>
+              <th scope="col">CPF</th>
               <th>Ações</th>
             </tr>
           </thead>
@@ -36,20 +36,18 @@
               <td>{{ $cad->id }} </td>
               <td>{{ $cad->nome }} </td>
               <td>{{ $cad->matricula }} </td>
-              <td>{{ $cad->competencia}} </td>
-              <td>{{ $cad->escolaridade }} </td>
-              <td> <button data-bs-toggle="collapse" data-bs-target="#cad{{$cad->id}}"  class="btn btn-primary">Ações</button>
+              <td>{{ date('d/m/Y', strtotime( $cad->datanascimento) )}} </td>
+              <td>{{ $cad->responsavelFinanceiro }} </td>
+              <td>{{ $cad->cpf }} </td>
+              <td>  <button data-bs-toggle="collapse" data-bs-target="#cad{{$cad->id}}"  class="btn btn-primary">Ações</button>
 
 <div id="cad{{$cad->id}}" class="collapse">
-<a class="dropdown-item" href="{{ route('professores.show', $cad->id) }}"><button type="button" class="btn btn-info"><i class="far fa-eye"></i></button></a>
-    <a class="dropdown-item" href="{{ route('professores.edit', $cad->id) }}"><button type="button" class="btn btn-primary"><i class="far fa-edit"></i></button></a>
+<a class="dropdown-item" href="{{ route('alunos.show', $cad->id) }}"><button type="button" class="btn btn-info"><i class="far fa-eye"></i></button></a>
+    <a class="dropdown-item" href="{{ route('alunos.edit', $cad->id) }}"><button type="button" class="btn btn-primary"><i class="far fa-edit"></i></button></a>
     <a class="dropdown-item"><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{$cad->id}}">
  <i class="far fa-trash-alt"></i>
 </button></a>
 </div>
-
-
-                              
 <!-- The Modal -->
 <div class="modal" id="delete{{$cad->id}}">
   <div class="modal-dialog">
@@ -61,7 +59,7 @@
       </div>
       <!-- Modal body -->
       <div class="modal-body">
-      <form action="{{ route('professores.destroy', $cad->id) }}" method="POST">
+      <form action="{{ route('alunos.destroy', $cad->id) }}" method="POST">
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="hidden" name="_token" value="{{csrf_token()}}"> 
                     
@@ -77,6 +75,7 @@
     </div>
   </div>
 </div>
+              </td>
             </tr>
               @endforeach
           </tbody>
@@ -84,3 +83,5 @@
     </div>
 </div>
 @endsection
+
+

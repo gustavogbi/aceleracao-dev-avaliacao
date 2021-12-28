@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Curso;
-use App\Http\Requests\StoreUpdateCursoRequest;
+use App\Http\Requests\CursoRequest;
 
 class CursoController extends Controller
 {
@@ -21,7 +21,7 @@ class CursoController extends Controller
         return view($this->view . '.create');
     }
 
-    public function store(StoreUpdateCursoRequest $request)
+    public function store(CursoRequest $request)
     {
         Curso::create($request->all());
 
@@ -42,7 +42,7 @@ class CursoController extends Controller
         return view($this->view . '.edit', compact('cad'));
     }
 
-    public function update(StoreUpdateCursoRequest $request, $id)
+    public function update(CursoRequest $request, $id)
     {
         $cad = Curso::findOrFail($id);
         $cad->update($request->all());
