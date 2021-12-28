@@ -1,15 +1,7 @@
 <?php
 
 
-<<<<<<< HEAD
-use App\Http\Controllers\{AlunoController,ProfessorController, PlanoFinanceiroController, CursoController};
-=======
-use App\Http\Controllers\CursoController;
-
-use App\Http\Controllers\PlanoFinanceiroController;
-
-use App\Http\Controllers\{AlunoController, ProfessorController};
->>>>>>> 551a84ff812aca9fe172ceeda01ab2ff38e74c10
+use App\Http\Controllers\{AlunoController, ProfessorController, PlanoFinanceiroController, CursoController};
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -33,11 +25,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('alunos', AlunoController::class);
 Route::resource('cursos', CursoController::class);
-<<<<<<< HEAD
 Route::resource('planos-financeiros', PlanoFinanceiroController::class);
-Route::resource('professores', ProfessorController::class );
-=======
-Route::resource('alunos', AlunoController::class);
-Route::resource('planos-financeiros', PlanoFinanceiroController::class);
-Route::resource('professor', ProfessorController::class);
->>>>>>> 551a84ff812aca9fe172ceeda01ab2ff38e74c10
+Route::resource('professores', ProfessorController::class);
