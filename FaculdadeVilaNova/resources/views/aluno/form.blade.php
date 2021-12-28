@@ -10,7 +10,6 @@
   Data de nascimento:
          <input onchange="responsavel(this)" onload="responsavel(this)"  type="date" name="datanascimento" id="datanascimento"  value="{{ $cad->datanascimento ?? old ('datanascimento')}}" class="form-control" >
        <br>
-      
        @if(Route::is('alunos.edit'))
        @if(\Carbon\Carbon::parse($cad->datanascimento)->diff(\Carbon\Carbon::now())->format('%y') < 18)
        <div id="responsavelFinanceirodiv" >
