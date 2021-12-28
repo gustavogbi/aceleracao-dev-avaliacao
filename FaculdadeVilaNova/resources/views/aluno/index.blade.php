@@ -36,7 +36,7 @@
               <td>{{ $cad->id }} </td>
               <td>{{ $cad->nome }} </td>
               <td>{{ $cad->matricula }} </td>
-              <td>{{ $cad->datanascimento }} </td>
+              <td>{{ date('d/m/Y', strtotime( $cad->datanascimento) )}} </td>
               <td>{{ $cad->responsavelFinanceiro }} </td>
               <td>{{ $cad->cpf }} </td>
               <td>  <button data-bs-toggle="collapse" data-bs-target="#cad{{$cad->id}}"  class="btn btn-primary">Ações</button>
@@ -48,9 +48,6 @@
  <i class="far fa-trash-alt"></i>
 </button></a>
 </div>
-
-
-                              
 <!-- The Modal -->
 <div class="modal" id="delete{{$cad->id}}">
   <div class="modal-dialog">
