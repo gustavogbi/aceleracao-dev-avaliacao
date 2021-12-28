@@ -28,8 +28,6 @@
                             <th>Descrição</th>
                             <th>Categoria</th>
                             <th>Mensalidade</th>
-                            <th>Data Criação</th>
-                            <th>Data Atualização</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
@@ -40,8 +38,6 @@
                                 <td>{{ $cad->nomedocurso }} </td>
                                 <td>{{ $cad->qntmax }} </td>
                                 <td>{{ $cad->descricao }} </td>
-                                <td>{{ $cad->datacriacao }} </td>
-                                <td>{{ $cad->dataupdate }} </td>
                                 <td>{{ $cad->categoria }} </td>
                                 <td>{{ $cad->mensalidade }} </td>
                                 <td>{{ $cad->status }} </td>

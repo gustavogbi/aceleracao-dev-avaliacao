@@ -25,7 +25,7 @@ class CursoRequest extends FormRequest
     {
         return [
             'nomedocurso' => 'required|max:45',
-            'qntmax' => 'required|max:3|',
+            'qntmax' => 'required|integer|max:2147483647',
             'descricao' => 'required|max:200',
             'categoria' => 'required|max:45',
             'mensalidade' => 'required|max:4',
@@ -40,6 +40,7 @@ class CursoRequest extends FormRequest
             'nomedocurso.max' => 'O campo Curso não pode ter mais de 45 caracteres',
 
             'qntmax.required' => 'O campo Quant. Max. não pode ser vazio',
+            'qntmax.integer' => 'O campo Quant. Max. deve ser um número inteiro',
             'qntmax.max' => 'O campo Quant. Max não pode ter mais de 3 caracteres',
 
             'descricao.required' => 'O campo Descrição não pode ser vazio',
