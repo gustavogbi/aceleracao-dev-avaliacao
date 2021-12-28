@@ -11,17 +11,23 @@ use Illuminate\Http\Request;
 
 class CursoControllerApi extends Controller
 {
-    protected $view = 'curso';
-    protected $route = 'cursos';
+    private $model;
+
+    public function __construct(Curso $model)
+    {
+        $this->model = $model;
+    }
 
     public function index(Request $request)
     {
-        $cads = Curso::getInstance();
+        $cads = $this->model;
 
         if ($request->has('fields')) {
             $fields = $request->get('fields');
             $cads = $cads->selectRaw($fields);
         }
+
+        $cads = $cads->paginate(8);
 
         return new CursoCollection($cads);
     }

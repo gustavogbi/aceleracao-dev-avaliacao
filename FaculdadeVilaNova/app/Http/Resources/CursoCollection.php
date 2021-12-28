@@ -16,4 +16,11 @@ class CursoCollection extends ResourceCollection
     {
         return parent::toArray($request);
     }
+
+    public function with($request)
+    {
+        return [
+            "informacao" => "Essa API não está em produção, é apenas de homologação e testes"
+        ];
+    }
 }
