@@ -16,7 +16,7 @@ class AlunoFactory extends Factory
         return [
             'nome' => $this->faker->name(),
             'matricula' => $this->faker->unique()->randomNumber(3, false),
-            'datanascimento' => $this->faker->date('d-m-Y'),
+            'datanascimento' => $this->faker->date('Y-m-d'),
             'responsavelFinanceiro' => $this->faker->name(),
             'cpf' => mt_rand(10000000000, 99999999999),
             'idcursos' => $this->faker->unique()->randomNumber(3, false),

@@ -25,7 +25,7 @@
                <div class="card-body">
                Nome: {{$cad->nome}} <br>
                Matricula: {{$cad->matricula}} <br>
-               Data de nascimento: {{$cad->datanascimento}} <br>
+               Data de nascimento:{{ date('d/m/Y', strtotime( $cad->datanascimento) )}} <br>
                Responsável: {{$cad->responsavelFinanceiro}} <br>            
                </div>
             </div>
