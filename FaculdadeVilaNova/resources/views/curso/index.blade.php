@@ -14,6 +14,9 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="container">
+        @include('layouts.alerts')
         <div class="row ">
             <div class="col-md-12">
                 <table class="table table-bordered">

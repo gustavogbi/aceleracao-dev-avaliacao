@@ -92,8 +92,11 @@ class CursoController extends Controller
      * @param  \App\Models\Curso  $aluno
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Curso $aluno)
+    public function destroy($id)
     {
-        //
+        $cad = Curso::findOrFail($id);
+        $cad->delete();
+
+        return redirect()->route($this->route . '.index')->with('danger', "Cadastro deletado com sucesso");
     }
 }
