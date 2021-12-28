@@ -25,10 +25,10 @@ class CursoRequest extends FormRequest
     {
         return [
             'nomedocurso' => 'required|max:45',
-            'qntmax' => 'required|integer|max:2147483647',
+            'qntmax' => 'required|integer|between:0,2147483647',
             'descricao' => 'required|max:200',
             'categoria' => 'required|max:45',
-            'mensalidade' => 'required|max:4',
+            'mensalidade' => 'required|numeric|between:0,999999.99',
             'status' => 'required|max:45'
         ];
     }
@@ -41,7 +41,7 @@ class CursoRequest extends FormRequest
 
             'qntmax.required' => 'O campo Quant. Max. não pode ser vazio',
             'qntmax.integer' => 'O campo Quant. Max. deve ser um número inteiro',
-            'qntmax.max' => 'O campo Quant. Max não pode ter mais de 3 caracteres',
+            'qntmax.between' => 'O campo Quant. Max não pode ser menor que 0 e maior que 2147483647',
 
             'descricao.required' => 'O campo Descrição não pode ser vazio',
             'descricao.max' => 'O campo Descrição não pode ter mais de 200 caracteres',
@@ -50,7 +50,8 @@ class CursoRequest extends FormRequest
             'categoria.max' => 'O campo Categoria não pode ter mais de 45 caracteres',
 
             'mensalidade.required' => 'O campo Mensalidade não pode ser vazio',
-            'mensalidade.max' => 'O campo Mensalidade não pode ter mais de 4 caracteres',
+            'mensalidade.numeric' => 'O campo Mensalidade deve ser um número',
+            'mensalidade.between' => 'O campo Mensalidade não pode ter mais de 4 caracteres',
 
             'status.required' => 'O campo Status não pode ser vazio',
             'status.max' => 'O campo Status não pode ter mais de 45 caracteres',
