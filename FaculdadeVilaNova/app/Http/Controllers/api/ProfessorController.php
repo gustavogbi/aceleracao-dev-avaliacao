@@ -19,50 +19,50 @@ class ProfessorController extends Controller
 
     public function index(Request $request)
     {
-        $professor = $this->model;
+        $cad = $this->model;
 
         if($request->has('fields')){
             $fields = $request->get('fields');
-            $professor = $professor->selectRaw($fields);
+            $cad = $cad->selectRaw($fields);
         }
 
-       return new ProfessorResourceCollection($professor->paginate(8));
+       return new ProfessorResourceCollection($cad->paginate(8));
     }
     
     public function store(ProfessorRequest $request)
     {
-        $professor = Professor::create($request->all());
-        return response()->json(['code'=>'200', "msg"=>'Professor inserido com sucesso']);
+        $cad = Professor::create($request->all());
+        return response()->json(['code'=>'200', "msg"=>'Cadastro inserido com sucesso']);
     }
 
     public function show($id)
     {
-        $professor = Professor::find($id);
+        $cad = Professor::find($id);
 
-        if(!$professor){
+        if(!$cad){
             return response()->json(["code"=>500,"msg"=>"nao foi possivel encontrar o id fornecido"]);
         }
-        return new ProfessorResource($professor);
+        return new ProfessorResource($cad);
     }
 
     public function update(ProfessorRequest $request, $id)
     {
-        $professor = Professor::find($id);
-        if(!$professor){
+        $cad = Professor::find($id);
+        if(!$cad){
             return response()->json(["code"=>500,"msg"=>"nao foi possivel encontrar o id fornecido"]);
         }
-        $professor->update($request->all());
-        return response()->json(['code'=>'200', "msg"=>'Professor alterado com sucesso']);
+        $cad->update($request->all());
+        return response()->json(['code'=>'200', "msg"=>'Cadastro alterado com sucesso']);
     }
 
     public function destroy($id)
     {
-        $professor = Professor::find($id);
+        $cad = Professor::find($id);
 
-        if(!$professor){
+        if(!$cad){
             return response()->json(["code"=>500,"msg"=>"nao foi possivel encontrar o id fornecido"]);
         }
-        $professor->delete();
-        return response()->json(["code"=>200,"msg"=>"professor removido com sucesso"]);
+        $cad->delete();
+        return response()->json(["code"=>200,"msg"=>"Cadastro removido com sucesso"]);
     }
 }
