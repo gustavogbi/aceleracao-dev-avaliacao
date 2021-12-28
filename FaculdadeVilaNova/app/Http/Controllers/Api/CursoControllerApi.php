@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreUpdateCursoRequest;
+use App\Http\Requests\CursoRequest;
 use App\Http\Resources\CursoCollection;
 use App\Http\Resources\CursoResource;
 use App\Models\Curso;
@@ -19,7 +19,7 @@ class CursoControllerApi extends Controller
         return new CursoCollection($cads);
     }
 
-    public function store(StoreUpdateCursoRequest $request)
+    public function store(CursoRequest $request)
     {
         $cad = Curso::create($request->all());
 
@@ -33,7 +33,7 @@ class CursoControllerApi extends Controller
         return new CursoResource($cad);
     }
 
-    public function update(StoreUpdateCursoRequest $request, $id)
+    public function update(CursoRequest $request, $id)
     {
         $cad = Curso::findOrFail($id);
         $cad->update($request->all());
