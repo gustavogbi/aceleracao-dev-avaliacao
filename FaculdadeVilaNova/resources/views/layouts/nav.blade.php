@@ -91,7 +91,7 @@
 
         <li class="nav-item has-treeview  ">
             <a href="#" class="nav-link bg-warning">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <i class="nav-icon fas fa-user-secret"></i>
                 <p>
                     API
                     <i class="right fas fa-angle-left"></i>
