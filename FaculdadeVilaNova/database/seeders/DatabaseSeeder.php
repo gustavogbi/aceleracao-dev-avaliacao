@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             ProfessorSeeder::class,
             CursoSeeder::class,
             PlanoFinanceiroSeeder::class,
-            AulaSeeder::class,
+            AulaSeeder::class
         ]);
     }
 }

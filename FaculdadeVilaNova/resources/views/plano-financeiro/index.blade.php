@@ -95,6 +95,7 @@
                     @endforeach
                 </tbody>
             </table>
+            {{ $cads->links() }}
         </div>
     </div>
     @endsection
