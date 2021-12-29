@@ -10,4 +10,6 @@ class Professor extends Model
     use HasFactory;
     protected $table = "professores";
     protected $fillable = ['nome', 'matricula', 'competencia', 'escolaridade'];
+
+    
 }

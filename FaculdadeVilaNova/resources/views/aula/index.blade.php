@@ -28,8 +28,8 @@
                         <th scope="col">Tema</th>
                         <th scope="col">Duração</th>
                         <th scope="col">Observação</th>
-                        <th scope="col">ID Curso</th>
-                        <th scope="col">ID Professor</th>
+                        <th scope="col">Curso</th>
+                        <th scope="col">Professor</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
@@ -41,8 +41,8 @@
                         <td>{{ $cad->tema }} </td>
                         <td>{{ $cad->duracao}} </td>
                         <td>{{ $cad->observacao }} </td>
-                        <td>{{ $cad->idcurso }} </td>
-                        <td>{{ $cad->idprofessor }} </td>
+                        <td>{{ $cad->_curso() }} </td>
+                        <td>{{ $cad->_professor() }} </td>
                         <td> <button data-bs-toggle="collapse" data-bs-target="#cad{{$cad->id}}"
                                 class="btn btn-primary">Ações</button>
 
