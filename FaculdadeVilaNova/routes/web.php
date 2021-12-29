@@ -1,7 +1,5 @@
 <?php
 
-
-use App\Http\Controllers\AlunoController;
 use App\Http\Controllers\CursoController;
 
 use App\Http\Controllers\PlanoFinanceiroController;
