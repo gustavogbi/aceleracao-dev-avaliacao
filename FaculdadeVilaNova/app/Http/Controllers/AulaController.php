@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AulaRequest;
 use App\Models\Aula;
+use App\Models\Curso;
+use App\Models\Professor;
 
 class AulaController extends Controller
 {
@@ -25,7 +27,9 @@ class AulaController extends Controller
 
     public function create()
     {
-        return view($this->view.'.create');
+        $cursos= Curso::all();
+        $professores= Professor::all();
+         return view($this->view.'.create',  compact('cursos', 'professores'));
     }
 
     public function store(AulaRequest $request)
