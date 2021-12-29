@@ -23,10 +23,13 @@
                 <div class="card-header">Dados</div>
 
                <div class="card-body">
-               Nome: {{$cad->nome}} <br>
-               Matricula: {{$cad->matricula}} <br>
-               Data de nascimento:{{ date('d/m/Y', strtotime( $cad->datanascimento) )}} <br>
-               Responsável: {{$cad->responsavelFinanceiro}} <br>            
+              <strong> Nome:</strong>  {{$cad->nome}}<br><hr>
+              <strong>   Matricula:</strong>  {{$cad->matricula}} <br><hr>
+              <strong>   Data de nascimento: </strong> {{ date('d/m/Y', strtotime( $cad->datanascimento) )}} <br><hr>
+              <strong>   Responsável:</strong>  {{$cad->responsavelFinanceiro}} <br>     <hr>
+              <strong>  CPF:</strong>  {{$cad->cpf}} <br>     <hr>
+              <strong> Curso:</strong>  {{$cad->_curso()}} <br>   <hr>      
+              <strong>  Plano:</strong>  {{$cad->_plano()}} <br>   <hr>         
                </div>
             </div>
         </div>

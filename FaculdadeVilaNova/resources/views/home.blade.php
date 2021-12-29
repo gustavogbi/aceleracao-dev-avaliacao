@@ -93,9 +93,11 @@
                 <div class="card-body">
                     <i class="nav-icon fas fa-book-open"></i>
                     <p>
-                    <a href="#">Aulas</a><br>
+                    <a href="/aulas">Aulas</a><br>
                         <span class="badge badge-info right">
-                          
+                        @php
+                            echo DB::table("aulas")->select("id")->count();
+                            @endphp
 
                         </span>
                     </p>
