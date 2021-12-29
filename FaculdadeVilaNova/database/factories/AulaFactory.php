@@ -18,8 +18,8 @@ class AulaFactory extends Factory
             'tema' => $this->faker->unique()->name(),
             'duracao' => $this->faker->randomNumber(2),
             'observacao' => $this->faker->paragraph(2),
-            'idcurso' => $this->faker->unique()->randomNumber(2),
-            'idprofessor' => $this->faker->unique()->randomNumber(2),
+            'idcurso' => random_int(1,8),
+            'idprofessor' => random_int(1,10)
         ];
     }
 }
