@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class ProfessorResourceCollection extends ResourceCollection
+class CursoCollection extends ResourceCollection
 {
     /**
      * Transform the resource collection into an array.
@@ -14,17 +14,13 @@ class ProfessorResourceCollection extends ResourceCollection
      */
     public function toArray($request)
     {
-        //return parent::toArray($request);
-
-        return[
-            "data"=> $this->collection
-        ];
+        return parent::toArray($request);
     }
 
     public function with($request)
     {
         return [
-            "informação importante"=> "Essa API não está em produção, é apenas de homologação e testes"
+            "informacao" => "Essa API não está em produção, é apenas de homologação e testes"
         ];
     }
 }

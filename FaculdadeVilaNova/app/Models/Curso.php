@@ -11,4 +11,13 @@ class Curso extends Model
 
     const CREATED_AT = 'datacriacao';
     const UPDATED_AT = 'dataupdate';
+
+    protected $fillable = [
+        'nomedocurso',
+        'qntmax',
+        'descricao',
+        'categoria',
+        'mensalidade',
+        'status'
+    ];
 }

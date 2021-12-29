@@ -4,10 +4,10 @@
     <div class="row ">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Alunos</div>
+                <div class="card-header">Aulas</div>
 
                 <div class="card-body">
-                    <a href="{{route('alunos.create') }}"><button type="button" class="btn btn-success tet-white">
+                    <a href="{{route('aulas.create') }}"><button type="button" class="btn btn-success tet-white">
                             <i class="fa fa-plus"></i> Novo</button></a>
 
                 </div>
@@ -24,13 +24,12 @@
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Matricula</th>
-                        <th scope="col">Data de nascimento</th>
-                        <th scope="col">Responsável financeiro </th>
-                        <th scope="col">CPF</th>
-                        <th scope="col">Curso</th>
-                        <th scope="col">Plano</th>
+                        <th scope="col">Numero de Aula</th>
+                        <th scope="col">Tema</th>
+                        <th scope="col">Duração</th>
+                        <th scope="col">Observação</th>
+                        <th scope="col">ID Curso</th>
+                        <th scope="col">ID Professor</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
@@ -38,21 +37,19 @@
                     @foreach($cads as $cad)
                     <tr>
                         <td>{{ $cad->id }} </td>
-                        <td>{{ $cad->nome }} </td>
-                        <td>{{ $cad->matricula }} </td>
-                        <td>{{ date('d/m/Y', strtotime( $cad->datanascimento) )}} 
-                        </td>
-                        <td>{{ $cad->responsavelFinanceiro }} </td>
-                        <td>{{ $cad->cpf }} </td>
-                        <td>{{ $cad->_curso()}} </td>
-                        <td>{{ $cad->_plano()}} </td>
+                        <td>{{ $cad->num_aula }} </td>
+                        <td>{{ $cad->tema }} </td>
+                        <td>{{ $cad->duracao}} </td>
+                        <td>{{ $cad->observacao }} </td>
+                        <td>{{ $cad->idcurso }} </td>
+                        <td>{{ $cad->idprofessor }} </td>
                         <td> <button data-bs-toggle="collapse" data-bs-target="#cad{{$cad->id}}"
                                 class="btn btn-primary">Ações</button>
 
                             <div id="cad{{$cad->id}}" class="collapse">
-                                <a class="dropdown-item" href="{{ route('alunos.show', $cad->id) }}"><button
+                                <a class="dropdown-item" href="{{ route('aulas.show', $cad->id) }}"><button
                                         type="button" class="btn btn-info"><i class="far fa-eye"></i></button></a>
-                                <a class="dropdown-item" href="{{ route('alunos.edit', $cad->id) }}"><button
+                                <a class="dropdown-item" href="{{ route('aulas.edit', $cad->id) }}"><button
                                         type="button" class="btn btn-primary"><i class="far fa-edit"></i></button></a>
                                 <a class="dropdown-item"><button type="button" class="btn btn-danger"
                                         data-bs-toggle="modal" data-bs-target="#delete{{$cad->id}}">
@@ -70,7 +67,7 @@
                                         </div>
                                         <!-- Modal body -->
                                         <div class="modal-body">
-                                            <form action="{{ route('alunos.destroy', $cad->id) }}" method="POST">
+                                            <form action="{{ route('aulas.destroy', $cad->id) }}" method="POST">
                                                 <input type="hidden" name="_method" value="DELETE">
                                                 <input type="hidden" name="_token" value="{{csrf_token()}}">
 
@@ -92,7 +89,7 @@
                     @endforeach
                 </tbody>
             </table>
-            {{ $cads->links() }}
+            {{-- {{ $cads->links() }} --}}
         </div>
     </div>
     @endsection

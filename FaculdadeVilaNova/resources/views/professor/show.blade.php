@@ -8,7 +8,7 @@
                 <div class="card-header">Professor</div>
   
                 <div class="card-body">
-                <a href="{{route('professor.index') }}"><button type="button" class="btn btn-success tet-white">
+                <a href="{{route('professores.index') }}"><button type="button" class="btn btn-success tet-white">
                   <i class="fa fa-arrow-left"></i> VOLTAR</button></a>
               
                 </div>

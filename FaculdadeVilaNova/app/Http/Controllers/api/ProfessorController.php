@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\api;
+namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProfessorRequest;
@@ -11,46 +11,58 @@ use Illuminate\Http\Request;
 
 class ProfessorController extends Controller
 {
-    
-    public function index()
+    private $model;
+
+    public function __construct(Professor $model){
+        $this->model = $model;
+    }
+
+    public function index(Request $request)
     {
-       $professor = Professor::all();
-       //return response()->json($professor);
-       return new ProfessorResourceCollection($professor);
+        $cad = $this->model;
+
+        if($request->has('fields')){
+            $fields = $request->get('fields');
+            $cad = $cad->selectRaw($fields);
+        }
+
+       return new ProfessorResourceCollection($cad->paginate(8));
     }
     
     public function store(ProfessorRequest $request)
     {
-        $professor = Professor::create($request->all());
-        return response()->json($professor);
+        $cad = Professor::create($request->all());
+        return response()->json(['code'=>'200', "msg"=>'Cadastro inserido com sucesso']);
     }
 
     public function show($id)
     {
-        $professor = Professor::findOrFail($id);
-        if(!$professor){
+        $cad = Professor::find($id);
+
+        if(!$cad){
             return response()->json(["code"=>500,"msg"=>"nao foi possivel encontrar o id fornecido"]);
         }
-        return new ProfessorResource($professor);
+        return new ProfessorResource($cad);
     }
 
     public function update(ProfessorRequest $request, $id)
     {
-        $professor = Professor::findOrFail($id);
-        if(!$professor){
+        $cad = Professor::find($id);
+        if(!$cad){
             return response()->json(["code"=>500,"msg"=>"nao foi possivel encontrar o id fornecido"]);
         }
-        $professor->update($professor->all());
-        return response()->json($professor);
+        $cad->update($request->all());
+        return response()->json(['code'=>'200', "msg"=>'Cadastro alterado com sucesso']);
     }
 
     public function destroy($id)
     {
-        $professor = Professor::findOrFail($id);
-        if(!$professor){
+        $cad = Professor::find($id);
+
+        if(!$cad){
             return response()->json(["code"=>500,"msg"=>"nao foi possivel encontrar o id fornecido"]);
         }
-        $professor->delete();
-        return response()->json(["code"=>200,"msg"=>"documento removido com sucesso"]);
+        $cad->delete();
+        return response()->json(["code"=>200,"msg"=>"Cadastro removido com sucesso"]);
     }
 }

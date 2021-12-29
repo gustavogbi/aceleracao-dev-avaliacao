@@ -14,7 +14,7 @@ class ProfessorController extends Controller
 
     public function index()
     {
-        $cads = Professor::all();
+        $cads = Professor::paginate(8);
         return view($this->view.'.index', compact('cads'));
     }
 
