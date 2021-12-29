@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PlanoFinanceiroRequest;
 use App\Models\PlanoFinanceiro;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,7 @@ class PlanoFinanceiroController extends Controller
      */
     public function index()
     {
-        $cads = PlanoFinanceiro::all();
+        $cads = PlanoFinanceiro::paginate(8);
         return view($this->view.'.index', compact('cads'));
     }
 
@@ -37,7 +38,7 @@ class PlanoFinanceiroController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PlanoFinanceiroRequest $request)
     {
         $cad = PlanoFinanceiro::create($request->all());
 
@@ -81,7 +82,7 @@ class PlanoFinanceiroController extends Controller
      * @param  \App\Models\PlanoFinanceiro  $PlanoFinanceiro
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PlanoFinanceiroRequest $request, $id)
     {
         $cad = PlanoFinanceiro::find($id);
         
