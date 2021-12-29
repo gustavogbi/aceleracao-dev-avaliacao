@@ -1,7 +1,7 @@
 <?php
 
 
-use App\Http\Controllers\{AlunoController, ProfessorController, PlanoFinanceiroController, CursoController};
+use App\Http\Controllers\{AlunoController, AulaController, ProfessorController, PlanoFinanceiroController, CursoController};
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -28,3 +28,4 @@ Route::resource('alunos', AlunoController::class);
 Route::resource('cursos', CursoController::class);
 Route::resource('planos-financeiros', PlanoFinanceiroController::class);
 Route::resource('professores', ProfessorController::class);
+Route::resource('aulas', AulaController::class);
