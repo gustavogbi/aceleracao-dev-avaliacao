@@ -1,4 +1,5 @@
 @csrf
+
 <div class="row">
 
 <div class="col-md-8">
@@ -42,5 +43,5 @@ Status:
         Indisponível</option>
 </select> 
 </div>
-</div><br>
+</div>
 <button type="subbmit" class="btn btn-primary addCompany">Salvar</button>
