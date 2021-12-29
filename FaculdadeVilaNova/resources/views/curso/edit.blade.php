@@ -4,7 +4,7 @@
     <div class="row ">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Cruso</div>
+                <div class="card-header">Curso</div>
   
                 <div class="card-body">
                 <a href="{{route('cursos.index') }}"><button type="button" class="btn btn-success tet-white">
