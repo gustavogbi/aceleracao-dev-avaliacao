@@ -1,28 +1,51 @@
 @csrf
+<div class="row ">
+<div class="col-md-8">
 Nome:
-<input type="text" name="nome" id="nome" value="{{ $cad->nome ?? old ('nome')}}" class="form-control">
-<br>
+<input type="text" name="nome" id="nome" value="{{ $cad->nome ?? old ('nome')}}" class="form-control"><br> 
+</div>
+
+<div class="col-md-4">
+  
 Matricula:
 <input type="text" name="matricula" id="matricula" value="{{ $cad->matricula ?? old ('matricula')}}"
-    class="form-control">
-<br>
+    class="form-control"><br> 
+</div>
+
+<div class="col-md-4">
+  
 Data de nascimento:
 <input onchange="responsavel(this)" onload="responsavel(this)" type="date" name="datanascimento" id="datanascimento"
-    value="{{ $cad->datanascimento ?? old ('datanascimento')}}" class="form-control">
-<br>
+    value="{{ $cad->datanascimento ?? old ('datanascimento')}}" class="form-control"><br> 
+</div>
+
+<div class="col-md-8">
+  
 @if(Route::is('alunos.edit'))
-@if(\Carbon\Carbon::parse($cad->datanascimento)->diff(\Carbon\Carbon::now())->format('%y') < 18) <div
-    id="responsavelFinanceirodiv">
-    Responsável Financeiro<div class='text-danger'>(Para menores de 18 anos)</div>
+@if(\Carbon\Carbon::parse($cad->datanascimento)->diff(\Carbon\Carbon::now())->format('%y') < 18) 
+<div id="responsavelFinanceirodiv">
+    Responsável Financeiro(Para menores de 18 anos)
     <input type="text" name="responsavelFinanceiro" id="responsavelFinanceiro"
-        value="{{ $cad->responsavelFinanceiro ?? old ('responsavelFinanceiro')}}" class="form-control" required>
-    <br> </div>
+        value="{{ $cad->responsavelFinanceiro ?? old ('responsavelFinanceiro')}}" class="form-control" required><br> 
+    </div>
     @endif
-    @endif
-    CPF:
+     @endif  
+     
+    <div id="responsavelFinanceirodiv" style="display:none;">
+    Responsável Financeiro(Para menores de 18 anos)
+    <input type="text" name="responsavelFinanceiro" id="responsavelFinanceiro"
+        value="{{ $cad->responsavelFinanceiro ?? old ('responsavelFinanceiro')}}" class="form-control" ><br> 
+    </div>
+</div>
+
+<div class="col-md-4">
+  
+CPF:
     <input type="text" name="cpf" id="cpf" value="{{ $cad->cpf ?? old ('cpf')}}" class="form-control">
-    <br>
-    Curso
+</div>
+
+<div class="col-md-4">
+Curso
     <select class="select2bs4" name="idcursos" id="idcursos" style="width: 100%;">
         @foreach($cursos as $curso)
 
@@ -31,8 +54,10 @@ Data de nascimento:
         </option>
         @endforeach
     </select>
-    <br>
-    Plano Financeiro
+</div>
+
+<div class="col-md-4">
+Plano Financeiro
     <select class="select2bs4" name="idplano" id="idplano" style="width: 100%;">
         @foreach($planos as $plano)
 
@@ -41,8 +66,9 @@ Data de nascimento:
         </option>
         @endforeach
     </select>
-    <br>
-    <button type="subbmit" class="btn btn-primary addCompany">Salvar</button>
+</div>
+</div>
+<br> <button type="subbmit" class="btn btn-primary addCompany">Salvar</button>
 
 
     <script>

@@ -81,8 +81,10 @@
                             <span class="badge badge-info right">
                                 <span class="badge badge-info right">
                                 @php
-                            echo DB::table("professores")->select("id")->count();
-                            @endphp
+                                    echo DB::table('aulas')
+                                        ->select('id')
+                                        ->count();
+                                @endphp
                                 </span>
                             </span>
                         </p>
@@ -168,7 +170,11 @@
                             Aulas
                             <span class="badge badge-info right">
                                 <span class="badge badge-info right">
-
+                                @php
+                                    echo DB::table('aulas')
+                                        ->select('id')
+                                        ->count();
+                                @endphp
                                 </span>
                             </span>
                         </p>
