@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Aula;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -20,6 +21,7 @@ class DatabaseSeeder extends Seeder
             ProfessorSeeder::class,
             CursoSeeder::class,
             PlanoFinanceiroSeeder::class,
+            AulaSeeder::class
         ]);
     }
 }
