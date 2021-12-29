@@ -14,6 +14,6 @@ class AulaSeeder extends Seeder
      */
     public function run()
     {
-        Aula::factory(50)->create()
+        Aula::factory(50)->create();
     }
 }
