@@ -14,6 +14,17 @@ class ProfessorResourceCollection extends ResourceCollection
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        //return parent::toArray($request);
+
+        return[
+            "data"=> $this->collection
+        ];
+    }
+
+    public function with($request)
+    {
+        return [
+            "informação importante"=> "Essa API não está em produção, é apenas de homologação e testes"
+        ];
     }
 }
