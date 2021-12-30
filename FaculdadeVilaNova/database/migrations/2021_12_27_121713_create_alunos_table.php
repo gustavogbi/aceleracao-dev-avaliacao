@@ -19,6 +19,7 @@ class CreateAlunosTable extends Migration
             $table->string('nome',45);
             $table->string('matricula',45);
             $table->string('datanascimento',45);
+            $table->string('idade',20)->nullable();
             $table->string('responsavelFinanceiro',45)->nullable();
             $table->string('cpf',45);
             $table->integer('idcursos')->default(0);

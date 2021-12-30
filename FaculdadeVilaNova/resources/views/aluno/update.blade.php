@@ -10,7 +10,6 @@
                 <div class="card-body">
                 <a href="{{route('alunos.index') }}"><button type="button" class="btn btn-success tet-white">
                   <i class="fa fa-arrow-left"></i> VOLTAR</button></a>
-              
                 </div>
             </div>
         </div>

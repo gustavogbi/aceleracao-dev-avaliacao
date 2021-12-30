@@ -50,7 +50,9 @@ class AlunoController extends Controller
     {
         $cad = Aluno::create($request->all());
         //Verifica se o aluno é maior de idade
-        if( Carbon::parse( $cad->datanascimento)->diff(\Carbon\Carbon::now())->format('%y'))
+        $cad->idade = self::calc_idade($cad->datanascimento);
+        $cad->save();
+        if(( $cad->idade > 18) )
         {
             $cad->responsavelFinanceiro = 'Aluno maior de idade';
             $cad->save();
@@ -106,14 +108,13 @@ class AlunoController extends Controller
         endif;
         $cad->update($request->all());
        //Verifica se o aluno é maior de idade
-       
-        if((Carbon:: parse($cad->datanascimento)->diff(\Carbon\Carbon::now())->format('%y') > 18) )
-        {
-
-            $cad->responsavelFinanceiro = 'Aluno maior de idade';
-            $cad->save();
-        }
-        $id= $cad->id;
+       $cad->idade = self::calc_idade($cad->datanascimento);
+       $cad->save();
+        if(( $cad->idade  > 18) )
+        {$cad->responsavelFinanceiro = 'Aluno maior de idade';$cad->save();}
+        else
+        {if($cad->responsavelFinanceiro == 'Aluno maior de idade')
+            {$cad->responsavelFinanceiro = 'Responsável financeiro não informado';$cad->save();}}
 
         return redirect()->route($this->route . '.index')->with('success', "Cadastrado atualizado com sucesso!");  }
 
@@ -135,13 +136,17 @@ class AlunoController extends Controller
         return redirect()->route($this->route.'.index')->with('danger', "Cadastro deletado com sucesso");
     }
 
-    static function calc_idade($nascimento) {
-        $nascimento=explode('-',$nascimento); //Cria um array com os campos da data de nascimento 
+    static function calc_idade($nascimento)
+     {
+        $nascimento=explode('-',$nascimento); //Cria um array com os campos da data de nascimento separado por -
         $data=date('d/m/Y'); $data=explode('/',$data); //Cria um array com os campos da data atual 
-        $anos=$data[2]-$nascimento[2]; //ano atual - ano de nascimento 
+        $anos=$data[2]-$nascimento[0]; //ano atual - ano de nascimento 
+        //A data $nascimento é no formato ('Y-m-d) 
+
         if($nascimento[1] > $data[1]) return $anos-1; //Se o mês de nascimento for maior que o mês atual, diminui um ano 
         if($nascimento[1] == $data[1]){ //se o mês de nascimento for igual ao mês atual, precisamos ver os dias 
-          if($nascimento[0] <= $data[0]) { return $anos; } else{ return $anos-1; } }
+          if($nascimento[2] <= $data[0]) { return $anos; } else{ return $anos-1; } }
 
-      return $anos; }
+      return $anos; 
+    }
 }
