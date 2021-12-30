@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\{Aluno, Curso, PlanoFinanceiro};
+use App\Models\{Aluno, Aula, Curso, PlanoFinanceiro};
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\AlunoRequest;
 use Carbon\Carbon;
+use Database\Seeders\AulaSeeder;
 use Illuminate\Support\Facades\DB;
 
 class AlunoController extends Controller
@@ -70,8 +71,13 @@ class AlunoController extends Controller
     {
         $cad = Aluno::find($id);
         if($cad)
-        {
-        return view($this->view.'.show', compact('cad'));  
+        {   
+            $aulas = Aula::where('idcurso',$cad->idcursos)->get();
+            $curso = Curso::find($cad->idcursos);
+            $plano = PlanoFinanceiro::find($cad->idplano);
+            $desconto =number_format(($curso->mensalidade) - (($curso->mensalidade /100) * $plano->desconto));
+            
+        return view($this->view.'.show', compact('cad', 'aulas','curso', 'plano', 'desconto'));  
         }   
         return redirect()->back();
     }
