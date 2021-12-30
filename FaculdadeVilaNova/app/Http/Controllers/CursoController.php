@@ -41,7 +41,7 @@ class CursoController extends Controller
     {
         $cad = Curso::findOrFail($id);
 
-        return view($this->view . '.edit', compact('cad'));
+        return view($this->view . '.update', compact('cad'));
     }
 
     public function update(CursoRequest $request, $id)

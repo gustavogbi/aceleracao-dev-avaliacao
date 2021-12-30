@@ -1,20 +1,20 @@
 @extends('layouts.single')
 @section('content')
-    <div class="container">
-        <div class="row ">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">Cursos</div>
+<div class="container">
+    <div class="row ">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">Cursos 
+                    <a href="{{route('cursos.create') }}"><button type="button" class="btn btn-info tet-white float-right">
+                            <i class="fa fa-plus"></i> Novo</button></a></div>
 
-                    <div class="card-body">
-                        <a href="{{ route('cursos.create') }}"><button type="button" class="btn btn-success tet-white">
-                                <i class="fa fa-plus"></i> Novo</button></a>
+                <div class="card-body">
 
-                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
     <div class="container">
         @include('layouts.alerts')
         <div class="row ">
