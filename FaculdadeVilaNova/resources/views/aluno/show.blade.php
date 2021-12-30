@@ -5,7 +5,8 @@
     <div class="row ">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Aluno - <strong>{{$cad->nome}}</strong>   <a href="{{route('alunos.index') }}"><button type="button" class="btn btn-success tet-white float-right">
+                <div class="card-header">Aluno - <strong>{{$cad->nome}}</strong>  
+                 <a href="{{route('alunos.index') }}"><button type="button" class="btn btn-success tet-white float-right">
                             <i class="fa fa-arrow-left "></i> VOLTAR</button></a></div>
                 <div class="card-body">
                   
@@ -19,7 +20,8 @@
     <div class="row ">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Dados de  {{$cad->nome}} </div>
+                <div class="card-header">Dados de  {{$cad->nome}} 
+                <a href="{{ route('alunos.edit', $cad->id) }}" class="btn btn-info float-right">Editar</a></div>
 
                 <div class="card-body">
                     <div class="row">
@@ -33,7 +35,7 @@
                     <strong> Idade:</strong> {{$cad->idade}} <br>
 
                     <strong> Responsável:</strong>
-                    @if($cad->idade >= 18 ) Aluno maior de idade @else {{$cad->responsavelFinanceiro}} @endif <br>
+                    @if($cad->idade >= 18 ) {{$cad->nome}} @else {{$cad->responsavelFinanceiro}} @endif <br>
                    
                     <strong> CPF:</strong> {{$cad->cpf}} <br>
                 </div>

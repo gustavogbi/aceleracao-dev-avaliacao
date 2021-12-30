@@ -37,6 +37,7 @@
         <select class="select2bs4" name="idplano" id="idplano" style="width: 100%;">
             @foreach ($planos as $plano)
 
+<<<<<<< HEAD
                 <option value="{{ $plano->id }}" @if (!empty($cad)) {{ $cad->idplano == $plano->id ? 'selected' : '' }} @endif>
                     {{ $plano->nome }}
                 </option>
@@ -57,6 +58,21 @@
         <input type="text" name="responsavelFinanceiro" id="responsavelFinanceiro"
             value="{{ $cad->responsavelFinanceiro ?? old('responsavelFinanceiro') }}" class="form-control"><br>
     </div>
+=======
+        if (myAge < 18) {
+
+
+            
+            document.getElementById("responsavelFinanceirodiv").style.display = "block";
+            document.getElementById("responsavelFinanceiro").required = true;
+            document.getElementById("responsavelFinanceiro").removeAttribute("disabled");
+        } else {
+            
+            document.getElementById("responsavelFinanceirodiv").style.display = "none";
+            document.getElementById("responsavelFinanceiro").removeAttribute("required");
+            document.getElementById("responsavelFinanceiro").disabled = true;
+        }
+>>>>>>> 7d47aef8abb80219a7afebb7bf89901be38bf2a4
 
 </div>
 <br> <button type="subbmit" class="btn btn-primary addCompany">Salvar</button>
