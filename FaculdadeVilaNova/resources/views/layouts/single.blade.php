@@ -79,7 +79,7 @@
                     <div class="image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+                        <a href="#" class="d-block">@auth{{ Auth::user()->name }}@endauth</a>
                         <a class=" text-danger" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                             {{ __('Sair') }}
