@@ -48,7 +48,6 @@ class AlunoController extends Controller
      */
     public function store(AlunoRequest $request)
     {
-        dd($request->all());
         Aluno::create($request->all());
 
         return redirect()->route($this->route . '.index')->with('success', "Cadastrado efetivado com sucesso!");
