@@ -29,3 +29,7 @@ Route::resource('cursos', CursoController::class);
 Route::resource('planos-financeiros', PlanoFinanceiroController::class);
 Route::resource('professores', ProfessorController::class);
 Route::resource('aulas', AulaController::class);
+
+
+
+Route::get('/apialunos/index', [App\Http\Controllers\AlunoController::class, 'apiIndex'])->name('apialunos.index');

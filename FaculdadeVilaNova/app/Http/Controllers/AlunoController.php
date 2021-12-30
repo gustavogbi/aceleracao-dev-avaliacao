@@ -125,4 +125,10 @@ class AlunoController extends Controller
         $cad->delete();
         return redirect()->route($this->route . '.index')->with('danger', "Cadastro deletado com sucesso");
     }
+
+    //Funções de API
+
+    public function apiIndex(){
+        return view('api.'.$this->view.'.index');
+    }
 }
