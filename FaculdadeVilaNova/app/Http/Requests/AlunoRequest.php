@@ -2,10 +2,7 @@
 
 namespace App\Http\Requests;
 
-use Carbon\Carbon;
-use GuzzleHttp\Psr7\Request;
 use Illuminate\Foundation\Http\FormRequest;
-use LaravelLegends\PtBrValidator\Rules\FormatoCpf;
 
 class AlunoRequest extends FormRequest
 {
@@ -32,7 +29,8 @@ class AlunoRequest extends FormRequest
             'nome'          => 'required|min:3|',
             'matricula'      => 'required|min:2|numeric',   
             'cpf'          => 'required|min:11|cpf',
-            'datanascimento'          => 'required|date|before:today-15.|after:'.(date('01/01/1900')),
+            'datanascimento'          => 'required|date|before:-15 years|after:'.(date('01/01/1900')),
+            'responsavelFinanceiro'  => 'required_if:idade, < 18  ',
         ];
     }
 
