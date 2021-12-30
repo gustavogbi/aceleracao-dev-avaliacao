@@ -29,7 +29,7 @@
                         Mensalidade: {{ $cad->mensalidade }} <br>
                         Status: {{ $cad->status }} <br>
                         @forelse ($aulas as $aula)
-                            Aula: {{ $aula->numaula }} - {{ $aula->tema }} <br>
+                            Aula: {{ $aula->num_aula }} - {{ $aula->tema }} <br>
                         @empty
                             Aula: Sem aulas vinculadas <br>
                         @endforelse
