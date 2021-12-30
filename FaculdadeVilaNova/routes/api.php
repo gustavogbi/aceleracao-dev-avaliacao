@@ -25,4 +25,5 @@ Route::group(['namespace' => 'App\Http\Controllers\Api', 'middleware' => 'auth.b
     Route::get('/cursos/indisponiveis', 'CursoControllerApi@indisponiveis')->name('cursos.indisponiveis');
     Route::apiResource('/cursos', 'CursoControllerApi');
     Route::apiResource('/planos-financeiros', 'PlanoFinanceiroController');
+    Route::apiResource('/aulas', 'AulaController');
 });
