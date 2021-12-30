@@ -53,7 +53,7 @@ class AlunoController extends Controller
         //Verifica se o aluno é maior de idade
         $cad->idade = self::calc_idade($cad->datanascimento);
         $cad->save();
-        if(( $cad->idade > 18) )
+        if(( $cad->idade >= 18) )
         {
             $cad->responsavelFinanceiro = $cad->nome;
             $cad->save();
@@ -115,7 +115,7 @@ class AlunoController extends Controller
        //Verifica se o aluno é maior de idade
        $cad->idade = self::calc_idade($cad->datanascimento);
        $cad->save();
-        if(( $cad->idade  > 18) )
+        if(( $cad->idade  >= 18) )
         {$cad->responsavelFinanceiro = $cad->nome;$cad->save();}
         else
         {if($cad->responsavelFinanceiro == 'Aluno maior de idade' || $cad->responsavelFinanceiro == $cad->nome )
