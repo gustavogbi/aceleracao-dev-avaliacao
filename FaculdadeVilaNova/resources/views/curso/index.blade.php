@@ -40,7 +40,7 @@
                                 <td>{{ $cad->qntmax }} </td>
                                 <td>{{ $cad->descricao }} </td>
                                 <td>{{ $cad->categoria }} </td>
-                                <td>{{ $cad->mensalidade }} </td>
+                                <td>R${{ $cad->mensalidade }} </td>
                                 <td>{{ $cad->status }} </td>
                                 <td>
                                     <button data-bs-toggle="collapse" data-bs-target="#cad{{ $cad->id }}"
