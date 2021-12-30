@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfessorRequest;
+use App\Models\Aula;
 use App\Models\Professor;
 use Illuminate\Http\Request;
 
@@ -32,8 +33,10 @@ class ProfessorController extends Controller
     public function show($id)
     {
         $cad = Professor::find($id);
+        $aulas = Aula::where('idcurso', $id)->get();
+
         if($cad){
-            return view($this->view.'.show', compact('cad'));  
+            return view($this->view.'.show', compact('cad','aulas'));  
         }   
         return redirect()->back();
     }
