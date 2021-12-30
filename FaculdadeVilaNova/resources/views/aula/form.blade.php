@@ -1,28 +1,33 @@
 @csrf
 <div class="row">
+
 <div class="col-md-6">
-    
 Numero de aulas:
-<input type="number" name="num_aula" id="num_aula" value="{{ $cad->num_aula ?? old('num_aula') }}"
-    class="form-control">
-<br>
+    <input type="number" name="num_aula" id="num_aula" value="{{ $cad->num_aula ?? old('num_aula') }}" class="form-control">
+    <br>
 </div>
+
 <div class="col-md-6">
-    
 Duração:
-<input type="text" name="duracao" id="duracao" value="{{ $cad->duracao ?? old('duracao') }}"
+    <input type="text" name="duracao" id="duracao" value="{{ $cad->duracao ?? old('duracao') }}"
     class="form-control">
-<br>
+    <br>
 </div>
+
 <div class="col-md-12">
-    
-Observação:
-<input type="text" name="observacao" id="observacao" value="{{ $cad->observacao ?? old('observacao') }}"
-    class="form-control"><br>
+Tema:
+    <input type="text" name="tema" id="tema" value="{{ $cad->tema ?? old('tema') }}" class="form-control">
+    <br>
 </div>
+
+<div class="col-md-12">
+Observação:
+    <input type="text" name="observacao" id="observacao" value="{{ $cad->observacao ?? old('observacao') }}" class="form-control"><br>
+</div>
+
 <div class="col-md-6">
-Curso
-    <select class="select2bs4" name="idcursos" id="idcursos" style="width: 100%;">
+Curso:
+    <select class="select2bs4" name="idcurso" id="idcurso" style="width: 100%;">
         @foreach($cursos as $curso)
 
         <option value="{{$curso->id}}" @if (!empty($cad)) {{ $cad->idcurso == $curso->id ? 'selected' : '' }} @endif>
@@ -31,8 +36,9 @@ Curso
         @endforeach
     </select>
 </div>
+
 <div class="col-md-6">
-Professor
+Professor:
     <select class="select2bs4" name="idprofessor" id="idprofessor" style="width: 100%;">
         @foreach($professores as $professor)
 
