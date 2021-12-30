@@ -27,9 +27,10 @@ class AulaController extends Controller
 
     public function create()
     {
-        $cursos= Curso::all();
-        $professores= Professor::all();
-         return view($this->view.'.create',  compact('cursos', 'professores'));
+        $cursos = Curso::all();
+        $professores = Professor::all();
+
+        return view($this->view.'.create',  compact('cursos', 'professores'));
     }
 
     public function store(AulaRequest $request)
@@ -53,18 +54,21 @@ class AulaController extends Controller
 
     public function edit($id)
     {
+        $cursos = Curso::all();
+        $professores = Professor::all();
         $cad = Aula::findOrFail($id);
 
         if(!$cad):
             return redirect()->back();
         endif;
 
-        return view($this->view.'.update', compact('cad'));
+        return view($this->view.'.update', compact('cad', 'cursos', 'professores'));
     }
 
     public function update(AulaRequest $request, $id)
     {
         $cad = Aula::findOrFail($id);
+        
         if(!$cad):
             return redirect()->back();
         endif;
