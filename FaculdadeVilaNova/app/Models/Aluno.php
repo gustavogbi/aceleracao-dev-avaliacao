@@ -12,6 +12,7 @@ class Aluno extends Model
     protected $table = "alunos";
     protected $fillable = ['nome', 'matricula', 'cpf', 'datanascimento', 'responsavelFinanceiro', 'idcursos', 'idplano'];
     
+
     public function _curso(){
 
 

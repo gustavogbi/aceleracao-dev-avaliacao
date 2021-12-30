@@ -42,7 +42,9 @@
                         <td>{{ $cad->matricula }} </td>
                         <td>{{ date('d/m/Y', strtotime( $cad->datanascimento) )}} 
                         </td>
-                        <td>{{ $cad->responsavelFinanceiro }} </td>
+                        <td>@if( $cad->responsavelFinanceiro == "Responsável financeiro não informado")
+                             <p class="text-danger">{{ $cad->responsavelFinanceiro }} </p>
+                             @else {{$cad->responsavelFinanceiro}} @endif</td>
                         <td>{{ $cad->cpf }} </td>
                         <td>{{ $cad->_curso()}} </td>
                         <td>{{ $cad->_plano()}} </td>

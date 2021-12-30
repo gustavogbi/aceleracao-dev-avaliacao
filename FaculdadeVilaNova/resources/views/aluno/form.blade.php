@@ -91,9 +91,11 @@ Data de nascimento:
 
             document.getElementById("responsavelFinanceirodiv").style.display = "none";
             document.getElementById("responsavelFinanceiro").removeAttribute("required");
+            document.getElementById("responsavelFinanceiro").disabled = true;
         } else {
             document.getElementById("responsavelFinanceirodiv").style.display = "block";
             document.getElementById("responsavelFinanceiro").required = true;
+            document.getElementById("responsavelFinanceiro").removeAttribute("disabled");
         }
 
     };
