@@ -53,7 +53,7 @@ Data de nascimento:
 <div class="col-md-8">
   <br>
 @if(Route::is('alunos.edit'))
-@if(\Carbon\Carbon::parse($cad->datanascimento)->diff(\Carbon\Carbon::now())->format('%y') < 18) 
+@if($cad->idade < 18) 
 <div id="responsavelFinanceirodiv">
     Responsável Financeiro(Para menores de 18 anos)
     <input type="text" name="responsavelFinanceiro" id="responsavelFinanceiro"
