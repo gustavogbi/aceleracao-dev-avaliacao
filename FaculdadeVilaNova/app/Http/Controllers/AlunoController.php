@@ -55,7 +55,7 @@ class AlunoController extends Controller
         $cad->save();
         if(( $cad->idade > 18) )
         {
-            $cad->responsavelFinanceiro = 'Aluno maior de idade';
+            $cad->responsavelFinanceiro = $cad->nome;
             $cad->save();
         }
         return redirect()->route($this->route . '.index')->with('success', "Cadastrado efetivado com sucesso!");
@@ -116,9 +116,9 @@ class AlunoController extends Controller
        $cad->idade = self::calc_idade($cad->datanascimento);
        $cad->save();
         if(( $cad->idade  > 18) )
-        {$cad->responsavelFinanceiro = 'Aluno maior de idade';$cad->save();}
+        {$cad->responsavelFinanceiro = $cad->nome;$cad->save();}
         else
-        {if($cad->responsavelFinanceiro == 'Aluno maior de idade')
+        {if($cad->responsavelFinanceiro == 'Aluno maior de idade' || $cad->responsavelFinanceiro == $cad->nome )
             {$cad->responsavelFinanceiro = 'Responsável financeiro não informado';$cad->save();}}
 
         return redirect()->route($this->route . '.index')->with('success', "Cadastrado atualizado com sucesso!");  }
