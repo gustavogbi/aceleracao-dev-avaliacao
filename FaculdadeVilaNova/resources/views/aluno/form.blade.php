@@ -87,15 +87,18 @@ Data de nascimento:
         // calculate age comparing current date and borthday
         var myAge = ~~((Date.now(currentDate) - myBirthday) / (31557600000));
 
-        if (myAge >= 18) {
+        if (myAge < 18) {
 
-            document.getElementById("responsavelFinanceirodiv").style.display = "none";
-            document.getElementById("responsavelFinanceiro").removeAttribute("required");
-            document.getElementById("responsavelFinanceiro").disabled = true;
-        } else {
+
+            
             document.getElementById("responsavelFinanceirodiv").style.display = "block";
             document.getElementById("responsavelFinanceiro").required = true;
             document.getElementById("responsavelFinanceiro").removeAttribute("disabled");
+        } else {
+            
+            document.getElementById("responsavelFinanceirodiv").style.display = "none";
+            document.getElementById("responsavelFinanceiro").removeAttribute("required");
+            document.getElementById("responsavelFinanceiro").disabled = true;
         }
 
     };
