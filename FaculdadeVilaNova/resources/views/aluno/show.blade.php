@@ -5,7 +5,7 @@
     <div class="row ">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Aluno</div>
+                <div class="card-header">Aluno - {{$cad->nome}} </div>
                 <div class="card-body">
                     <a href="{{route('alunos.index') }}"><button type="button" class="btn btn-success tet-white">
                             <i class="fa fa-arrow-left"></i> VOLTAR</button></a>
@@ -19,7 +19,7 @@
     <div class="row ">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Dados </div>
+                <div class="card-header">Dados de  {{$cad->nome}} </div>
 
                 <div class="card-body">
                     <div class="row">
@@ -53,9 +53,9 @@
 <div class="container">
     <div class="row ">
         <div class="col-md-12">
-            <div class="card bg-info text-white">
-                <div class="card-header">Aulas de {{$cad->nome}} </div>
-                <table class="table table-bordered">
+            <div class="card ">
+                <div class="card-header">Grade de aulas do curso de <strong> {{$cad->_curso()}} </strong> </div>
+                <table class="table table-bordered bg-info text-white">
                     <thead>
                         <tr>
                             <th scope="col">Numero de Aula</th>

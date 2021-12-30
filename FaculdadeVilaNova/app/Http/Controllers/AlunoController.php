@@ -75,8 +75,7 @@ class AlunoController extends Controller
             $aulas = Aula::where('idcurso',$cad->idcursos)->get();
             $curso = Curso::find($cad->idcursos);
             $plano = PlanoFinanceiro::find($cad->idplano);
-            $desconto =number_format(($curso->mensalidade) - (($curso->mensalidade /100) * $plano->desconto));
-            
+            $desconto =number_format(( ($curso->mensalidade) - (($curso->mensalidade /100) * $plano->desconto)) , 2, '.', '');
         return view($this->view.'.show', compact('cad', 'aulas','curso', 'plano', 'desconto'));  
         }   
         return redirect()->back();
