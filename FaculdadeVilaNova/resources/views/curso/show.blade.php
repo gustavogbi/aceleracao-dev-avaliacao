@@ -28,6 +28,11 @@
                         Categoria: {{ $cad->categoria }} <br>
                         Mensalidade: {{ $cad->mensalidade }} <br>
                         Status: {{ $cad->status }} <br>
+                        @forelse ($aulas as $aula)
+                            Aula: {{ $aula->num_aula }} - {{ $aula->tema }} <br>
+                        @empty
+                            Aula: Sem aulas vinculadas <br>
+                        @endforelse
                     </div>
                 </div>
             </div>

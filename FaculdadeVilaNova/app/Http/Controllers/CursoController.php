@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Curso;
 use App\Http\Requests\CursoRequest;
+use App\Models\Aula;
 
 class CursoController extends Controller
 {
@@ -31,8 +32,9 @@ class CursoController extends Controller
     public function show($id)
     {
         $cad = Curso::findOrFail($id);
+        $aulas = Aula::where('idcurso', $id)->get();
 
-        return view($this->view . '.show', compact('cad'));
+        return view($this->view . '.show', compact('cad', 'aulas'));
     }
 
     public function edit($id)
