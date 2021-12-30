@@ -56,8 +56,17 @@ class PlanoFinanceiroController extends Controller
 
     public function update(PlanoFinanceiroRequest $request, $id)
     {
-        $cad = PlanoFinanceiro::findOrFail($id);
+        try
+        {
+            $cad = PlanoFinanceiro::findOrFail($id);
+        }
+        catch (ModelNotFoundException $exception)
+        {
+            return response()->json(['message' => 'Cadastro não encontrado'], 404);
+        }
+
         $cad->update($request->all());
+        
         $id = $cad->id;
 
         return new PlanoFinanceiroResource($cad);
