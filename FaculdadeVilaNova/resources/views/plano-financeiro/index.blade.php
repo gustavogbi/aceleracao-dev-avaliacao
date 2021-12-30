@@ -1,16 +1,14 @@
 @extends('layouts.single')
 @section('content')
-
 <div class="container">
     <div class="row ">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Planos Financeiros</div>
+                <div class="card-header">Planos financeiros 
+                    <a href="{{route('planos-financeiros.create') }}"><button type="button" class="btn btn-info tet-white float-right">
+                            <i class="fa fa-plus"></i> Novo</button></a></div>
 
                 <div class="card-body">
-                    <a href="{{route('planos-financeiros.create') }}"><button type="button"
-                            class="btn btn-success tet-white">
-                            <i class="fa fa-plus"></i> Novo</button></a>
 
                 </div>
             </div>

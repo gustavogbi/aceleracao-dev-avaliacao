@@ -20,7 +20,7 @@
     <div class="row ">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Dados de  {{$cad->nome}} 
+                <div class="card-header">Dados de  <strong>{{$cad->nome}}</strong>  
                 <a href="{{ route('alunos.edit', $cad->id) }}" class="btn btn-info float-right">Editar</a></div>
 
                 <div class="card-body">

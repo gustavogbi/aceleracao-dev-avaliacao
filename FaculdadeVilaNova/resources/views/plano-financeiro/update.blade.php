@@ -1,21 +1,20 @@
 @extends('layouts.single')
 @section('content')
-
 <div class="container">
     <div class="row ">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Planos financeiros</div>
-  
+                <div class="card-header">Plano financeiro - <strong>{{$cad->nome}}</strong>  
+                 <a href="{{route('planos-financeiro.index') }}"><button type="button" class="btn btn-success tet-white float-right">
+                            <i class="fa fa-arrow-left "></i> VOLTAR</button></a></div>
                 <div class="card-body">
-                <a href="{{route('planos-financeiros.index') }}"><button type="button" class="btn btn-success tet-white">
-                  <i class="fa fa-arrow-left"></i> VOLTAR</button></a>
-              
+                  
+
                 </div>
             </div>
         </div>
     </div>
-  </div>
+</div>
     <div class="container">
         <div class="row ">
             <div class="col-md-12">
