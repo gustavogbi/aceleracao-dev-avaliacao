@@ -24,14 +24,6 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
-        //Administradores
-        $this->newCad('Administrador','adm@fvl.com.br','123456','9');
-        $this->newCad('Pedro','pivow@fvl.com.br','123456','9');
-        $this->newCad('Lucas', 'lucas@fvl.com', '123456','9');
-        $this->newCad('Fabio','fabio@fvl.com.br','123456','9');
-        $this->newCad('Gustavo','gustavo@fvl.com.br','123456','9');
-        $this->newCad('Leal','leal@fvl.com.br','123456','9');
-
 }
 
 
@@ -43,14 +35,5 @@ class CreateUsersTable extends Migration
     public function down()
     {
         Schema::dropIfExists('users');
-    }
-    public function newCad($name,$email,$pass, $role){
-
-        $cad = new User();
-        $cad->name = $name;
-        $cad->email = $email;
-        $cad->role = $role;
-        $cad->password = bcrypt($pass);
-        $cad->save();
     }
 }
