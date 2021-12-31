@@ -13,6 +13,9 @@ https://drive.google.com/drive/folders/1EYmYG1sdVwT72dFOkvntHpR-SAGdEf0g?usp=sha
 + Filtragem de resultados por campos nas consultas principais
 + Aulas do aluno + valor da mensalidade com desconto
 
+# Diagrama de Casos de Uso
+![Diagrama de Casos de Uso](diagrama_casos_de_uso.jpeg)
+
 ### Autenticação
 Basic auth 
 
@@ -21,7 +24,7 @@ GET Listar Professores <br />
 ```api/professores```
 
 RESPONSE 
-```
+```JSON
 {
     "data": [
         {
@@ -91,7 +94,7 @@ GET Listar alunos por curso <br />
 ```api/alunos/{idcurso}```
 
 RESPONSE
-```
+```JSON
 {
     "data": [
         {
@@ -156,7 +159,7 @@ GET Listar aulas por curso <br />
 ```api/aulas/{idcurso}```
 
 RESPONSE
-```
+```JSON
 {
     "data": [
         {
@@ -202,7 +205,7 @@ GET Listar cursos disponíveis <br />
 ```api/cursos/disponiveis```
 
 RESPONSE
-```
+```JSON
 {
     "data": [
         {
@@ -260,7 +263,7 @@ GET Listar cursos indisponiveis <br />
 ```api/cursos/indisponiveis```
 
 RESPONSE
-```
+```JSON
 {
     "data": [
         {
