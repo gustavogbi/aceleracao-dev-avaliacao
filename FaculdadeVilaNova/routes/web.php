@@ -48,6 +48,9 @@ Route::resource('planos-financeiros', PlanoFinanceiroController::class);
 Route::resource('aulas', AulaController::class);
 Route::resource('users', UserController::class );
 Route::resource('professores', ProfessorController::class)->except('store', 'update');
+
+
+Route::get('/endpoints/api', [App\Http\Controllers\HomeController::class, 'endpoints'])->name('endpoints');
   
 });
 

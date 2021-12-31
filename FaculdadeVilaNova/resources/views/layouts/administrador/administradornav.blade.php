@@ -1,6 +1,3 @@
-
-
-
 <!-- Sidebar Menu -->
 <nav class="mt-2">
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -78,7 +75,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/aulas" class="nav-link">
+                    <a href="/aulas" class="nav-link  {{ request()->is('aulas*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-book-open"></i>
                         <p>
                             Aulas

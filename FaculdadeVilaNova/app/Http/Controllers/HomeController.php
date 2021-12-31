@@ -85,5 +85,10 @@ class HomeController extends Controller
         {$status = "0";
             return view('home', compact('status'));}
         }
+
+        public function endpoints(){
+            
+            return view('api.endpoints');
+        }
     }
 
