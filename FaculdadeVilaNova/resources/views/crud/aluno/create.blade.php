@@ -1,11 +1,12 @@
 @extends('layouts.single')
 @section('content')
+
 <div class="container">
     <div class="row ">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Aula 
-                <a href="{{route('aulas.index') }}"><button type="button" class="btn btn-success tet-white float-right">
+                <div class="card-header">Aluno 
+                <a href="{{route('alunos.index') }}"><button type="button" class="btn btn-success tet-white float-right">
                   <i class="fa fa-arrow-left"></i> VOLTAR</button></a></div>
   
                 <div class="card-body">
@@ -20,12 +21,12 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Dados</div>
-                @include('layouts.alerts')
+        @include('layouts.alerts')
                 <div class="card-body">
-                    <form action="{{ route('aulas.store') }}" method="post">
-                        @method('POST')
-                        @include('aula.form')
-                    </form>
+                <form action="{{ route('alunos.store') }}" method="post">
+        @method('POST')
+                @include('crud.aluno.form')
+                   </form>
                 </div>
             </div>
         </div>

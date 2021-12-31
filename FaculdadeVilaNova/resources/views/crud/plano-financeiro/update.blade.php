@@ -24,7 +24,7 @@
                     <div class="card-body">
                         <form action="{{ route('planos-financeiros.update', $cad->id) }}" method="post">
                             @method('PUT')
-                            @include('plano-financeiro.form')
+                            @include('crud.plano-financeiro.form')
                         </form>
                     </div>
                 </div>

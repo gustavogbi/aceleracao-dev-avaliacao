@@ -26,8 +26,8 @@ class AlunoRequest extends FormRequest
         // dd($this->idade, $this->responsavelFinanceiro);
         return [
             'nome'          => 'required|min:3|',
-            'matricula'      => 'required|min:2|numeric',
-            'cpf'          => 'required|min:11|cpf',
+            'matricula'      => 'required|min:2|numeric|unique:alunos,id',
+            'cpf'          => 'required|min:11|cpf|unique:alunos,id',
             'datanascimento'          => 'required|date|before:-15 years|after:' . (date('01/01/1900')),
             'responsavelFinanceiro'  => 'required_if:maior,0'
         ];
@@ -48,6 +48,7 @@ class AlunoRequest extends FormRequest
             'cpf.min' => 'O campo CPF precisa ter pelo menos 11 caractéres!',
             'cpf.formato_cpf' => 'O campo CPF deve estar no formato "999.999.999-99" !',
             'cpf.required' => 'O campo CPF não pode ser vazio!',
+            'cpf.unique' => 'CPF já cadastrado',
 
             'datanascimento.required' => 'O campo DATA DE NASCIMENTO não pode ser vazio!',
             'datanascimento.date_format' => 'O campo DATA DE NASCIMENTO deve estar no formato "DD/MM/AAAA !',

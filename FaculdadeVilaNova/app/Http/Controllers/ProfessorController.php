@@ -6,17 +6,32 @@ use App\Http\Requests\ProfessorRequest;
 use App\Models\Aula;
 use App\Models\Professor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProfessorController extends Controller
 {
          
-    protected $view = 'professor';
-    protected $route = 'professor';
+    protected $view = 'crud.professor';
+    protected $route = 'professores';
 
     public function index()
     {
-        $cads = Professor::paginate(8);
-        return view($this->view.'.index', compact('cads'));
+        $user = Auth::user();
+        if($user->role == 1)
+        {
+            $cad = Professor::Where('cpf', $user->cpf)->first();
+            if(!$cad){
+                return redirect()->back();
+            }
+            $aula = Aula::Where('idprofessor', $user->id)->first();
+            $idcurso = $aula->idcurso;
+            return view($this->view . '.update', compact('cad','idcurso'));
+        }
+        if($user->role == 9)
+        {
+            $cads = Professor::paginate(8);
+            return view($this->view . '.index', compact('cads'));
+        }
     }
 
     public function create()
@@ -26,7 +41,7 @@ class ProfessorController extends Controller
 
     public function store(ProfessorRequest $request)
     {
-        $cad = Professor::create($request->all());
+        Professor::create($request->all());
         return redirect()->route($this->route.'.index')->with('success', "Cadastro inserido com sucesso");
     }
 
@@ -52,13 +67,34 @@ class ProfessorController extends Controller
 
     public function update(ProfessorRequest $request, $id)
     {
+       
         $cad = Professor::find($id);
         if(!$cad):
             return redirect()->back();
         endif;
+        
+        $user = Auth::user();
+        if($user->role == 1)
+        {
+            $cad = Professor::Where('cpf', $user->cpf)->first();
+            if(!$cad){
+                return redirect()->back();
+            }
+            $aula = Aula::Where('idprofessor', $user->id)->first();
+            $idcurso = $aula->idcurso;
+            $cad->update($request->all());
+            $user->name = $request['nome'];
+            $user->save();
+            return view($this->view . '.update', compact('cad','idcurso'))->with('success', "Cadastro alterado com sucesso");;
+        }
+        if($user->role == 9)
+        {
+           
         $cad->update($request->all());
-        $id= $cad->id;
         return redirect()->route($this->route.'.index')->with('success', "Cadastro alterado com sucesso");
+        }
+        
+        
     }
 
     public function destroy($id)

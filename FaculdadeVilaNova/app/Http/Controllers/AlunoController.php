@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\{Aluno, Aula, Curso, PlanoFinanceiro};
+use App\Models\{Aluno, Aula, Curso, PlanoFinanceiro, Professor};
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\AlunoRequest;
@@ -19,13 +19,39 @@ class AlunoController extends Controller
      */
 
 
-    protected $view = 'aluno';
+    protected $view = 'crud.aluno';
     protected $route = 'alunos';
 
     public function index()
     {
-        $cads = Aluno::paginate(8);
-        return view($this->view . '.index', compact('cads'));
+        $user = Auth::user();
+        if($user->role == 1)
+        {
+            $cad = Professor::Where('cpf', $user->cpf)->first();
+            if(!$cad){
+                return redirect()->back();
+            }
+            $aula = Aula::Where('idprofessor', $cad->id)->first();
+            $cads = Aluno::Where('idcursos', $aula->idcurso)->paginate(8);
+            $idcurso = $cads[0]->idcurso;
+            return view($this->view . '.index', compact('cads', 'idcurso'));
+        }
+        if($user->role == 0)
+        {
+            $cad = Aluno::Where('cpf', $user->cpf)->first();
+            if(!$cad){
+                return redirect()->back();
+            }
+            
+        $cursos = Curso::all();
+        $planos = PlanoFinanceiro::all();
+            return view($this->view . '.update', compact('cad','cursos','planos'));
+        }
+        if($user->role == 9)
+        {
+            $cads = Aluno::paginate(8);
+            return view($this->view . '.index', compact('cads'));
+        }
     }
 
     /**
@@ -49,7 +75,6 @@ class AlunoController extends Controller
     public function store(AlunoRequest $request)
     {
         Aluno::create($request->all());
-
         return redirect()->route($this->route . '.index')->with('success', "Cadastrado efetivado com sucesso!");
     }
 
@@ -102,6 +127,23 @@ class AlunoController extends Controller
         if (!$cad) :
             return redirect()->back();
         endif;
+        $user = Auth::user();
+        if($user->role == 0)
+        {
+
+            $cad = Aluno::Where('cpf', $user->cpf)->first();
+            if(!$cad){
+                return redirect()->back();
+            }
+            
+            $cad->update($request->all());
+            $user->name = $request['nome'];
+            $user->save();
+           
+        $cursos = Curso::all();
+        $planos = PlanoFinanceiro::all();
+        return view($this->view . '.update',  compact('cursos', 'planos', 'cad'))->with('success', "Cadastrado atualizado com sucesso!");
+        }
 
         $cad->update($request->all());
 

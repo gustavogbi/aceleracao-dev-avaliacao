@@ -8,7 +8,7 @@ use App\Models\Aula;
 
 class CursoController extends Controller
 {
-    protected $view = 'curso';
+    protected $view = 'crud.curso';
     protected $route = 'cursos';
 
     public function index()

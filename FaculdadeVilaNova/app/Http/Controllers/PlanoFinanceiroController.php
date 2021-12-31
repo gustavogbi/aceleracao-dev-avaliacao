@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class PlanoFinanceiroController extends Controller
 {
-    protected $view = 'plano-financeiro';
+    protected $view = 'crud.plano-financeiro';
     protected $route = 'planos-financeiros';
 
     /**

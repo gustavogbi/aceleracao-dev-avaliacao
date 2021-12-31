@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AulaRequest;
+use App\Models\Aluno;
 use App\Models\Aula;
 use App\Models\Curso;
 use App\Models\Professor;
+use Illuminate\Support\Facades\Auth;
 
 class AulaController extends Controller
 {
@@ -15,14 +17,37 @@ class AulaController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    protected $view = 'aula';
+    protected $view = 'crud.aula';
     protected $route = 'aulas';
 
     public function index()
     {
-        $cads = Aula::all();
+        $user = Auth::user();
+        if($user->role == 1)
+        {
+            $cad = Professor::Where('cpf', $user->cpf)->first();
+            if(!$cad){
+                return redirect()->back();
+            }
+            $cads = Aula::Where('idprofessor', $cad->id)->paginate(8);
+            $idcurso = $cads[0]->idcurso;
+            return view($this->view . '.index', compact('cads','idcurso'));
+        }
+        if($user->role == 0)
+        {
+            $cad = Aluno::Where('cpf', $user->cpf)->first();
+            if(!$cad){
+                return redirect()->back();
+            }
+            $cads = Aula::Where('idcurso', $cad->idcursos)->paginate(8);
+            return view($this->view . '.index', compact('cads'));
+        }
+        if($user->role == 9)
+        {
+            $cads = Aula::paginate(8);
+            return view($this->view . '.index', compact('cads'));
+        }
 
-        return view($this->view.'.index', compact('cads'));
     }
 
     public function create()
