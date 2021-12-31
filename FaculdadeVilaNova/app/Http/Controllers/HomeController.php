@@ -30,11 +30,17 @@ class HomeController extends Controller
         {            
         $professor = Professor::Where('cpf', $user->cpf)->first();
         if($professor){
-            $idprofessor =  $professor->id;
             $professor->nome = $user->name;
             $professor->save();
             //Avisa que o professor esta vinculado ao user
             $status = "1";
+
+            
+            $aula = Aula::Where('idprofessor' , $professor->id)->first();
+            if($aula)
+            $idcurso = $aula->idcurso;
+            else
+            $idcurso ="0";
             return view('home', compact('status'));
         } 
     }

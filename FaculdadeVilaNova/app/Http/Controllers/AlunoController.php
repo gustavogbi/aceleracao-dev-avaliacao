@@ -27,13 +27,19 @@ class AlunoController extends Controller
         $user = Auth::user();
         if($user->role == 1)
         {
-            $cad = Professor::Where('cpf', $user->cpf)->first();
-            if(!$cad){
+            $professor = Professor::Where('cpf', $user->cpf)->first();
+            if(!$professor){
                 return redirect()->back();
             }
-            $aula = Aula::Where('idprofessor', $cad->id)->first();
+            $cads = Aula::Where('idprofessor', $professor->id)->paginate(8);
+            $aula = Aula::Where('idprofessor', $professor->id)->first();
+            if($aula){
+                
+            $idcurso = $aula->idcurso;            
             $cads = Aluno::Where('idcursos', $aula->idcurso)->paginate(8);
-            $idcurso = $cads[0]->idcurso;
+            }
+            else
+            $idcurso ="0";
             return view($this->view . '.index', compact('cads', 'idcurso'));
         }
         if($user->role == 0)

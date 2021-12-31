@@ -23,8 +23,11 @@ class ProfessorController extends Controller
             if(!$cad){
                 return redirect()->back();
             }
-            $aula = Aula::Where('idprofessor', $user->id)->first();
+            $aula = Aula::Where('idprofessor', $cad->id)->first();
+            if($aula)
             $idcurso = $aula->idcurso;
+            else
+            $idcurso ="0";
             return view($this->view . '.update', compact('cad','idcurso'));
         }
         if($user->role == 9)

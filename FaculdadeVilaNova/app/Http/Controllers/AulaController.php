@@ -25,12 +25,16 @@ class AulaController extends Controller
         $user = Auth::user();
         if($user->role == 1)
         {
-            $cad = Professor::Where('cpf', $user->cpf)->first();
-            if(!$cad){
+            $professor = Professor::Where('cpf', $user->cpf)->first();
+            if(!$professor){
                 return redirect()->back();
             }
-            $cads = Aula::Where('idprofessor', $cad->id)->paginate(8);
-            $idcurso = $cads[0]->idcurso;
+            $cads = Aula::Where('idprofessor', $professor->id)->paginate(8);
+            $aula = Aula::Where('idprofessor', $professor->id)->first();
+            if($aula)
+            $idcurso = $aula->idcurso;
+            else
+            $idcurso ="0";
             return view($this->view . '.index', compact('cads','idcurso'));
         }
         if($user->role == 0)
