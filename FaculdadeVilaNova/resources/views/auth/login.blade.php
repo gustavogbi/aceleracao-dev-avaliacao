@@ -19,11 +19,11 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition login-page bg-dafult">
-<div class="login-box">
+<div class="login-box" style="width: 40%; ">
   
   <!-- /.login-logo -->
-  <div class="card">
-    <div class="card-body login-card-body">
+  <div class="card" >
+    <div class="card-body "  style="background-image: url(/img/background3.png) ;   background-repeat: no-repeat;"   >
     <div class="login-logo">
   <a href="/" class="brand-link">
       <img src="/img/logo.png" alt="FVL Logo" class="brand-image img-circle elevation-3"
@@ -33,7 +33,7 @@
   </div> 
       <p class="login-box-msg">Digite seu email e senha.</p>
 
-      <form method="POST" action="{{ route('login') }}">
+      <form method="POST" action="{{ route('login') }}" >
                 @csrf
 
                 <div class="form-group row">

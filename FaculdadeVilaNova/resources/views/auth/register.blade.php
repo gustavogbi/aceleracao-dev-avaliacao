@@ -21,11 +21,11 @@
 </head>
 
 <body class="hold-transition login-page bg-dafult">
-<div class="login-box">
+<div class="login-box" style="width:50%">
   
   <!-- /.login-logo -->
-  <div class="card" style="width:600px">
-    <div class="card-body login-card-body">
+  <div class="card" >
+    <div class="card-body login-card-body" style="background-image: url(/img/background3.png) ;   background-repeat: no-repeat;">
     <div class="login-logo">
   <a href="/" class="brand-link">
       <img src="/img/logo.png" alt="FVL Logo" class="brand-image img-circle elevation-3"
@@ -132,7 +132,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row mb-0">
+                            <div class="form-group ">
                                 <div class="col-md-12">
                                     <button type="submit" class="btn btn-primary">
                                         {{ __('Finalizar cadastro') }}
@@ -147,10 +147,10 @@
 
 
                         <p class="text-white">
-                            <a href="forgot-password.html" class="text-white">Esqueci minha senha</a>
+                            <a href="forgot-password.html" class="text-dark">Esqueci minha senha</a>
                         </p>
                         <p class="text-white">
-                            <a href="/register" class="text-white">Não tenho cadastro</a>
+                            <a href="/register" class="text-dark">Não tenho cadastro</a>
                         </p>
                     </div>
                     <!-- /.login-card-body -->
