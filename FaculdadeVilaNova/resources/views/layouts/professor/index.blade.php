@@ -5,10 +5,8 @@
                 <div class="card-header">Home</div>
 
                 <div class="card-body">
-                    Olá, <strong> {{ Auth::user()->name }}</strong>. <br>
+                    Olá, <strong> {{ Auth::user()->name }}</strong> <br>
                     Seja bem vindo ao seu painel administrativo.<br>
-                    @if($status == 0) Você aida não esta lecioanando nenhum curso<br>
-                    @else Você esta lecionando o curso de <strong> {{$nomecurso}} @endif</strong>
                     @if($status == 0) Seu cadastro esta imcompleto. <br>
                     Clique abaixo para concluir sua matricula <br>
                     <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#myModal">
@@ -69,36 +67,6 @@
 
     </div>
 </div>
-<div class="container">
-    <div class="row ">
-        <div class="col-md-12">
-            <div class="card ">
-                <div class="card-header">Esta sua grade de aulas <strong> </strong> </div>
-                <table class="table table-bordered bg-dark text-white">
-                    <thead>
-                        <tr>
-                            <th scope="col">Numero de Aula</th>
-                            <th scope="col">Tema</th>
-                            <th scope="col">Duração</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @if($aulasstatus != 0)
-                        @foreach($aulas as $cad)
-                        <tr>
-                            <td>{{ $cad->num_aula }} </td>
-                            <td>{{ $cad->tema }} </td>
-                            <td>{{ $cad->duracao}} Horas </td>
-                        </tr>
-                        @endforeach
-                        @endif
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 @endif
 @if($status == 0)
