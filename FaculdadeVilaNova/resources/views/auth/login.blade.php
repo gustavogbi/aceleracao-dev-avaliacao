@@ -18,18 +18,19 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body class="hold-transition login-page bg-dark">
+<body class="hold-transition login-page bg-dafult">
 <div class="login-box">
-  <div class="login-logo">
+  
+  <!-- /.login-logo -->
+  <div class="card">
+    <div class="card-body login-card-body">
+    <div class="login-logo">
   <a href="/" class="brand-link">
       <img src="/img/logo.png" alt="FVL Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">FVL</span>
     </a>
-  </div>
-  <!-- /.login-logo -->
-  <div class="card">
-    <div class="card-body login-card-body">
+  </div> 
       <p class="login-box-msg">Digite seu email e senha.</p>
 
       <form method="POST" action="{{ route('login') }}">
@@ -78,14 +79,6 @@
                     </div>
                 </div>
             </form>
-
-      <div class="social-auth-links text-center mb-3">
-     
-       
-        <a href="#" class="btn btn-block btn-danger">
-          <i class="fab fa-google-plus mr-2"></i> Entrar com Google+
-        </a>
-      </div>
       <!-- /.social-auth-links -->
 
       <p class="mb-1">

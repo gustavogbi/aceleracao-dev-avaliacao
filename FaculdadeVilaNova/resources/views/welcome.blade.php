@@ -19,7 +19,7 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body class="bg-info">
+<body class="bg-dark">
   <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
   <div class="container">
@@ -37,28 +37,10 @@
         <li class="nav-item">
           <p class="nav-link active" aria-current="page" href="#">Faculdade Vila Nova</p>
         </li>
-        <li class="nav-item">
-       @auth  @else <a class="nav-link" href="/register">Não tenho cadastro</a>@endauth
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Informações</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Preços</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contato</a>
-        </li>
       </ul>
     </div>
-  </div>
-</nav>
-
-<!-- Page Content -->
-<div class="container">
-@auth 
-<a href="/home" class="">
-<img src="/img/logo2.png" alt="FVL Logo" class="">
+    @auth 
+<a href="/home" class="float-right">
 
 <button class="btn btn-secondary">
   <span class="spinner-grow spinner-border-sm"></span>
@@ -67,8 +49,7 @@
 
 </a>
   @else 
-<a href="/login" class="">
-<img src="/img/logo2.png" alt="FVL Logo" class="">
+<a href="/login" class="float-right">
 
 <button class="btn btn-secondary">
   <span class="spinner-grow spinner-border-sm"></span>
@@ -77,6 +58,14 @@
 
 </a>
 @endauth
+  </div>
+</nav>
+
+<!-- Page Content -->
+<div class="container ">
+  
+<img src="/img/logo2.png" alt="FVL Logo" class="">
+
 </div>
 
 <!-- jQuery -->
