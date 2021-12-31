@@ -17,6 +17,7 @@ class CreateProfessorsTable extends Migration
             $table->id();
             $table->string('nome',45);
             $table->string('matricula',45);
+            $table->string('cpf',45)->unique();
             $table->string('competencia',45);
             $table->string('escolaridade',45);
             $table->timestamps();

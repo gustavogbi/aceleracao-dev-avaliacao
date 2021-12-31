@@ -17,7 +17,8 @@ class ProfessorFactory extends Factory
             'nome' => $this->faker->name(),
             'matricula' => $this->faker->unique()->randomNumber(3, false),
             'competencia' => $this->faker->name(),
-            'escolaridade' => $this->faker->name()
+            'escolaridade' => $this->faker->name(),            
+            'cpf' => mt_rand(10000000000, 99999999999),
         ];
     }
 }

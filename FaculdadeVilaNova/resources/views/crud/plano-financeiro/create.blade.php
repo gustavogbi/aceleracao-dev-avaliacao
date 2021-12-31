@@ -24,7 +24,7 @@
                     <div class="card-body">
                         <form action="{{ route('planos-financeiros.store') }}" method="post">
                             @method('POST')
-                            @include('plano-financeiro.form')
+                            @include('crud.plano-financeiro.form')
                         </form>
                     </div>
                 </div>

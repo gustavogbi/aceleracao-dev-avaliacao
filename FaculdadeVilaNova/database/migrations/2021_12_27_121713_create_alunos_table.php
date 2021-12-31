@@ -21,7 +21,7 @@ class CreateAlunosTable extends Migration
             $table->string('datanascimento',45);
             $table->string('idade',20)->nullable();
             $table->string('responsavelFinanceiro',45)->nullable();
-            $table->string('cpf',45);
+            $table->string('cpf',45)->unique();
             $table->integer('idcursos')->default(0);
             $table->integer('idplano')->default(0);
             $table->timestamps();
