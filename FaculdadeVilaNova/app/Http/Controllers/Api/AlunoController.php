@@ -7,6 +7,7 @@ use App\Http\Requests\AlunoRequest;
 use App\Http\Resources\AlunoResource;
 use App\Http\Resources\AlunoResourceCollection;
 use App\Models\Aluno;
+use App\Models\Curso;
 use Illuminate\Http\Request;
 
 class AlunoController extends Controller
@@ -28,21 +29,23 @@ class AlunoController extends Controller
 
        return new AlunoResourceCollection($cad->paginate(8));
     }
-    
+
     public function store(AlunoRequest $request)
     {
         $cad = Aluno::create($request->all());
         return response()->json(['code'=>'200', "msg"=>'Cadastro inserido com sucesso']);
     }
 
-    public function show($id)
+    public function show($idcurso)
     {
-        $cad = Aluno::find($id);
 
-        if(!$cad){
+        $cads = Curso::findOrFail($idcurso);
+        $cads = Aluno::where('idcursos', $idcurso)->get();
+
+        if(!$cads){
             return response()->json(["code"=>500,"msg"=>"Não foi possivel encontrar o id fornecido"]);
         }
-        return new AlunoResource($cad);
+        return new AlunoResourceCollection($cads);
     }
 
     public function update(AlunoRequest $request, $id)
