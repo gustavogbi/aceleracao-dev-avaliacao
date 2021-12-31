@@ -64,7 +64,7 @@
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <aside class="main-sidebar sidebar-dark-primary elevation-4 " style="background-image: url(/img/background2.png) ;   background-repeat: no-repeat;">
             <!-- Brand Logo -->
             <a href="/home" class="brand-link">
                 <img src="/img/logo.png" alt="FVL Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
