@@ -1,6 +1,9 @@
 # Projeto Faculdade Vila Nova
 O projeto disponibiliza um sistema web com api integrada
 
+# Link com as requests e responses do postman e o banco .sql
+https://drive.google.com/drive/folders/1EYmYG1sdVwT72dFOkvntHpR-SAGdEf0g?usp=sharing
+
 # Endpoints
 + Listagem de professores
 + Listagem de alunos por curso
@@ -13,7 +16,7 @@ O projeto disponibiliza um sistema web com api integrada
 ### Autenticação
 Basic auth 
 
-### Endpoint Professores
+### Endpoint listagem de professores
 GET Listar Professores <br />
 ```api/professores```
 
@@ -23,125 +26,35 @@ RESPONSE
     "data": [
         {
             "id": 1,
-            "num_aula": 81,
-            "tema": "Eliza Flatley",
-            "duracao": "55",
-            "observacao": "Autem vero id possimus dolor. Voluptas sunt harum esse recusandae quo quo. Possimus ut commodi maiores quae facere sapiente repellat eum.",
-            "idcurso": 1,
-            "idprofessor": 1,
-            "created_at": "2021-12-30T08:52:27.000000Z",
-            "updated_at": "2021-12-30T09:09:46.000000Z"
+            "nome": "Nicolette Beahan",
+            "matricula": "221",
+            "cpf": "81111093293",
+            "competencia": "Alda Friesen",
+            "escolaridade": "Prof. Dagmar Tillman",
+            "created_at": "2021-12-31T05:16:04.000000Z",
+            "updated_at": "2021-12-31T05:16:04.000000Z"
         },
         {
             "id": 2,
-            "num_aula": 70,
-            "tema": "Mrs. Destinee Mayer",
-            "duracao": "61",
-            "observacao": "Animi earum temporibus omnis voluptate explicabo voluptatem corrupti. Praesentium incidunt quam blanditiis eum.",
-            "idcurso": 3,
-            "idprofessor": 7,
-            "created_at": "2021-12-30T08:52:27.000000Z",
-            "updated_at": "2021-12-30T08:52:27.000000Z"
-        },
-        {
-            "id": 3,
-            "num_aula": 58,
-            "tema": "Dino Lemke Sr.",
-            "duracao": "7",
-            "observacao": "Architecto neque natus est excepturi et assumenda quia consequatur. Molestiae quaerat sequi delectus totam.",
-            "idcurso": 7,
-            "idprofessor": 6,
-            "created_at": "2021-12-30T08:52:27.000000Z",
-            "updated_at": "2021-12-30T08:52:27.000000Z"
-        },
-        {
-            "id": 4,
-            "num_aula": 77,
-            "tema": "Buddy Schimmel",
-            "duracao": "23",
-            "observacao": "Sed eum soluta pariatur corporis sit. Distinctio eaque veniam aut cum ad sed. Quos culpa veniam magnam voluptatem animi.",
-            "idcurso": 1,
-            "idprofessor": 10,
-            "created_at": "2021-12-30T08:52:27.000000Z",
-            "updated_at": "2021-12-30T08:52:27.000000Z"
-        },
-        {
-            "id": 5,
-            "num_aula": 44,
-            "tema": "Frank Bechtelar DDS",
-            "duracao": "86",
-            "observacao": "Magni animi sed molestiae. Facilis recusandae ea quidem cupiditate modi consectetur.",
-            "idcurso": 1,
-            "idprofessor": 10,
-            "created_at": "2021-12-30T08:52:27.000000Z",
-            "updated_at": "2021-12-30T08:52:27.000000Z"
-        },
-        {
-            "id": 6,
-            "num_aula": 2,
-            "tema": "Prof. Pauline Weissnat",
-            "duracao": "92",
-            "observacao": "Voluptas qui consequatur aliquid id dolorem. Iure ipsam distinctio modi libero laboriosam perferendis nisi.",
-            "idcurso": 7,
-            "idprofessor": 8,
-            "created_at": "2021-12-30T08:52:27.000000Z",
-            "updated_at": "2021-12-30T08:52:27.000000Z"
-        },
-        {
-            "id": 7,
-            "num_aula": 95,
-            "tema": "Prof. Ned Emard Jr.",
-            "duracao": "36",
-            "observacao": "Blanditiis sapiente aut soluta veritatis quis. Incidunt porro repellendus officiis non iste impedit quae. Et optio accusamus at.",
-            "idcurso": 8,
-            "idprofessor": 5,
-            "created_at": "2021-12-30T08:52:27.000000Z",
-            "updated_at": "2021-12-30T08:52:27.000000Z"
-        },
-        {
-            "id": 8,
-            "num_aula": 84,
-            "tema": "Mrs. Aubree Feil III",
-            "duracao": "62",
-            "observacao": "Cumque aut quasi nulla adipisci eligendi eius laudantium. Cumque nihil molestiae illo natus. Distinctio quae reprehenderit laudantium quisquam rem est.",
-            "idcurso": 7,
-            "idprofessor": 1,
-            "created_at": "2021-12-30T08:52:27.000000Z",
-            "updated_at": "2021-12-30T08:52:27.000000Z"
-        },
-        {
-            "id": 9,
-            "num_aula": 68,
-            "tema": "Alexandria Stamm",
-            "duracao": "29",
-            "observacao": "Necessitatibus dolore qui placeat itaque. Optio laudantium a possimus qui id ex.",
-            "idcurso": 3,
-            "idprofessor": 9,
-            "created_at": "2021-12-30T08:52:27.000000Z",
-            "updated_at": "2021-12-30T08:52:27.000000Z"
-        },
-        {
-            "id": 10,
-            "num_aula": 87,
-            "tema": "Miss Shanelle Bartoletti I",
-            "duracao": "76",
-            "observacao": "Culpa eos repellendus impedit suscipit voluptas mollitia assumenda. Aut in maxime et quaerat similique nemo eum. In quo sunt placeat harum.",
-            "idcurso": 4,
-            "idprofessor": 8,
-            "created_at": "2021-12-30T08:52:27.000000Z",
-            "updated_at": "2021-12-30T08:52:27.000000Z"
+            "nome": "Ms. Joana Mitchell",
+            "matricula": "935",
+            "cpf": "65905678399",
+            "competencia": "Wilford Schumm V",
+            "escolaridade": "Jerod Deckow",
+            "created_at": "2021-12-31T05:16:04.000000Z",
+            "updated_at": "2021-12-31T05:16:04.000000Z"
         }
     ],
     "links": {
-        "first": "http://localhost:8000/api/aulas?page=1",
-        "last": "http://localhost:8000/api/aulas?page=5",
+        "first": "http://localhost:8000/api/professores?page=1",
+        "last": "http://localhost:8000/api/professores?page=2",
         "prev": null,
-        "next": "http://localhost:8000/api/aulas?page=2"
+        "next": "http://localhost:8000/api/professores?page=2"
     },
     "meta": {
         "current_page": 1,
         "from": 1,
-        "last_page": 5,
+        "last_page": 2,
         "links": [
             {
                 "url": null,
@@ -149,44 +62,256 @@ RESPONSE
                 "active": false
             },
             {
-                "url": "http://localhost:8000/api/aulas?page=1",
+                "url": "http://localhost:8000/api/professores?page=1",
                 "label": "1",
                 "active": true
             },
             {
-                "url": "http://localhost:8000/api/aulas?page=2",
+                "url": "http://localhost:8000/api/professores?page=2",
                 "label": "2",
                 "active": false
             },
             {
-                "url": "http://localhost:8000/api/aulas?page=3",
-                "label": "3",
-                "active": false
-            },
-            {
-                "url": "http://localhost:8000/api/aulas?page=4",
-                "label": "4",
-                "active": false
-            },
-            {
-                "url": "http://localhost:8000/api/aulas?page=5",
-                "label": "5",
-                "active": false
-            },
-            {
-                "url": "http://localhost:8000/api/aulas?page=2",
+                "url": "http://localhost:8000/api/professores?page=2",
                 "label": "Next &raquo;",
                 "active": false
             }
         ],
-        "path": "http://localhost:8000/api/aulas",
-        "per_page": 10,
-        "to": 10,
-        "total": 50
+        "path": "http://localhost:8000/api/professores",
+        "per_page": 8,
+        "to": 8,
+        "total": 10
     },
     "informação importante": "Essa API não está em produção, é apenas de homologação e testes"
 }
 ```
+
+### Endpoint listagem de alunos por curso
+GET Listar alunos por curso <br />
+```api/alunos/{idcurso}```
+
+RESPONSE
+```
+{
+    "data": [
+        {
+            "id": 1,
+            "nome": "Guy Will",
+            "matricula": "597",
+            "datanascimento": "1988-03-19",
+            "idade": "23",
+            "responsavelFinanceiro": "Bernadine Senger Jr.",
+            "cpf": "69995875899",
+            "idcursos": 1,
+            "idplano": 2,
+            "created_at": "2021-12-31T05:16:04.000000Z",
+            "updated_at": "2021-12-31T05:16:04.000000Z"
+        },
+        {
+            "id": 4,
+            "nome": "Vanessa Gorczany",
+            "matricula": "564",
+            "datanascimento": "1975-12-05",
+            "idade": "87",
+            "responsavelFinanceiro": "Abner Kiehn",
+            "cpf": "56669501009",
+            "idcursos": 1,
+            "idplano": 2,
+            "created_at": "2021-12-31T05:16:04.000000Z",
+            "updated_at": "2021-12-31T05:16:04.000000Z"
+        },
+        {
+            "id": 6,
+            "nome": "Hassan Roob",
+            "matricula": "40",
+            "datanascimento": "1978-03-22",
+            "idade": "35",
+            "responsavelFinanceiro": "Demarco Bergstrom MD",
+            "cpf": "45726563584",
+            "idcursos": 1,
+            "idplano": 2,
+            "created_at": "2021-12-31T05:16:04.000000Z",
+            "updated_at": "2021-12-31T05:16:04.000000Z"
+        },
+        {
+            "id": 8,
+            "nome": "Dr. Norwood Quigley III",
+            "matricula": "887",
+            "datanascimento": "1976-07-29",
+            "idade": "93",
+            "responsavelFinanceiro": "Howell Wilkinson",
+            "cpf": "34348051060",
+            "idcursos": 1,
+            "idplano": 2,
+            "created_at": "2021-12-31T05:16:04.000000Z",
+            "updated_at": "2021-12-31T05:16:04.000000Z"
+        }
+    ],
+    "informação importante": "Essa API não está em produção, é apenas de homologação e testes"
+}
+```
+
+### Endpoint listagem de aulas por curso
+GET Listar aulas por curso <br />
+```api/aulas/{idcurso}```
+
+RESPONSE
+```
+{
+    "data": [
+        {
+            "id": 1,
+            "num_aula": 30,
+            "tema": "Jammie Funk",
+            "duracao": "80",
+            "observacao": "Aliquam exercitationem iste eaque sint non. Voluptatibus et quo et laborum voluptatem. Tempore nihil excepturi debitis saepe pariatur.",
+            "idcurso": 1,
+            "idprofessor": 3,
+            "created_at": "2021-12-31T05:16:05.000000Z",
+            "updated_at": "2021-12-31T05:16:05.000000Z"
+        },
+        {
+            "id": 11,
+            "num_aula": 61,
+            "tema": "Prof. Sam Macejkovic",
+            "duracao": "37",
+            "observacao": "Eius sit distinctio aut ratione eum expedita voluptatem voluptates. Corporis nemo et exercitationem.",
+            "idcurso": 1,
+            "idprofessor": 10,
+            "created_at": "2021-12-31T05:16:05.000000Z",
+            "updated_at": "2021-12-31T05:16:05.000000Z"
+        },
+        {
+            "id": 16,
+            "num_aula": 26,
+            "tema": "Arjun Goyette",
+            "duracao": "99",
+            "observacao": "Aspernatur et aut aut sint mollitia. Vitae quia nihil deleniti qui doloremque eos aut. Sed consequatur quis voluptatem tenetur.",
+            "idcurso": 1,
+            "idprofessor": 5,
+            "created_at": "2021-12-31T05:16:05.000000Z",
+            "updated_at": "2021-12-31T05:16:05.000000Z"
+        }
+    ],
+    "informação importante": "Essa API não está em produção, é apenas de homologação e testes"
+}
+```
+
+### Endpoint listagem de cursos disponíveis
+GET Listar cursos disponíveis <br />
+```api/cursos/disponiveis```
+
+RESPONSE
+```
+{
+    "data": [
+        {
+            "id": 1,
+            "nomedocurso": "Willy Hane",
+            "qntmax": 8,
+            "descricao": "Consectetur porro debitis placeat sed necessitatibus eveniet nesciunt. Ipsum itaque autem doloribus perspiciatis. Incidunt eveniet eum libero similique.",
+            "datacriacao": "2007-01-14T08:47:46.000000Z",
+            "dataupdate": "1974-06-16T01:13:13.000000Z",
+            "categoria": "repellat",
+            "mensalidade": 2235.02,
+            "status": "Disponível"
+        },
+        {
+            "id": 4,
+            "nomedocurso": "Cassandre Kuhn V",
+            "qntmax": 8,
+            "descricao": "Labore inventore doloribus amet est voluptas expedita. Vel ea voluptates excepturi. Harum ut dolores est sunt assumenda et. Voluptatem eum sunt maiores ab ut.",
+            "datacriacao": "1973-11-05T17:21:18.000000Z",
+            "dataupdate": "2020-05-18T22:11:51.000000Z",
+            "categoria": "nihil",
+            "mensalidade": 2395.38,
+            "status": "Disponível"
+        },
+        {
+            "id": 6,
+            "nomedocurso": "Mrs. Alexa McClure",
+            "qntmax": 7,
+            "descricao": "Minus libero voluptas sunt est impedit autem. Quidem inventore quo aut eum. Aut voluptas facere reiciendis non eos doloremque.",
+            "datacriacao": "2016-08-23T01:04:01.000000Z",
+            "dataupdate": "2016-01-26T13:03:38.000000Z",
+            "categoria": "vitae",
+            "mensalidade": 9593.85,
+            "status": "Disponível"
+        },
+        {
+            "id": 7,
+            "nomedocurso": "Lindsey Yost",
+            "qntmax": 6,
+            "descricao": "Eveniet sed quo et aspernatur ipsam enim nulla et. Voluptas debitis rerum labore voluptas. Similique aut aliquid esse enim. Et dolorem facere rerum voluptate fuga rerum ullam.",
+            "datacriacao": "1993-11-24T22:06:20.000000Z",
+            "dataupdate": "1991-03-05T00:29:15.000000Z",
+            "categoria": "atque",
+            "mensalidade": 3112.47,
+            "status": "Disponível"
+        }
+    ],
+    "informacao": "Essa API não está em produção, é apenas de homologação e testes"
+}
+```
+
+
+### Endpoint listagem de cursos indisponiveis
+GET Listar cursos indisponiveis <br />
+```api/cursos/indisponiveis```
+
+RESPONSE
+```
+{
+    "data": [
+        {
+            "id": 2,
+            "nomedocurso": "Teresa Lebsack",
+            "qntmax": 2,
+            "descricao": "Fugit veniam totam occaecati et non. Atque vero voluptates quam blanditiis amet maxime dolore. Voluptatem est ut iusto qui quibusdam asperiores.",
+            "datacriacao": "1989-01-17T20:34:57.000000Z",
+            "dataupdate": "2000-12-07T01:35:31.000000Z",
+            "categoria": "atque",
+            "mensalidade": 917.86,
+            "status": "Indisponível"
+        },
+        {
+            "id": 3,
+            "nomedocurso": "Merritt Rosenbaum V",
+            "qntmax": 2,
+            "descricao": "Qui nemo quia laborum et ut placeat. Quasi voluptas officia doloribus adipisci omnis laudantium occaecati rerum. Voluptas velit aut nihil vitae commodi odio.",
+            "datacriacao": "1972-05-03T18:17:43.000000Z",
+            "dataupdate": "1992-02-11T04:54:22.000000Z",
+            "categoria": "voluptas",
+            "mensalidade": 5457.61,
+            "status": "Indisponível"
+        },
+        {
+            "id": 5,
+            "nomedocurso": "Mr. Ryan Ryan III",
+            "qntmax": 4,
+            "descricao": "Et aut non repudiandae et. Consequuntur eos qui molestiae est sit ut et.",
+            "datacriacao": "2009-11-01T16:20:24.000000Z",
+            "dataupdate": "1988-08-11T18:44:07.000000Z",
+            "categoria": "vitae",
+            "mensalidade": 4189.54,
+            "status": "Indisponível"
+        },
+        {
+            "id": 8,
+            "nomedocurso": "Prof. Ernesto Reinger DDS",
+            "qntmax": 1,
+            "descricao": "Corporis similique aut dolor et ut. Voluptatem commodi laboriosam aut ea et blanditiis. Ab facere sit sint facere. Ea quas minus atque qui.",
+            "datacriacao": "1972-06-29T09:20:39.000000Z",
+            "dataupdate": "1988-08-26T09:36:51.000000Z",
+            "categoria": "nam",
+            "mensalidade": 8457.11,
+            "status": "Indisponível"
+        }
+    ],
+    "informacao": "Essa API não está em produção, é apenas de homologação e testes"
+}
+```
+
 
 POST Criar Professor <br />
 ```api/professores```
@@ -241,238 +366,3 @@ RESPONSE
     "msg": "Cadastro removido com sucesso"
 }
 ```
-
-asdasdasda
-### Endpoint Alunos
-GET Listar Alunos
-```api/professores```
-```
-{
-    "data": [
-        {
-            "id": 1,
-            "num_aula": 81,
-            "tema": "Eliza Flatley",
-            "duracao": "55",
-            "observacao": "Autem vero id possimus dolor. Voluptas sunt harum esse recusandae quo quo. Possimus ut commodi maiores quae facere sapiente repellat eum.",
-            "idcurso": 1,
-            "idprofessor": 1,
-            "created_at": "2021-12-30T08:52:27.000000Z",
-            "updated_at": "2021-12-30T09:09:46.000000Z"
-        },
-        {
-            "id": 2,
-            "num_aula": 70,
-            "tema": "Mrs. Destinee Mayer",
-            "duracao": "61",
-            "observacao": "Animi earum temporibus omnis voluptate explicabo voluptatem corrupti. Praesentium incidunt quam blanditiis eum.",
-            "idcurso": 3,
-            "idprofessor": 7,
-            "created_at": "2021-12-30T08:52:27.000000Z",
-            "updated_at": "2021-12-30T08:52:27.000000Z"
-        },
-        {
-            "id": 3,
-            "num_aula": 58,
-            "tema": "Dino Lemke Sr.",
-            "duracao": "7",
-            "observacao": "Architecto neque natus est excepturi et assumenda quia consequatur. Molestiae quaerat sequi delectus totam.",
-            "idcurso": 7,
-            "idprofessor": 6,
-            "created_at": "2021-12-30T08:52:27.000000Z",
-            "updated_at": "2021-12-30T08:52:27.000000Z"
-        },
-        {
-            "id": 4,
-            "num_aula": 77,
-            "tema": "Buddy Schimmel",
-            "duracao": "23",
-            "observacao": "Sed eum soluta pariatur corporis sit. Distinctio eaque veniam aut cum ad sed. Quos culpa veniam magnam voluptatem animi.",
-            "idcurso": 1,
-            "idprofessor": 10,
-            "created_at": "2021-12-30T08:52:27.000000Z",
-            "updated_at": "2021-12-30T08:52:27.000000Z"
-        },
-        {
-            "id": 5,
-            "num_aula": 44,
-            "tema": "Frank Bechtelar DDS",
-            "duracao": "86",
-            "observacao": "Magni animi sed molestiae. Facilis recusandae ea quidem cupiditate modi consectetur.",
-            "idcurso": 1,
-            "idprofessor": 10,
-            "created_at": "2021-12-30T08:52:27.000000Z",
-            "updated_at": "2021-12-30T08:52:27.000000Z"
-        },
-        {
-            "id": 6,
-            "num_aula": 2,
-            "tema": "Prof. Pauline Weissnat",
-            "duracao": "92",
-            "observacao": "Voluptas qui consequatur aliquid id dolorem. Iure ipsam distinctio modi libero laboriosam perferendis nisi.",
-            "idcurso": 7,
-            "idprofessor": 8,
-            "created_at": "2021-12-30T08:52:27.000000Z",
-            "updated_at": "2021-12-30T08:52:27.000000Z"
-        },
-        {
-            "id": 7,
-            "num_aula": 95,
-            "tema": "Prof. Ned Emard Jr.",
-            "duracao": "36",
-            "observacao": "Blanditiis sapiente aut soluta veritatis quis. Incidunt porro repellendus officiis non iste impedit quae. Et optio accusamus at.",
-            "idcurso": 8,
-            "idprofessor": 5,
-            "created_at": "2021-12-30T08:52:27.000000Z",
-            "updated_at": "2021-12-30T08:52:27.000000Z"
-        },
-        {
-            "id": 8,
-            "num_aula": 84,
-            "tema": "Mrs. Aubree Feil III",
-            "duracao": "62",
-            "observacao": "Cumque aut quasi nulla adipisci eligendi eius laudantium. Cumque nihil molestiae illo natus. Distinctio quae reprehenderit laudantium quisquam rem est.",
-            "idcurso": 7,
-            "idprofessor": 1,
-            "created_at": "2021-12-30T08:52:27.000000Z",
-            "updated_at": "2021-12-30T08:52:27.000000Z"
-        },
-        {
-            "id": 9,
-            "num_aula": 68,
-            "tema": "Alexandria Stamm",
-            "duracao": "29",
-            "observacao": "Necessitatibus dolore qui placeat itaque. Optio laudantium a possimus qui id ex.",
-            "idcurso": 3,
-            "idprofessor": 9,
-            "created_at": "2021-12-30T08:52:27.000000Z",
-            "updated_at": "2021-12-30T08:52:27.000000Z"
-        },
-        {
-            "id": 10,
-            "num_aula": 87,
-            "tema": "Miss Shanelle Bartoletti I",
-            "duracao": "76",
-            "observacao": "Culpa eos repellendus impedit suscipit voluptas mollitia assumenda. Aut in maxime et quaerat similique nemo eum. In quo sunt placeat harum.",
-            "idcurso": 4,
-            "idprofessor": 8,
-            "created_at": "2021-12-30T08:52:27.000000Z",
-            "updated_at": "2021-12-30T08:52:27.000000Z"
-        }
-    ],
-    "links": {
-        "first": "http://localhost:8000/api/aulas?page=1",
-        "last": "http://localhost:8000/api/aulas?page=5",
-        "prev": null,
-        "next": "http://localhost:8000/api/aulas?page=2"
-    },
-    "meta": {
-        "current_page": 1,
-        "from": 1,
-        "last_page": 5,
-        "links": [
-            {
-                "url": null,
-                "label": "&laquo; Previous",
-                "active": false
-            },
-            {
-                "url": "http://localhost:8000/api/aulas?page=1",
-                "label": "1",
-                "active": true
-            },
-            {
-                "url": "http://localhost:8000/api/aulas?page=2",
-                "label": "2",
-                "active": false
-            },
-            {
-                "url": "http://localhost:8000/api/aulas?page=3",
-                "label": "3",
-                "active": false
-            },
-            {
-                "url": "http://localhost:8000/api/aulas?page=4",
-                "label": "4",
-                "active": false
-            },
-            {
-                "url": "http://localhost:8000/api/aulas?page=5",
-                "label": "5",
-                "active": false
-            },
-            {
-                "url": "http://localhost:8000/api/aulas?page=2",
-                "label": "Next &raquo;",
-                "active": false
-            }
-        ],
-        "path": "http://localhost:8000/api/aulas",
-        "per_page": 10,
-        "to": 10,
-        "total": 50
-    },
-    "informação importante": "Essa API não está em produção, é apenas de homologação e testes"
-}
-```
-
-POST Criar Professor
-```api/professores```
-
-```
-{
-    "nome": "Nome do professor",
-    "matricula": "Numero de matricula do professor",
-    "competencia": "competência do professor",
-    "escolaridade": "nivel de escolaridade do professor",
-}
-```
-
-```
-{
-    "code": "200",
-    "msg": "Cadastro inserido com sucesso"
-}
-```
-
-
-PUT Editar Professor
-```api/professores/{id}```
-```
-{
-    "nome": "Nome do professor",
-    "matricula": "Numero de matricula do professor",
-    "competencia": "competência do professor",
-    "escolaridade": "nivel de escolaridade do professor",
-}
-```
-
-```
-{
-    "code": 200,
-    "msg": "Cadastro alterado com sucesso"
-}
-```
-
-DELETE Listar Professores
-```api/professores/{id}```
-
-```
-{
-    "code": 200,
-    "msg": "Cadastro removido com sucesso"
-}
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
