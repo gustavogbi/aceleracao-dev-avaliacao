@@ -6,7 +6,7 @@
                 <div class="card-header">Home</div>
 
                 <div class="card-body">
-                    Olá Administrador, {{ Auth::user()->name }}. Seja bem vindo ao seu painel administrativo
+                    Olá , {{ Auth::user()->name }}. Seja bem vindo ao seu painel administrativo
                 </div>
             </div>
         </div>

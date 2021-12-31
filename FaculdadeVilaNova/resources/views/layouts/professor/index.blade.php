@@ -6,7 +6,7 @@
                 <div class="card-header">Home</div>
 
                 <div class="card-body">
-                    Olá querido Professor, <strong> {{ Auth::user()->name }}</strong>. <br>
+                    Olá, <strong> {{ Auth::user()->name }}</strong>. <br>
                     Seja bem vindo ao seu painel administrativo.<br>
                     @if($status == 0) Você aida não esta lecioanando nenhum curso<br>
                      @else Você esta lecionando o curso de <strong> {{$nomecurso}} @endif</strong>

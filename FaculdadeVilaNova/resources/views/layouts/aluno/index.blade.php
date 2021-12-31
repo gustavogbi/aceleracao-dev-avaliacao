@@ -6,7 +6,7 @@
                 <div class="card-header">Home</div>
 
                 <div class="card-body">
-                    Olá querido aluno, <strong>{{ Auth::user()->name }}</strong>. <br>
+                    Olá, <strong>{{ Auth::user()->name }}</strong>. <br>
                     Seja bem vindo ao seu painel administrativo<br><br><hr>
                     @include('layouts.alerts')
 

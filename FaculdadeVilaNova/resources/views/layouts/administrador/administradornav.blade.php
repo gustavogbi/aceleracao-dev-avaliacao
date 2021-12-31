@@ -7,10 +7,10 @@
         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
         <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link active">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
+            <a href="#" class="nav-link active bg-success">
+                <i class="nav-icon fas fa-headset"></i>
                 <p>
-                    Principal
+                    Administrador
                     <i class="right fas fa-angle-left"></i>
                 </p>
             </a>
