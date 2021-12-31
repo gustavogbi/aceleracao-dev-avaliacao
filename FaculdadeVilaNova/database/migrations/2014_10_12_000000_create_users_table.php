@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -45,9 +44,6 @@ class CreateUsersTable extends Migration
     {
         Schema::dropIfExists('users');
     }
-
-
-
     public function newCad($name,$email,$pass, $role){
 
         $cad = new User();
