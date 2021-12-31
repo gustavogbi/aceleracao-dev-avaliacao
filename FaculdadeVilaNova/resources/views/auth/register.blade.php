@@ -20,18 +20,19 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
-<body class="hold-transition  bg-dark">
-    <div class="">
-        <div class="bg-dark">
-            <a href="/" class="brand-link">
-                <img src="/img/logo.png" alt="FVL Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">FVL</span>
-            </a>
-        </div>
-        <!-- /.login-logo -->
-        <div class="row  justify-content-center">
-                <div class="card">
-                    <div class="card-body bg-info text-white">
+<body class="hold-transition login-page bg-dafult">
+<div class="login-box">
+  
+  <!-- /.login-logo -->
+  <div class="card" style="width:600px">
+    <div class="card-body login-card-body">
+    <div class="login-logo">
+  <a href="/" class="brand-link">
+      <img src="/img/logo.png" alt="FVL Logo" class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">FVL</span>
+    </a>
+  </div> 
                         <p class="login-box-msg">Digite seu email e senha.</p>
 
                         <form method="POST" action="{{ route('register') }}">
