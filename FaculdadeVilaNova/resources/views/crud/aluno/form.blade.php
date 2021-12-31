@@ -25,9 +25,10 @@
         <select class="select2bs4" name="idcursos" id="idcursos" style="width: 100%;">
             @foreach ($cursos as $curso)
 
-                <option value="{{ $curso->id }}" @if (!empty($cad)) {{ $cad->idcursos == $curso->id ? 'selected' : '' }} @endif>
-                    {{ $curso->nomedocurso }}
-                </option>
+            <option value="{{ $curso->id }}" @if (!empty($cad)) {{ $cad->idcursos == $curso->id ? 'selected' : '' }}
+                @endif>
+                {{ $curso->nomedocurso }}
+            </option>
             @endforeach
         </select>
     </div>
@@ -37,9 +38,10 @@
         <select class="select2bs4" name="idplano" id="idplano" style="width: 100%;">
             @foreach ($planos as $plano)
 
-                <option value="{{ $plano->id }}" @if (!empty($cad)) {{ $cad->idplano == $plano->id ? 'selected' : '' }} @endif>
-                    {{ $plano->nome }}
-                </option>
+            <option value="{{ $plano->id }}" @if (!empty($cad)) {{ $cad->idplano == $plano->id ? 'selected' : '' }}
+                @endif>
+                {{ $plano->nome }}
+            </option>
             @endforeach
         </select>
     </div>
@@ -47,8 +49,7 @@
         <br>
         Data de nascimento:
         <input onchange="responsavel(this)" onload="responsavel(this)" type="date" name="datanascimento"
-            id="datanascimento" value="{{ $cad->datanascimento ?? old('datanascimento') }}"
-            class="form-control"><br>
+            id="datanascimento" value="{{ $cad->datanascimento ?? old('datanascimento') }}" class="form-control"><br>
     </div>
 
     <div class="col-md-8">

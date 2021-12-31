@@ -4,11 +4,12 @@
     <div class="row ">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Alunos 
-                @if( Auth::user()->role == 9 )   <a href="{{route('alunos.create') }}"><button type="button" class="btn btn-info tet-white float-right">
+                <div class="card-header">Alunos
+                    @if( Auth::user()->role == 9 ) <a href="{{route('alunos.create') }}"><button type="button"
+                            class="btn btn-info tet-white float-right">
                             <i class="fa fa-plus"></i> Novo</button></a>
-                        @endif
-                    </div>
+                    @endif
+                </div>
 
                 <div class="card-body">
 
@@ -42,11 +43,12 @@
                         <td>{{ $cad->id }} </td>
                         <td>{{ $cad->nome }} </td>
                         <td>{{ $cad->matricula }} </td>
-                        <td>{{ date('d/m/Y', strtotime( $cad->datanascimento) )}} 
+                        <td>{{ date('d/m/Y', strtotime( $cad->datanascimento) )}}
                         </td>
                         <td>@if( $cad->responsavelFinanceiro == "Responsável financeiro não informado")
-                             <p class="text-danger">{{ $cad->responsavelFinanceiro }} </p>
-                             @else {{$cad->responsavelFinanceiro}} @endif</td>
+                            <p class="text-danger">{{ $cad->responsavelFinanceiro }} </p>
+                            @else {{$cad->responsavelFinanceiro}} @endif
+                        </td>
                         <td>{{ $cad->cpf }} </td>
                         <td>{{ $cad->_curso()}} </td>
                         <td>{{ $cad->_plano()}} </td>

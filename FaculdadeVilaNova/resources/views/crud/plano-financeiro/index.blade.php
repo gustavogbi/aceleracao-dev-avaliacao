@@ -4,9 +4,11 @@
     <div class="row ">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Planos financeiros 
-                    <a href="{{route('planos-financeiros.create') }}"><button type="button" class="btn btn-info tet-white float-right">
-                            <i class="fa fa-plus"></i> Novo</button></a></div>
+                <div class="card-header">Planos financeiros
+                    <a href="{{route('planos-financeiros.create') }}"><button type="button"
+                            class="btn btn-info tet-white float-right">
+                            <i class="fa fa-plus"></i> Novo</button></a>
+                </div>
 
                 <div class="card-body">
 
@@ -70,7 +72,8 @@
                                         </div>
                                         <!-- Modal body -->
                                         <div class="modal-body">
-                                            <form action="{{ route('planos-financeiros.destroy', $cad->id) }}" method="POST">
+                                            <form action="{{ route('planos-financeiros.destroy', $cad->id) }}"
+                                                method="POST">
                                                 <input type="hidden" name="_method" value="DELETE">
                                                 <input type="hidden" name="_token" value="{{csrf_token()}}">
 

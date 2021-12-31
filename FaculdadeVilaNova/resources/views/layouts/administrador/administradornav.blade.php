@@ -19,9 +19,9 @@
                         <p>
                             Cursos<span class="badge badge-info right">
                                 @php
-                                    echo DB::table('cursos')
-                                        ->select('id')
-                                        ->count();
+                                echo DB::table('cursos')
+                                ->select('id')
+                                ->count();
                                 @endphp
                             </span>
                         </p>
@@ -35,9 +35,9 @@
                             Alunos
                             <span class="badge badge-info right">
                                 @php
-                                    echo DB::table('alunos')
-                                        ->select('id')
-                                        ->count();
+                                echo DB::table('alunos')
+                                ->select('id')
+                                ->count();
                                 @endphp
                             </span>
                         </p>
@@ -50,9 +50,9 @@
                         <p>Plano Financeiro
                             <span class="badge badge-info right">
                                 @php
-                                    echo DB::table('planos_financeiros')
-                                        ->select('id')
-                                        ->count();
+                                echo DB::table('planos_financeiros')
+                                ->select('id')
+                                ->count();
                                 @endphp
                             </span>
                         </p>
@@ -66,9 +66,9 @@
                             Professores
                             <span class="badge badge-info right">
                                 @php
-                                    echo DB::table('professores')
-                                        ->select('id')
-                                        ->count();
+                                echo DB::table('professores')
+                                ->select('id')
+                                ->count();
                                 @endphp
                             </span>
                         </p>
@@ -81,22 +81,21 @@
                             Aulas
                             <span class="badge badge-info right">
                                 <span class="badge badge-info right">
-                                @php
+                                    @php
                                     echo DB::table('aulas')
-                                        ->select('id')
-                                        ->count();
-                                @endphp
+                                    ->select('id')
+                                    ->count();
+                                    @endphp
                                 </span>
                             </span>
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/endpoints/api"
-                        class="nav-link  {{ request()->is('endpoints/api*') ? 'active' : '' }} ">
+                    <a href="/endpoints/api" class="nav-link  {{ request()->is('endpoints/api*') ? 'active' : '' }} ">
                         <i class="nav-icon 	fas fa-code"></i>
                         <p>
-                            Endpoints                        </p>
+                            Endpoints </p>
                     </a>
                 </li>
             </ul>

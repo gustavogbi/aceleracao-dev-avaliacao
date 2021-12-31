@@ -1,6 +1,3 @@
-
-
-
 <!-- Sidebar Menu -->
 <nav class="mt-2">
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -8,7 +5,7 @@
                with font-awesome or any other icon font library -->
         <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link active bg-info">
-            <i class="nav-icon fas fa-user-graduate"></i>
+                <i class="nav-icon fas fa-user-graduate"></i>
                 <p>
                     Aluno
                     <i class="right fas fa-angle-left"></i>
@@ -19,15 +16,15 @@
                     <a href="/aluno/meusdados" class="nav-link">
                         <i class="nav-icon fas fa-user"></i>
                         <p>
-                            Meus  dados
+                            Meus dados
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="/aluno/aulas" class="nav-link">
-                    <i class="nav-icon fas fa-book-open"></i>
+                        <i class="nav-icon fas fa-book-open"></i>
                         <p>
-                           Minhas aulas
+                            Minhas aulas
                         </p>
                     </a>
                 </li>

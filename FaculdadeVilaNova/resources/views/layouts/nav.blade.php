@@ -1,5 +1,3 @@
-
-
 @if( Auth::user()->role == 0 )
 @include('layouts.aluno.alunonav')
 @endif

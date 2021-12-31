@@ -91,4 +91,3 @@ class HomeController extends Controller
             return view('api.endpoints');
         }
     }
-

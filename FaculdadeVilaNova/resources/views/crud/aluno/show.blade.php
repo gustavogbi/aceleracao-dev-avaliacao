@@ -5,11 +5,13 @@
     <div class="row ">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Aluno - <strong>{{$cad->nome}}</strong>  
-                 <a href="{{route('alunos.index') }}"><button type="button" class="btn btn-success tet-white float-right">
-                            <i class="fa fa-arrow-left "></i> VOLTAR</button></a></div>
+                <div class="card-header">Aluno - <strong>{{$cad->nome}}</strong>
+                    <a href="{{route('alunos.index') }}"><button type="button"
+                            class="btn btn-success tet-white float-right">
+                            <i class="fa fa-arrow-left "></i> VOLTAR</button></a>
+                </div>
                 <div class="card-body">
-                  
+
 
                 </div>
             </div>
@@ -20,34 +22,36 @@
     <div class="row ">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Dados de  <strong>{{$cad->nome}}</strong>  
-                @if( Auth::user()->role == 9 )                 
-                <a href="{{ route('alunos.edit', $cad->id) }}" class="btn btn-info float-right">Editar</a>
-                @endif 
+                <div class="card-header">Dados de <strong>{{$cad->nome}}</strong>
+                    @if( Auth::user()->role == 9 )
+                    <a href="{{ route('alunos.edit', $cad->id) }}" class="btn btn-info float-right">Editar</a>
+                    @endif
                 </div>
 
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md">
-                    <strong> Nome:</strong> {{$cad->nome}}<br>
-                   
-                    <strong> Matricula:</strong> {{$cad->matricula}} <br>
-                   
-                    <strong> Data de nascimento: </strong> {{ date('d/m/Y', strtotime( $cad->datanascimento) )}} <br>
-                   
-                    <strong> Idade:</strong> {{$cad->idade}} <br>
+                            <strong> Nome:</strong> {{$cad->nome}}<br>
 
-                    <strong> Responsável:</strong>
-                    @if($cad->idade >= 18 ) {{$cad->nome}} @else {{$cad->responsavelFinanceiro}} @endif <br>
-                   
-                    <strong> CPF:</strong> {{$cad->cpf}} <br>
-                </div>
+                            <strong> Matricula:</strong> {{$cad->matricula}} <br>
+
+                            <strong> Data de nascimento: </strong> {{ date('d/m/Y', strtotime( $cad->datanascimento) )}}
+                            <br>
+
+                            <strong> Idade:</strong> {{$cad->idade}} <br>
+
+                            <strong> Responsável:</strong>
+                            @if($cad->idade >= 18 ) {{$cad->nome}} @else {{$cad->responsavelFinanceiro}} @endif <br>
+
+                            <strong> CPF:</strong> {{$cad->cpf}} <br>
+                        </div>
                         <div class="col-md">
-                    <strong> Curso:</strong> {{$cad->_curso()}} <br>
-                    <strong> Mensalidade:</strong> R${{$curso->mensalidade}}<br>
-                    <strong> Plano:</strong> {{$cad->_plano()}} <br>
-                     <strong> Desconto:</strong> {{$plano->desconto}}%<br>
-                    <strong> Mensalidade do curso com o desconto:</strong> R${{$desconto}} </div>
+                            <strong> Curso:</strong> {{$cad->_curso()}} <br>
+                            <strong> Mensalidade:</strong> R${{$curso->mensalidade}}<br>
+                            <strong> Plano:</strong> {{$cad->_plano()}} <br>
+                            <strong> Desconto:</strong> {{$plano->desconto}}%<br>
+                            <strong> Mensalidade do curso com o desconto:</strong> R${{$desconto}}
+                        </div>
                     </div>
                 </div>
             </div>

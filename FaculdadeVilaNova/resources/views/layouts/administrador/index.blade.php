@@ -1,4 +1,3 @@
-
 <div class="container">
     <div class="row ">
         <div class="col-md-12">
@@ -20,7 +19,7 @@
                 <div class="card-body">
                     <i class="nav-icon 	fas fa-laptop-code"></i>
                     <p>
-                      <a href="/cursos">  Cursos</a><br>
+                        <a href="/cursos"> Cursos</a><br>
                         <span class="badge badge-info right">
                             @php
                             echo DB::table("cursos")->select("id")->count();
@@ -38,7 +37,7 @@
                 <div class="card-body">
                     <i class="nav-icon fas fa-user-graduate"></i>
                     <p>
-                    <a href="/alunos">    Alunos</a><br>
+                        <a href="/alunos"> Alunos</a><br>
                         <span class="badge badge-info right">
                             @php
                             echo DB::table("alunos")->select("id")->count();
@@ -55,7 +54,7 @@
                 <div class="card-body">
                     <i class="nav-icon 	 fas fa-money-bill-wave"></i>
                     <p>
-                    <a href="/planos-financeiros">   Planos financeiros</a><br>
+                        <a href="/planos-financeiros"> Planos financeiros</a><br>
                         <span class="badge badge-info right">
                             @php
                             echo DB::table("planos_financeiros")->select("id")->count();
@@ -72,7 +71,7 @@
                 <div class="card-body">
                     <i class="nav-icon fas fa-chalkboard-teacher"></i>
                     <p>
-                    <a href="/professores">Professores</a><br>
+                        <a href="/professores">Professores</a><br>
                         <span class="badge badge-info right">
                             @php
                             echo DB::table("professores")->select("id")->count();
@@ -89,9 +88,9 @@
                 <div class="card-body">
                     <i class="nav-icon fas fa-book-open"></i>
                     <p>
-                    <a href="/aulas">Aulas</a><br>
+                        <a href="/aulas">Aulas</a><br>
                         <span class="badge badge-info right">
-                        @php
+                            @php
                             echo DB::table("aulas")->select("id")->count();
                             @endphp
 
@@ -105,11 +104,11 @@
             <div class="card">
 
                 <div class="card-body">
-                <i class="nav-icon 	fas fa-code"></i>
+                    <i class="nav-icon 	fas fa-code"></i>
                     <p>
-                    <a href="/endpoints/api">Endpoints</a><br>
+                        <a href="/endpoints/api">Endpoints</a><br>
                         <span class="badge badge-info right">
-                      
+
 
                         </span>
                     </p>

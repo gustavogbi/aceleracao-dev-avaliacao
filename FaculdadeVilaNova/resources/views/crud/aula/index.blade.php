@@ -4,10 +4,11 @@
     <div class="row ">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Aulas 
-                @if( Auth::user()->role == 9 ) <a href="{{route('aulas.create') }}"><button type="button" class="btn btn-info tet-white float-right">
+                <div class="card-header">Aulas
+                    @if( Auth::user()->role == 9 ) <a href="{{route('aulas.create') }}"><button type="button"
+                            class="btn btn-info tet-white float-right">
                             <i class="fa fa-plus"></i> Novo</button></a>
-                        @endif</div>
+                    @endif</div>
 
                 <div class="card-body">
 
@@ -31,7 +32,7 @@
                         <th scope="col">Observação</th>
                         <th scope="col">Curso</th>
                         <th scope="col">Professor</th>
-                        @if( Auth::user()->role == 9 )  <th>Ações</th> @endif
+                        @if( Auth::user()->role == 9 ) <th>Ações</th> @endif
                     </tr>
                 </thead>
                 <tbody>
@@ -45,7 +46,7 @@
                         <td>{{ $cad->_curso() }} </td>
                         <td>{{ $cad->_professor() }} </td>
                         @if( Auth::user()->role == 9 )
-                         <td> <button data-bs-toggle="collapse" data-bs-target="#cad{{$cad->id}}"
+                        <td> <button data-bs-toggle="collapse" data-bs-target="#cad{{$cad->id}}"
                                 class="btn btn-primary">Ações</button>
 
                             <div id="cad{{$cad->id}}" class="collapse">
