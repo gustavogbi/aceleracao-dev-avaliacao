@@ -14,7 +14,7 @@
 </div>
 <div class="container">
     <div class="row ">
-        <div class="col-md">
+        <div class="col-md-4">
             <div class="card">
 
                 <div class="card-body">
@@ -32,7 +32,7 @@
             </div>
         </div>
 
-        <div class="col-md">
+        <div class="col-md-4">
             <div class="card">
 
                 <div class="card-body">
@@ -49,7 +49,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md">
+        <div class="col-md-4">
             <div class="card">
 
                 <div class="card-body">
@@ -66,7 +66,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md">
+        <div class="col-md-4">
             <div class="card">
 
                 <div class="card-body">
@@ -83,7 +83,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md">
+        <div class="col-md-4">
             <div class="card">
 
                 <div class="card-body">
@@ -94,6 +94,22 @@
                         @php
                             echo DB::table("aulas")->select("id")->count();
                             @endphp
+
+                        </span>
+                    </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+
+                <div class="card-body">
+                <i class="nav-icon 	fas fa-code"></i>
+                    <p>
+                    <a href="/endpoints/api">Endpoints</a><br>
+                        <span class="badge badge-info right">
+                      
 
                         </span>
                     </p>
