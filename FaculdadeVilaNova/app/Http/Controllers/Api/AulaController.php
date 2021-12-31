@@ -7,6 +7,7 @@ use App\Http\Requests\AulaRequest;
 use App\Http\Resources\AulaResource;
 use App\Http\Resources\AulaResourceCollection;
 use App\Models\Aula;
+use App\Models\Curso;
 use Illuminate\Http\Request;
 
 class AulaController extends Controller
@@ -20,6 +21,7 @@ class AulaController extends Controller
 
     public function index(Request $request)
     {
+
         $cads = $this->model;
 
         if ($request->has('fields')) {
@@ -39,11 +41,12 @@ class AulaController extends Controller
         return new AulaResource($cad);
     }
 
-    public function show($id)
+    public function show($idcurso)
     {
-        $cad = Aula::findOrFail($id);
+        $cads = Curso::findOrFail($idcurso);
+        $cads = Aula::where('idcurso', $idcurso)->get();
 
-        return new AulaResource($cad);
+        return new AulaResourceCollection($cads);
     }
 
     public function update(AulaRequest $request, $id)
