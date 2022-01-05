@@ -29,7 +29,7 @@ class AulaRequest extends FormRequest
             'duracao'   => 'required|min:1|max:3',
             'observacao'    => 'required|min:5|max:255',
             'idcurso' => 'required|integer|between:1,8',
-            'idprofessor' => 'required|integer|between:1,10',
+            'idprofessor' => 'required|integer',
         ];
     }
 

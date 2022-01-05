@@ -7,12 +7,12 @@
                 <div class="card-body">
                     Olá, <strong> {{ Auth::user()->name }}</strong> <br>
                     Seja bem vindo ao seu painel administrativo.<br>
-                    @if($status == 0) Seu cadastro esta imcompleto. <br>
-                    Clique abaixo para concluir sua matricula <br>
+                    @if($status == 0)
+                    <p class="text-danger"> Seu cadastro esta imcompleto.<br>
+                        Clique abaixo para concluir sua matricula <br></p>
                     <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#myModal">
                         Concluir matricula
                     </button>
-
                     @endif
                 </div>
             </div>

@@ -18,7 +18,6 @@
     </div>
 </div>
 <div class="container">
-
     @include('layouts.alerts')
     <div class="row ">
         <div class="col-md-12">
@@ -93,7 +92,7 @@
                     @endforeach
                 </tbody>
             </table>
-            {{-- {{ $cads->links() }} --}}
+            {{ $cads->links() }}
         </div>
     </div>
     @endsection

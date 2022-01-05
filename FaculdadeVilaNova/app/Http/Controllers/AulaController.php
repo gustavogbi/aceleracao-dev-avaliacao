@@ -22,6 +22,7 @@ class AulaController extends Controller
 
     public function index()
     {
+        //Verifica se é professor
         $user = Auth::user();
         if($user->role == 1)
         {
@@ -37,6 +38,7 @@ class AulaController extends Controller
             $idcurso ="0";
             return view($this->view . '.index', compact('cads','idcurso'));
         }
+        //Verifica se é aluno
         if($user->role == 0)
         {
             $cad = Aluno::Where('cpf', $user->cpf)->first();
@@ -46,6 +48,7 @@ class AulaController extends Controller
             $cads = Aula::Where('idcurso', $cad->idcursos)->paginate(8);
             return view($this->view . '.index', compact('cads'));
         }
+        //Verifica se é Admin
         if($user->role == 9)
         {
             $cads = Aula::paginate(8);
@@ -64,9 +67,10 @@ class AulaController extends Controller
 
     public function store(AulaRequest $request)
     {
-        $cad = Aula::create($request->all());
+        Aula::create($request->all());
+        $cads = Aula::paginate(8);
 
-        return view($this->view.'.index', compact('cad'))->with('success', "Cadastrado efetivado com sucesso!");
+        return view($this->view.'.index', compact('cads'))->with('success', "Cadastrado efetivado com sucesso!");
     }
 
     public function show($id)
